@@ -1,0 +1,6 @@
+[submodule "blocks/ilios"]
+	path = blocks/ilios
+	url = git://github.com/ilios/moodle-block-ilios.git
+[submodule "local/archiveup"]
+	path = local/archiveup
+	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
