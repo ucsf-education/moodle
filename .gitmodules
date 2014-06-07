@@ -4,3 +4,12 @@
 [submodule "local/archiveup"]
 	path = local/archiveup
 	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = git://github.com/moodleou/moodle-mod_oublog.git
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = git://github.com/moodleou/moodle-mod_ouwiki.git
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
