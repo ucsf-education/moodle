@@ -13,3 +13,6 @@
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
 	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = git://github.com/moodleuulm/moodle-local_staticpage.git
