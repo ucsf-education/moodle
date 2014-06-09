@@ -22,3 +22,6 @@
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
+[submodule "theme/essential"]
+	path = theme/essential
+	url = git://github.com/moodleman/moodle-theme_essential.git
