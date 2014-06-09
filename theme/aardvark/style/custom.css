@@ -1,0 +1,336 @@
+/*
+ * @author    Shaun Daubney
+ * @package   theme_aardvark
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+html,body {
+color:#747474;
+background-color: [[setting:backcolor]];
+background-image: url([[setting:backimage]]);
+background-position: center top;
+background-repeat:[[setting:backposition]];
+font-family: 'open sans',sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-weight:normal;
+}
+
+h3 {
+font-size:1.1em;
+text-transform:uppercase;
+
+}
+
+a {
+    color: #3d3d3d;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: [[setting:menuhovercolor]];
+    text-decoration: none;
+}
+
+#page-site-index h2.headingblock:before {
+    background-color: #29A294;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    height: 1.3em;
+    margin-right: 0.5em;
+    margin-top: -0.3em;
+    padding-top: 0.2em;
+    text-align: center;
+    width: 1.5em;
+	content:"\f0a1";
+	border-radius: 3px 3px 3px 3px;
+}
+
+#page-header h1 {
+    color: #999999;
+    font-size: 22px;
+    text-transform: uppercase;
+	float:left;
+	margin: -10px 0 5px;
+}
+
+#page-header-date h1 {
+    color: #ccc;
+    font-size: 22px;
+    text-transform: uppercase;
+	float:right;
+	margin: -10px 0 5px;
+}
+
+#page-header-generalalert {
+    clear:both;
+	display: block;
+	color:#ff9f00;
+	background-color:#fef8d2;
+	padding:8px 35px 8px 14px;
+	margin-bottom:20px;
+	text-shadow:0 1px 0 rgba(255,255,255,0.5);
+	border:1px solid #fde6af;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+
+#page-header-generalalert:before {
+    background-color: #ff9f00;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    height: 1.4em;
+    margin-right: 0.5em;
+    margin-top: -0.15em;
+	margin-left: -0.5em;
+    padding-top: 0.2em;
+    text-align: center;
+    width: 1.7em;
+	content:"\f06a";
+	border-radius: 3px 3px 3px 3px;
+	text-shadow:none;
+}
+
+#page-header-snowalert {
+    clear:both;
+	display: block;
+	color:#3a87ad;
+	background-color:#d9edf7;
+	padding:8px 35px 8px 14px;
+	margin-bottom:20px;
+	text-shadow:0 1px 0 rgba(255,255,255,0.5);
+	border:1px solid #bce8f1;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+
+#page-header-snowalert:before {
+    background-color: #3a87ad;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    height: 1.4em;
+    margin-right: 0.5em;
+    margin-top: -0.15em;
+	margin-left: -0.5em;
+    padding-top: 0.2em;
+    text-align: center;
+    width: 1.7em;
+	content:"\f069";
+	border-radius: 3px 3px 3px 3px;
+	text-shadow:none;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    border-color: #E3E3E3;
+	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.05);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.05);
+}
+
+
+
+.navbar-inner {
+    background-color: #ffffff;
+    background-image: none;
+    background-repeat: repeat-x;
+	
+	}
+	
+.navbar .logo {
+    display: block;
+    float: left;
+	max-height: 38px;
+	margin-top: 1px;
+}
+
+
+.navbar .brand {
+    color: #3d3d3d;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:hover, .navbar .nav > li > a:focus, .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	color: [[setting:menuhovercolor]];
+	text-shadow: none;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+background-color: #ffffff;
+color:[[setting:menuhovercolor]];
+}
+
+.navbar .nav > li > a {
+    color: #3d3d3d;
+    float: none;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.navbar .nav .dropdown-toggle .caret {
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.navbar .nav li.dropdown > a:hover .caret, .navbar .nav li.dropdown > a:focus .caret, 
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret, .navbar .nav li.dropdown.active > .dropdown-toggle .caret, .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret  {
+    border-bottom-color: [[setting:menuhovercolor]];
+    border-top-color: [[setting:menuhovercolor]];
+}
+
+.dropdown-submenu:hover > a:after {
+    border-left-color: [[setting:menuhovercolor]];
+}
+
+.dropdown-menu {
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    padding:0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-submenu > .dropdown-menu {
+    -webkit-border-radius: 1px 1px 1px 1px;
+    -moz-border-radius: 1px 1px 1px 1px;
+    border-radius: 1px 1px 1px 1px;
+}
+
+
+.dropdown-menu > li > a {
+    padding: 6px 20px;
+}
+
+.open > .dropdown-menu {
+	overflow:visible!important;
+	}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    background-color: #ffffff;
+	background-image:none;
+	text-shadow: none;
+	color:[[setting:menuhovercolor]];
+}
+
+
+
+
+
+.course-content {
+    background-color: #FFFFFF;
+	border: 1px solid #E3E3E3;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 20px;
+    min-height: 20px;
+    padding: 8px 0;
+}
+
+.pagelayout-incourse #region-main, .pagelayout-mydashboard  #region-main {
+    background-color: #FFFFFF;
+	border: 1px solid #E3E3E3;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 20px;
+    min-height: 20px;
+    padding: 10px;
+}
+
+.course-content ul li.section.main {
+    border-bottom: 2px solid #FAFAFA;
+}
+
+.path-course-view .completionprogress {
+    margin-right: 10px;
+}
+
+.block {
+    background-color: #FFFFFF;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+padding-bottom:5px;
+border-radius: 2px;
+}
+
+.block .content {
+    padding-top:10px;
+}
+
+.block .header .title h2, .block h3.main {
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.forumpost {
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.author {
+	font-size:0.8em;
+	color:#999999;
+}
+
+.userpicture {
+    border-radius: 2px;
+}
+
+.headingblock {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+#page-footer {
+    border: 0;
+}
+
+#footer-left, #footer-middle {
+    color: #999999;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.footerlinks {
+    color: #e5e5e5;
+    font-size: 0.7em;
+	text-align:left;
+	text-shadow: 1px 1px #FFFFFF;
+}
+
+.footerlinks a {
+    color: #e5e5e5;
+
+}
+
+.path-calendar .maincalendar .eventlist .event {
+    background-color: #FFFFFF;
+	border: 1px solid #E3E3E3;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 20px;
+    min-height: 20px;
+    padding: 10px;
+}
+
+.coursebox {
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    margin-bottom: 15px;
+    border:1px solid #e3e3e3;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
