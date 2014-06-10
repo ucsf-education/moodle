@@ -28,3 +28,6 @@
 [submodule "grade/report/laegrader"]
 	path = grade/report/laegrader
 	url = git://github.com/bobpuffer/moodle-gradereport_laegrader.git
+[submodule "grade/report/laeuser"]
+	path = grade/report/laeuser
+	url = git://github.com/bobpuffer/moodle-gradereport_laeuser.git
