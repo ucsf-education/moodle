@@ -25,3 +25,6 @@
 [submodule "theme/essential"]
 	path = theme/essential
 	url = git://github.com/moodleman/moodle-theme_essential.git
+[submodule "grade/report/laegrader"]
+	path = grade/report/laegrader
+	url = git://github.com/bobpuffer/moodle-gradereport_laegrader.git
