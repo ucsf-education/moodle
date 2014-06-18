@@ -1469,7 +1469,7 @@ M.core_filepicker.init = function(Y, options) {
                     var popupbutton = node.one('button');
                     popupbutton.on('click', function(e){
                         M.core_filepicker.active_filepicker = this;
-                        window.open(loginurl, 'repo_auth', 'location=0,status=0,width=500,height=300,scrollbars=yes');
+                        window.open(loginurl, 'repo_auth', 'location=0,status=0,width=500,height=600,scrollbars=yes');
                         e.preventDefault();
                     }, this);
                     loginform_node.one('form').on('keydown', function(e) {
