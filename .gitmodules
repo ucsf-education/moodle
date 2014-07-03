@@ -28,3 +28,6 @@
 [submodule "repository/boxnetsso"]
 	path = repository/boxnetsso
 	url = git://github.com/ucsf-ckm/moodle-repository-boxnetsso.git
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
