@@ -31,3 +31,6 @@
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+[submodule "blocks/som_irocket"]
+	path = blocks/som_irocket
+	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
