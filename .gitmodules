@@ -37,3 +37,6 @@
 [submodule "internallogin"]
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
+[submodule "blocks/course_favourites"]
+	path = blocks/course_favourites
+	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
