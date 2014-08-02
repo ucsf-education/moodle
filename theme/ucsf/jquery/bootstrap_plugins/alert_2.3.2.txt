@@ -1,5 +1,0 @@
-FILE DELETED
-
-Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
-File name: "winmail.dat->ucsf.zip->alert_2.3.2.js"
-Filter name: "FILE FILTER= Dangerous File Type: *.js"
