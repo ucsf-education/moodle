@@ -702,3 +702,10 @@ font-family: "Open Sans",sans-serif;
 .pagelayout-redirect .alert-info:before {
     display: none;
 }
+
+/*------------------------------------------------------------------------------------*/
+/* QUIZ */
+
+.que .formulation, .que .outcome, .que .comment {
+    color: #000000;
+}
