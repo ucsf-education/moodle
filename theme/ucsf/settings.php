@@ -660,6 +660,41 @@ defined('MOODLE_INTERNAL') || die;
                 $setting = new admin_setting_configtext($name, $title, $description, $default);
                 $setting->set_updatedcallback('theme_reset_all_caches');
                 $settings_lr->add($setting);
+                
+                //Category label image
+                $name = 'theme_ucsf/categorylabelimage'.$cats->id;
+                $title = get_string('categorylabelimage', 'theme_ucsf');
+                $description = get_string('categorylabelimagedesc', 'theme_ucsf');
+                $setting = new admin_setting_configstoredfile($name, $title, $description, 'categorylabelimage'.$cats->id);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image height
+                $name = 'theme_ucsf/categorylabelimageheight'.$cats->id;
+                $title = get_string('categorylabelimageheight', 'theme_ucsf');
+                $description = get_string('categorylabelimageheightdesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image alt
+                $name = 'theme_ucsf/categorylabelimagealt'.$cats->id;
+                $title = get_string('categorylabelimagealt', 'theme_ucsf');
+                $description = get_string('categorylabelimagealtdesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image title
+                $name = 'theme_ucsf/categorylabelimagetitle'.$cats->id;
+                $title = get_string('categorylabelimagetitle', 'theme_ucsf');
+                $description = get_string('categorylabelimagetitledesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
 
                 //Link label to category page
                 $name = 'theme_ucsf/linklabeltocategorypage'.$cats->id;
@@ -699,6 +734,41 @@ defined('MOODLE_INTERNAL') || die;
                 $name = 'theme_ucsf/categorylabel'.$cats->id;
                 $title = get_string('categorylabel', 'theme_ucsf');
                 $description = get_string('categorylabeldesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image
+                $name = 'theme_ucsf/categorylabelimage'.$cats->id;
+                $title = get_string('categorylabelimage', 'theme_ucsf');
+                $description = get_string('categorylabelimagedesc', 'theme_ucsf');
+                $setting = new admin_setting_configstoredfile($name, $title, $description, 'categorylabelimage'.$cats->id);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image height
+                $name = 'theme_ucsf/categorylabelimageheight'.$cats->id;
+                $title = get_string('categorylabelimageheight', 'theme_ucsf');
+                $description = get_string('categorylabelimageheightdesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image alt
+                $name = 'theme_ucsf/categorylabelimagealt'.$cats->id;
+                $title = get_string('categorylabelimagealt', 'theme_ucsf');
+                $description = get_string('categorylabelimagealtdesc', 'theme_ucsf');
+                $default = '';
+                $setting = new admin_setting_configtext($name, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $settings_lr->add($setting);
+
+                //Category label image title
+                $name = 'theme_ucsf/categorylabelimagetitle'.$cats->id;
+                $title = get_string('categorylabelimagetitle', 'theme_ucsf');
+                $description = get_string('categorylabelimagetitledesc', 'theme_ucsf');
                 $default = '';
                 $setting = new admin_setting_configtext($name, $title, $description, $default);
                 $setting->set_updatedcallback('theme_reset_all_caches');

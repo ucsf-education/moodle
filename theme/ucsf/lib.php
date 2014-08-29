@@ -90,6 +90,18 @@ function theme_ucsf_set_logo($css, $logo) {
  * @return bool
  */
 function theme_ucsf_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    global $DB;
+    $CATEGORILABELIMAGE = array();
+
+    $sql = "SELECT cc.id
+        FROM {course_categories} cc";
+
+    $course_categories =  $DB->get_records_sql($sql);
+    foreach ($course_categories as $cat) {
+        $CATEGORILABELIMAGE[]= "categorylabelimage".$cat->id;        
+    }
+
+
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         $theme = theme_config::load('ucsf');
         if ($filearea === 'logo') {
@@ -108,6 +120,8 @@ function theme_ucsf_pluginfile($course, $cm, $context, $filearea, $args, $forced
             return $theme->setting_file_serve('tile5image', $args, $forcedownload, $options);
         } else if ($filearea === 'tile6image') {
             return $theme->setting_file_serve('tile6image', $args, $forcedownload, $options);
+        } else if (in_array($filearea,  $CATEGORILABELIMAGE)) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
@@ -223,7 +237,7 @@ function theme_ucsf_get_global_settings(renderer_base $output, moodle_page $page
         // set toplevel category label
         $return->categorylabel = '';
         if (!empty($page->theme->settings->toplevelcategorylabel)) {
-            $return->categorylabel = '<div class="category-label pull-left">'.$page->theme->settings->toplevelcategorylabel.'</div>';;
+            $return->categorylabel = '<div class="category-label pull-left"><div class="category-label-text">'.$page->theme->settings->toplevelcategorylabel.'</div></div>';;
         }
 
         // get course category id
@@ -254,8 +268,35 @@ function theme_ucsf_get_global_settings(renderer_base $output, moodle_page $page
         // override top level category label with custom category label
         if(!is_null($COURSECATEGORY && $COURSECATEGORY!=0)) {
             $categorylabelcustom = "categorylabel".$COURSECATEGORY;
+            $categorylabelimagecustom = "categorylabelimage".$COURSECATEGORY;
+            $categorylabelimageheightcustom = "categorylabelimageheight".$COURSECATEGORY;
+            $categorylabelimagealtcustom = "categorylabelimagealt".$COURSECATEGORY;
+            $categorylabelimagetitlecustom = "categorylabelimagetitle".$COURSECATEGORY;
+
             if (!empty($page->theme->settings->$categorylabelcustom)) {
-                $return->categorylabel = '<div class="category-label pull-left">'.$page->theme->settings->$categorylabelcustom.'</div>';
+            
+                $categorylabelimage = "";
+                $imgheight = "";
+                $imgalt = "";
+                $imgtitle = "";
+
+                if (!empty($page->theme->settings->$categorylabelimagecustom)) {
+                    $categorylabelimage = '<div class="category-label-image"><img src="'.$page->theme->setting_file_url('categorylabelimage'.$COURSECATEGORY, 'categorylabelimage'.$COURSECATEGORY).'"';
+                }
+                if (!empty($page->theme->settings->$categorylabelimageheightcustom)) {
+                    $categorylabelimage.= 'height="'.$page->theme->settings->$categorylabelimageheightcustom.'"';
+                }
+                if (!empty($page->theme->settings->$categorylabelimagealtcustom)) {
+                    $categorylabelimage.= 'alt="'.$page->theme->settings->$categorylabelimagealtcustom.'"';
+                }
+                if (!empty($page->theme->settings->$categorylabelimagetitlecustom)) {
+                    $categorylabelimage.= 'title="'.$page->theme->settings->$categorylabelimagetitlecustom.'"';
+                }
+                if (!empty($page->theme->settings->$categorylabelimagecustom)) {
+                    $categorylabelimage.= '/></div>';
+                }
+                         
+                $return->categorylabel = '<div class="category-label pull-left">'.$categorylabelimage.'<div class="category-label-text">'.$page->theme->settings->$categorylabelcustom.'</div></div>';
             }
         }
 
@@ -408,6 +449,15 @@ function theme_ucsf_get_alerts(renderer_base $output, moodle_page $page) {
     }
 
     return $alert;
+}
+
+function theme_ucsf_get_category_label_image(renderer_base $output, moodle_page $page) {
+    $categorylabelimage = "";
+
+    if(!empty($page->theme->settings->categorylabelimage))
+        $categorylabelimage = '<img src="'.$page->theme->setting_file_url('categorylabelimage', 'categorylabelimage').'" alt="'.$page->theme->settings->bannerimagealt.'" title="'.$page->theme->settings->bannerimagetitle.'" class="banner-image">';
+
+    return $categorylabelimage;
 }
 
 function theme_ucsf_get_banner(renderer_base $output, moodle_page $page) {

@@ -176,6 +176,18 @@ $string['bannerimagetitledesc'] = 'HTML image title Attribute';
 $string['categorylabel'] = 'Category label';
 $string['categorylabeldesc'] = 'Category label';
 
+$string['categorylabelimage'] = 'Category label image';
+$string['categorylabelimagedesc'] = 'Category label image to be displayed in the category label box';
+
+$string['categorylabelimageheight'] = 'Category label image height';
+$string['categorylabelimageheightdesc'] = 'Category label image height in pixels, eg.: 40px.';
+
+$string['categorylabelimagealt'] = 'Category label image alt';
+$string['categorylabelimagealtdesc'] = 'Category label image HTML alt Attribute';
+
+$string['categorylabelimagetitle'] = 'Category label image title';
+$string['categorylabelimagetitledesc'] = 'Category label image HTML title Attribute';
+
 $string['linklabeltocategorypage'] = 'Link label to category page';
 $string['linklabeltocategorypagedesc'] = 'Link label to category page';
 
@@ -184,4 +196,3 @@ $string['custommenudesc'] = 'Custom menu';
 
 $string['logoinfo'] = 'Logo';
 $string['logoinfodesc'] = 'Logo desc';
-

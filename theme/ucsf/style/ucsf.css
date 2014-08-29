@@ -26,6 +26,26 @@ body {
 
 /* styles for when the page size is reduce to fit large custom menus */
 
+@media ( max-width: 1199px ) {
+	
+	 /* the left block but only on the front page*/
+
+	
+	/* the main but only on the front page*/
+
+	#page-site-index .row-fluid .span4 {
+    	width: 31.9149% !important;
+	}
+	
+	/* the left block but only on the front page*/
+
+	#page-site-index .row-fluid #block-region-side-pre.span4 {
+    	width: 23.4043% !important;
+	}
+	
+}
+
+
 @media ( max-width: 1105px ) {
 	body{
 		background: #FFF!important;
@@ -46,7 +66,94 @@ body {
     .main-footer {
         padding: 0 10px!important;
     }
+	
+	 /* the left block but only on the front page*/
+
+	#page-site-index .row-fluid #block-region-side-pre.span4 {
+    	width: 23.4043% !important;
+	}
+	body#page-site-index.has_dock #page {
+    	padding-left: 0 !important;
+	
+	}
+	
 }
+
+@media ( max-width: 1030px ) {
+	
+	 /* the left block but only on the front page*/
+
+	/* docked padding fix front page*/
+
+	body#page-site-index.has_dock #page {
+    	padding-left: 50px !important;
+	
+	}
+	
+	/* ----- Control the width of the blocks -----*/
+
+	/* the main center content area */
+	.row-fluid .span8 {
+		width: 65.812% !important;
+	}
+
+	/* the left block */
+	.row-fluid .span4 {
+    	width: 31.6239% !important;
+	}
+
+	/* the right block */
+
+
+	.row-fluid .span3 {
+    	width: 24.0769% !important;
+	}
+
+	/* pre (left) and main */
+
+	.row-fluid .span9 {
+    	width: 73% !important;
+	}
+
+
+	/* docked padding fix */
+
+	body.has_dock #page {
+    	padding-left: 60px !important;
+	
+	}
+
+	/* pre (left and main when all right blocks docked */
+	
+	.empty-region-side-post .row-fluid .span9 {
+    	width: 100% !important;
+	}
+	
+	/* main when all blocks docked */
+	
+	.empty-region-side-pre #region-bs-main-and-pre.span9 #region-main, .jsenabled.docked-region-side-pre #region-bs-main-and-pre.span9 #region-main {
+    	width: 100% !important;
+	}
+	
+	/* the main center content area */
+	.pagelayout-frontpage .row-fluid .span8 {
+		width: 74% !important;
+	}
+	
+	/* the left block but only on the front page*/
+
+	#page-site-index .row-fluid .span4 {
+   		width: 31.8% !important;
+	}
+
+	/* front page */
+	
+	.pagelayout-frontpage .container-fluid {
+    	max-width: 100% !important;
+	}
+	
+}
+
 
 @media ( max-width: 1010px) {
 	
@@ -109,6 +216,34 @@ body {
     .main-footer {
         padding: 0 10px!important;
     }
+	
+	/* ----- Control the width of the blocks -----*/
+	
+	/* pre (left) and main */
+	
+	/*.row-fluid .span9 {
+    	width: 79% !important;
+	}*/
+	
+	/* pre (left and main when all right blocks docked */
+	
+	/*.empty-region-side-post .row-fluid .span9 {
+    	width: 100% !important;
+	}*/
+	
+	 /* the main but only on the front page*/
+
+	#page-site-index .row-fluid .span4 {
+    	width: 31.4911% !important;
+	}
+	
+	/* ----- End of Control the width of the blocks -----*/
+}
+
+@media ( max-width: 859px ) {
+	.cle-text {
+        display: none!important;
+    }
 }
 
 @media ( max-width: 767px ) {
@@ -130,6 +265,46 @@ body {
 	.navbar-inner {
         padding: 0px 5px 0 5px !important;
     }
+	
+	/* ----- Control the width of the blocks -----*/
+
+	/* the main center content area */
+	.row-fluid .span8 {
+		width: 100% !important;
+	}
+
+	/* the left block */
+	.row-fluid .span4 {
+    	width: 100% !important;
+	}
+
+	/* the right block */
+
+
+	.row-fluid .span3 {
+    	width: 100% !important;
+	}
+
+	/* pre (left) and main */
+
+	.row-fluid .span9 {
+    	width: 100% !important;
+	}
+	 /* the main but only on the front page*/
+	 
+	 /* the main center content area */
+
+	#page-site-index .row-fluid .span4, .pagelayout-frontpage .row-fluid .span8 {
+    	width: 100% !important;
+	}
+	
+	/* the left block but only on the front page*/
+
+	#page-site-index .row-fluid #block-region-side-pre.span4 {
+    	width: 100% !important;
+	}
+	
+	/* ----- End of Control the width of the blocks -----*/
 }
 
 @media ( max-width: 530px ) {
@@ -168,6 +343,8 @@ h4 {font-size: 16px}
 h5 {font-size: 14px}
 h6 {font-size: 13px}
 
+hr { background-color:#b3becb; height:1px; border:none }
+
 .container-fluid {
     max-width: 1680px;
 	padding-left: 0;
@@ -179,6 +356,12 @@ h6 {font-size: 13px}
 }
 #page {
     padding: 0 60px;
+}
+
+.modified {
+	font-size: 11px;
+	padding-top: 25px;
+	text-align: center;
 }
 
 
@@ -256,11 +439,19 @@ h6 {font-size: 13px}
 .category-label {
     font-size: 11px;
 	font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    min-height: 40px;
     padding-right: 20px;
 	color: #365376;
     background: url([[pix:theme_ucsf|breadcrumb-arrow]]) no-repeat right; 
+}
+.category-label-image {
+    float: left;
+    margin-right: 10px;
+}
+.category-label-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: right;
 }
 .category-label a { 
     color: #365376;
@@ -473,12 +664,62 @@ h6 {font-size: 13px}
 .block_tree .tree_item.branch {
     background-position: 0 3px!important;
 }
-hr {
-    border-color: #FFFFFF;
+
+.block hr {
+    border-color: #FFFFFF !important;
+	background: #FFFFFF !important;
 }
+
 .block .footer {
     text-align: center!important;
 }
+
+/* ----- Control the width of the blocks -----*/
+
+/* the main center content area */
+.row-fluid .span8 {
+	width: 70.812%;
+}
+
+/* the left block */
+.row-fluid .span4 {
+    width: 26.6239%;
+}
+
+/* the right block */
+
+
+.row-fluid .span3 {
+    width: 18.0769%;
+}
+
+/* pre (left) and main */
+
+.row-fluid .span9 {
+    width: 79.359%;
+}
+
+/* the left block but only on the front page*/
+
+#page-site-index .row-fluid .span4 {
+    width: 31.5329%;
+}
+
+/* docked padding fix */
+
+body.has_dock #page {
+    padding-left: 60px !important;
+	
+}
+
+/* docked padding fix front page*/
+
+body#page-site-index.has_dock #page {
+    padding-left: 0;
+	
+}
+
+
 
 
 /*------------------------------------------------------------------------------------*/
@@ -559,6 +800,35 @@ hr {
 }
 
 /*------------------------------------------------------------------------------------*/
+/* Course Page */
+
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.course-content ul.topics li.section .summary {
+    margin-left: 15px;
+}
+
+.course-content ul.section {
+    margin: 0.7em 0.1em 0.7em 0.1em;
+}
+
+.section .activity .mod-indent-outer {
+    padding-left: 17px;
+}
+
+.section .label .mod-indent-outer {
+    display: block;
+    padding-left: 15px;
+}
+
+.section .label .contentwithoutlink, .section .label .activityinstance {
+    padding-right: 15px;
+}
+
+/*------------------------------------------------------------------------------------*/
 /* FOOTER */
 
 #page-footer {
@@ -622,6 +892,11 @@ hr {
 
 /*------------------------------------------------------------------------------------*/
 /* DOCK */
+
+#dock .dockeditem_container {
+    margin-top: 85px;
+}
+
 #dock {
     padding-top: 45px;
 }
@@ -676,6 +951,12 @@ font-family: "Open Sans",sans-serif;
 #ilios_block {
     display: block;
 }
+
+#ilios_block body {
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
 @media ( max-width: 400px ) {
     #ilios_block {
         display: none!important;
