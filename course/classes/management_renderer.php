@@ -1067,7 +1067,9 @@ class core_course_management_renderer extends plugin_renderer_base {
         $html = '';
         $totalpages = ceil($totalcourses / $perpage);
         if ($showtotals) {
-            if ($totalpages == 1) {
+            if ($totalpages == 0) {
+                $str = get_string('nocourses');
+            } else if ($totalpages == 1) {
                 $str = get_string('showingacourses', 'moodle', $totalcourses);
             } else {
                 $a = new stdClass;
@@ -1180,21 +1182,18 @@ class core_course_management_renderer extends plugin_renderer_base {
             }
             // Show/Hide.
             if ($course->can_change_visibility()) {
-                if ($course->visible) {
                     $actions[] = $this->output->action_icon(
                         new moodle_url($baseurl, array('action' => 'hidecourse')),
-                        new pix_icon('t/show', get_string('hide')),
+                        new pix_icon('t/hide', get_string('hide')),
                         null,
                         array('data-action' => 'hide', 'class' => 'action-hide')
                     );
-                } else {
                     $actions[] = $this->output->action_icon(
                         new moodle_url($baseurl, array('action' => 'showcourse')),
-                        new pix_icon('t/hide', get_string('show')),
+                        new pix_icon('t/show', get_string('show')),
                         null,
                         array('data-action' => 'show', 'class' => 'action-show')
                     );
-                }
             }
         }
         if (empty($actions)) {
