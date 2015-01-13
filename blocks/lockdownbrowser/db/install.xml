@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+// Respondus LockDown Browser Extension for Moodle
+// Copyright (c) 2011-2014 Respondus, Inc.  All Rights Reserved.
+// Date: May 28, 2014.
+-->
+
+<XMLDB
+  PATH="blocks/lockdownbrowser/db"
+  VERSION="20130118"
+  COMMENT="XMLDB file for Moodle blocks/lockdownbrowser"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+
+    <TABLE NAME="block_lockdownbrowser" COMMENT="Respondus LockDown Browser" NEXT="block_lockdownbrowser_sett">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="text" LENGTH="medium" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="text" LENGTH="medium" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="name" NEXT="introformat"/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="intro" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="introformat" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timecreated"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course_ix" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+
+    <TABLE NAME="block_lockdownbrowser_sett" COMMENT="Settings not in quiz table" PREVIOUS="block_lockdownbrowser" NEXT="block_lockdownbrowser_toke">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="ID of block table" PREVIOUS="id" NEXT="quizid"/>
+        <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="ID of quiz table" PREVIOUS="course" NEXT="attempts"/>
+        <FIELD NAME="attempts" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="Do attempts require LDB? 0=no" PREVIOUS="quizid" NEXT="reviews"/>
+        <FIELD NAME="reviews" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="Do reviews require LDB? 0=no" PREVIOUS="attempts" NEXT="password"/>
+        <FIELD NAME="password" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" ENUM="false" COMMENT="Proctor exit password for quiz" PREVIOUS="reviews" NEXT="monitor"/>
+        <FIELD NAME="monitor" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" ENUM="false" COMMENT="Monitor-specific settings for quiz" PREVIOUS="password"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course_ix" UNIQUE="false" FIELDS="course" NEXT="quiz_ix"/>
+        <INDEX NAME="quiz_ix" UNIQUE="false" FIELDS="quizid" PREVIOUS="course_ix"/>
+      </INDEXES>
+    </TABLE>
+
+    <TABLE NAME="block_lockdownbrowser_toke" COMMENT="Tokens to control access to attempts and reviews" PREVIOUS="block_lockdownbrowser_sett" NEXT="block_lockdownbrowser_sess">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="token1"/>
+        <FIELD NAME="token1" TYPE="char" LENGTH="49" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="token2"/>
+        <FIELD NAME="token2" TYPE="char" LENGTH="32" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="token1" NEXT="sesskey"/>
+        <FIELD NAME="sesskey" TYPE="char" LENGTH="64" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="token2" NEXT="timeused"/>
+        <FIELD NAME="timeused" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="sesskey"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="sesskey_ix" UNIQUE="false" FIELDS="sesskey"/>
+      </INDEXES>
+    </TABLE>
+
+    <TABLE NAME="block_lockdownbrowser_sess" COMMENT="Sessions" PREVIOUS="block_lockdownbrowser_toke">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="sesskey"/>
+        <FIELD NAME="sesskey" TYPE="char" LENGTH="64" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="timeused"/>
+        <FIELD NAME="timeused" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="sesskey"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+
+  </TABLES>
+
+</XMLDB>
