@@ -37,5 +37,5 @@
  */
 
 $plugins = array(
-    'alert'     => array('files' => array('bootstrap_plugins/alert_2.3.2.min.js'))
+    'alert'     => array('files' => array('bootstrap_plugins/alert_2.3.2.js'))
 );

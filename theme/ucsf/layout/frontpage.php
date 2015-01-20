@@ -4,7 +4,7 @@
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
+// (at your option) any l   ater version.
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -66,37 +66,12 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <header role="banner" class="navbar '.$return->navbarclass.'">
-    <nav role="navigation" class="navbar-inner">            
+    <nav role="navigation>" class="navbar-inner"> 
         <div class="container-fluid top-header">
-            <a class="brand pull-left" href="http://courses.ucsf.edu"><?php echo $globalsettings->logo;?></a>
-            <a class="btn btn-navbar pull-right" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>                
+            <a class="brand pull-left" href="http://courses.ucsf.edu"><?php echo $globalsettings->logo;?></a>               
             <ul class="nav pull-right">
                 <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                <li class="navbar-text">
-                    <?php
-                        if(isloggedin()) { 
-                            echo $OUTPUT->login_info(); echo $globalsettings->helpfeedbacklink;   
-                        } else {
-                            echo $globalsettings->helpfeedbacklink; echo $OUTPUT->login_info();  
-                        }
-                    ?>
-                </li>
-            </ul>
-            <div class="cle-text">Collaborative Learning Environment</div>
-        </div>
-
-        <div class="container-fluid menu-background <?php echo $globalsettings->menubackgroundcleen; ?>">
-            <div class="category-label-container pull-left">
-                <?php echo $globalsettings->categorylabel; ?>
-            </div>
-
-            <div class="nav-collapse collapse ucsf-custom-menu">
-                <?php echo $globalsettings->displaycustommenu; ?>
-                <div class="navbar-text-responsive">
+                <div class="login_user">
                     <?php
                         if(isloggedin()) { 
                             echo $OUTPUT->login_info(); echo $globalsettings->helpfeedbacklink;   
@@ -104,9 +79,27 @@ echo $OUTPUT->doctype() ?>
                             echo $OUTPUT->login_info();  
                         }
                     ?>
-                </div>
+                </div> 
+            </ul>
+            <div class="cle-text">Collaborative Learning Environment</div>
+        </div>
+        <div class="container-fluid menu-background <?php echo $globalsettings->menubackgroundcleen; ?>">
+            <div class="menu-left pull-left"></div>
+            <div class="menu-right pull-right"></div>
+            
+            <div class="category-label-container pull-left">
+                <?php echo $globalsettings->categorylabel; ?>
+            </div>
+            <a class="btn btn-navbar pull-right" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a> 
+            <div class="nav-collapse collapse ucsf-custom-menu">
+                <?php echo $globalsettings->displaycustommenu; ?>
             </div>
         </div>
+        
     </nav>
 </header>
 
@@ -159,4 +152,4 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 </div>
 </body>
-</html>
+</html> 

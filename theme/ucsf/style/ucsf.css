@@ -1,5 +1,4 @@
 /* ucsf.css*/
-
 /*------------------------------------------------------------------------------------*/
 /* GENERAL */
 
@@ -28,7 +27,7 @@ body {
 
 @media ( max-width: 1199px ) {
 	
-	 /* the left block but only on the front page*/
+	/* the left block but only on the front page*/
 
 	
 	/* the main but only on the front page*/
@@ -42,71 +41,72 @@ body {
 	#page-site-index .row-fluid #block-region-side-pre.span4 {
     	width: 23.4043% !important;
 	}
-	
 }
 
-
 @media ( max-width: 1105px ) {
-	body{
-		background: #FFF!important;
-	}
+    body{
+            background: #FFF!important;
+    }
+    
     #page {
         padding: 0 10px!important;
     }
+    
     .category-label {
         display: block;
 		padding-left: 5px !important;
     }
+    
     .navbar .nav > li {
-        background: none!important;
+       /* background: none!important;*/
     }
+    
     .navbar-inner {
         padding: 0px 10px 0 10px !important;
     }
+    
     .main-footer {
         padding: 0 10px!important;
     }
 	
-	 /* the left block but only on the front page*/
+    /* the left block but only on the front page*/
 
-	#page-site-index .row-fluid #block-region-side-pre.span4 {
-    	width: 23.4043% !important;
-	}
-	body#page-site-index.has_dock #page {
-    	padding-left: 0 !important;
-	
-	}
+    #page-site-index .row-fluid #block-region-side-pre.span4 {
+        width: 23.4043% !important;
+    }
+    
+    body#page-site-index.has_dock #page {
+        padding-left: 0 !important;
+   }
 	
 }
 
 @media ( max-width: 1030px ) {
 	
-	 /* the left block but only on the front page*/
+	/* the left block but only on the front page*/
 
 	/* docked padding fix front page*/
 
 	body#page-site-index.has_dock #page {
-    	padding-left: 50px !important;
-	
+            padding-left: 50px !important;
 	}
 	
 	/* ----- Control the width of the blocks -----*/
 
 	/* the main center content area */
 	.row-fluid .span8 {
-		width: 65.812% !important;
+            width: 65.812% !important;
 	}
 
 	/* the left block */
 	.row-fluid .span4 {
-    	width: 31.6239% !important;
+            width: 31.6239% !important;
 	}
 
 	/* the right block */
 
-
-	.row-fluid .span3 {
-    	width: 24.0769% !important;
+        .row-fluid .span3 {
+            width: 24.0769% !important;
 	}
 
 	/* pre (left) and main */
@@ -119,68 +119,72 @@ body {
 	/* docked padding fix */
 
 	body.has_dock #page {
-    	padding-left: 60px !important;
-	
+            padding-left: 60px !important;
 	}
 
 	/* pre (left and main when all right blocks docked */
 	
 	.empty-region-side-post .row-fluid .span9 {
-    	width: 100% !important;
+            width: 100% !important;
 	}
 	
 	/* main when all blocks docked */
 	
 	.empty-region-side-pre #region-bs-main-and-pre.span9 #region-main, .jsenabled.docked-region-side-pre #region-bs-main-and-pre.span9 #region-main {
-    	width: 100% !important;
+            width: 100% !important;
 	}
 	
 	/* the main center content area */
 	.pagelayout-frontpage .row-fluid .span8 {
-		width: 74% !important;
+            width: 74% !important;
 	}
 	
 	/* the left block but only on the front page*/
 
 	#page-site-index .row-fluid .span4 {
-   		width: 31.8% !important;
+            width: 31.8% !important;
 	}
 
 	/* front page */
 	
 	.pagelayout-frontpage .container-fluid {
-    	max-width: 100% !important;
+            max-width: 100% !important;
 	}
-	
 }
 
 
 @media ( max-width: 1010px) {
 	
-	body{
-		background: #FFF!important;
-	}
+    body{
+            background: #FFF!important;
+    }
+    
     #page {
         padding: 0 10px!important;
     }
+    
     .category-label {
         display: block;
 		padding-left: 5px !important;
     }
-	.navbar .nav {
-		margin: 0;
-	}
+    
+    .navbar .nav {
+            margin: 0;
+    }
+    
     .navbar .nav > li {
-        background: none!important;
+       /* background: none!important;*/
     }
 	
-	.navbar .nav > li > a {
-		font-size: 11px !important;
-		padding: 10px 7px 10px 7px !important;
-	}
+    .navbar .nav > li > a {
+            font-size: 11px !important;
+            padding: 10px 7px 10px 7px !important;
+    }
+    
     .navbar-inner {
         padding: 0px 8px 0 8px !important;
     }
+    
     .main-footer {
         padding: 0 10px!important;
     }
@@ -188,60 +192,51 @@ body {
 
 /* end of custom menu fix */
 
-@media ( max-width: 979px) {
+@media ( max-width: 779px) {
 
-	body{
-		background: #FFF!important;
-	}
+    body{
+            background: #FFF!important;
+    }
+    
     #page {
         padding: 0 10px!important;
     }
+    
     .ucsf-custom-menu {
         background: #e4edf4;
     }
-	.category-label-container {
+    
+    .category-label-container {
         width: 100%!important;
     }
+    
     .category-label {
         display: block;
         background: url([[pix:theme_ucsf|breadcrumb-arrow-clear]]) no-repeat right!important;
-		padding-left: 5px !important;
+        padding-left: 5px !important;
     }
-    .navbar .nav > li {
-        background: none!important;
-    }	
+    
     .navbar-inner {
         padding: 0px 8px 0 8px !important;
     }
+    
     .main-footer {
         padding: 0 10px!important;
     }
 	
-	/* ----- Control the width of the blocks -----*/
 	
-	/* pre (left) and main */
 	
-	/*.row-fluid .span9 {
-    	width: 79% !important;
-	}*/
-	
-	/* pre (left and main when all right blocks docked */
-	
-	/*.empty-region-side-post .row-fluid .span9 {
-    	width: 100% !important;
-	}*/
-	
-	 /* the main but only on the front page*/
+    /* the main but only on the front page*/
 
-	#page-site-index .row-fluid .span4 {
-    	width: 31.4911% !important;
-	}
-	
-	/* ----- End of Control the width of the blocks -----*/
+    #page-site-index .row-fluid .span4 {
+        width: 31.4911% !important;
+    }
+
+   /* ----- End of Control the width of the blocks -----*/
 }
 
 @media ( max-width: 859px ) {
-	.cle-text {
+    .cle-text {
         display: none!important;
     }
 }
@@ -252,76 +247,82 @@ body {
     .main-footer { 
         padding: 0 5px!important;
     }
+    
     .cle-text {
         display: none!important;
     }
+    
     .sectionname {
         line-height: 25px;
     }
+    
     .course-content ul.topics li.section .left,
     .course-content ul.topics li.section .right {
         width: 0px;
     }
-	.navbar-inner {
+    
+    .navbar-inner {
         padding: 0px 5px 0 5px !important;
     }
 	
-	/* ----- Control the width of the blocks -----*/
+    /* ----- Control the width of the blocks -----*/
 
-	/* the main center content area */
-	.row-fluid .span8 {
-		width: 100% !important;
-	}
+    /* the main center content area */
+    .row-fluid .span8 {
+        width: 100% !important;
+    }
 
-	/* the left block */
-	.row-fluid .span4 {
-    	width: 100% !important;
-	}
+    /* the left block */
+    .row-fluid .span4 {
+        width: 100% !important;
+    }
 
-	/* the right block */
+    /* the right block */
+    .row-fluid .span3 {
+        width: 100% !important;
+    }
 
+    /* pre (left) and main */
 
-	.row-fluid .span3 {
-    	width: 100% !important;
-	}
+    .row-fluid .span9 {
+        width: 100% !important;
+    }
+     /* the main but only on the front page*/
 
-	/* pre (left) and main */
+     /* the main center content area */
 
-	.row-fluid .span9 {
-    	width: 100% !important;
-	}
-	 /* the main but only on the front page*/
-	 
-	 /* the main center content area */
+    #page-site-index .row-fluid .span4, .pagelayout-frontpage .row-fluid .span8 {
+        width: 100% !important;
+    }
 
-	#page-site-index .row-fluid .span4, .pagelayout-frontpage .row-fluid .span8 {
-    	width: 100% !important;
-	}
-	
-	/* the left block but only on the front page*/
+    /* the left block but only on the front page*/
 
-	#page-site-index .row-fluid #block-region-side-pre.span4 {
-    	width: 100% !important;
-	}
-	
-	/* ----- End of Control the width of the blocks -----*/
+    #page-site-index .row-fluid #block-region-side-pre.span4 {
+        width: 100% !important;
+    }
+
+    /* ----- End of Control the width of the blocks -----*/
 }
 
 @media ( max-width: 530px ) {
     .navbar-text {
         display: none;
     }
+    
     .navbar-text-responsive {
         display: block!important;
     }
+    
     .logininfo-box {
         margin-top: 5px!important;
         margin-bottom: 5px!important;
         float: right;
     }
+    
     .logininfo-box a {
         margin-left: 0px!important;
     }
+    
     .logininfo-box a:hover {
         background-color: #FFF!important;
     }
@@ -347,21 +348,23 @@ hr { background-color:#b3becb; height:1px; border:none }
 
 .container-fluid {
     max-width: 1680px;
-	padding-left: 0;
-	padding-right:0;
+    padding-left: 0;
+    padding-right:0;
 }
+
 .pagelayout-frontpage .container-fluid {
     max-width: 940px;
 	
 }
+
 #page {
     padding: 0 60px;
 }
 
 .modified {
-	font-size: 11px;
-	padding-top: 25px;
-	text-align: center;
+    font-size: 11px;
+    padding-top: 25px;
+    text-align: center;
 }
 
 
@@ -374,13 +377,15 @@ hr { background-color:#b3becb; height:1px; border:none }
     padding-top: 14px;
     font-weight: 600;
 }
+
 .logininfo, .pipe-separator, .help-feedback {
-	float: left;
+    float: left;
 }
 
 .logininfo-box {
     float: left;
 }
+
 .logininfo-box a {
     background-color: #af8e31;
     padding: 5px 10px;
@@ -389,14 +394,16 @@ hr { background-color:#b3becb; height:1px; border:none }
     color: #fff;
     font-weight: 600;
 }
+
 .logininfo-box a:hover {
     background-color: #e4edf4;
     color: #af8e31;
     font-weight: 600;
     text-decoration: none;
 }
+
 .pipe-separator {
-	margin: 0 5px;
+    margin: 0 5px;
 }
 
 .ucsf-custom-menu {
@@ -404,30 +411,36 @@ hr { background-color:#b3becb; height:1px; border:none }
     background: #e4edf4!important;
     width: 100%;
 }
+
 .navbar {
     margin-bottom: 0px;
 }
+
 .navbar-inner {
     background: none;
     border: 1px solid #fff;
     box-shadow: none;
-	padding: 0 60px 0 60px;
+    padding: 0 60px 0 60px;
 }
+
 .navbar-text {
     margin-top: 4px;
-	font-size: 11px;
+    font-size: 11px;
 }
+
 .navbar .btn, .navbar .btn-group {
     margin-top: 10px;
 }
+
 .category-label-container {
     width: auto;
     background: #cbdcea;
 }
+
 .menu-background {    
-    width: 100%;
     background: url([[pix:theme_ucsf|menu-background]]) no-repeat left top #e4edf4; 
 }
+
 .menu-background-cleen {
     background-image: none;
     background: #e4edf4;
@@ -438,24 +451,28 @@ hr { background-color:#b3becb; height:1px; border:none }
 
 .category-label {
     font-size: 11px;
-	font-weight: bold;
+    font-weight: bold;
     min-height: 40px;
     padding-right: 20px;
-	color: #365376;
+    color: #365376;
     background: url([[pix:theme_ucsf|breadcrumb-arrow]]) no-repeat right; 
 }
+
 .category-label-image {
     float: left;
     margin-right: 10px;
 }
+
 .category-label-text {
     padding-top: 10px;
     padding-bottom: 10px;
     float: right;
 }
+
 .category-label a { 
     color: #365376;
 }
+
 .nav-collapse .dropdown-menu a:hover, 
 .nav-collapse .dropdown-menu a:focus, 
 .nav-collapse .dropdown-submenu a:focus, 
@@ -465,6 +482,7 @@ hr { background-color:#b3becb; height:1px; border:none }
 .nav-collapse .dropdown-menu > li > a:focus {
     color: #fff;
 }
+
 .navbar-text-responsive {
     display: none;
     margin-left: 15px;
@@ -474,18 +492,19 @@ hr { background-color:#b3becb; height:1px; border:none }
 /*------------------------------------------------------------------------------------*/
 /* ALERTS */
 
-
 .alert-info {
-	background:#fcf8e3;
-	border-color: #fbeed5;
-	color: #c09853;
+    background:#fcf8e3;
+    border-color: #fbeed5;
+    color: #c09853;
 }
+
 .alert {
-	border-radius: 0px;
-	border: none;
+    border-radius: 0px;
+    border: none;
     margin-bottom: 10px;
     padding: 8px 35px 5px 14px;
 }
+
 .alert .title {
     margin-right: 20px;
 }
@@ -496,12 +515,14 @@ hr { background-color:#b3becb; height:1px; border:none }
     padding-right: 15px;
     font-size: 20px;
 }
+
 .alert-error::before {
     font-family: "FontAwesome";
     content: "\f071 ";
     padding-right: 15px;
     font-size: 20px;
 }
+
 .alert-info::before {
     font-family: "FontAwesome";
     padding:3px;
@@ -520,7 +541,6 @@ hr { background-color:#b3becb; height:1px; border:none }
     margin-bottom: 20px;
 }
 
-
 /*------------------------------------------------------------------------------------*/
 /* TILES & BANNER */
 
@@ -529,6 +549,7 @@ hr { background-color:#b3becb; height:1px; border:none }
     padding: 0px ;
     text-align: left;    
 }
+
 .tile-border {
     border-color: #0070a8;
     border-style: solid;
@@ -536,19 +557,24 @@ hr { background-color:#b3becb; height:1px; border:none }
     min-height: 210px!important;
     margin-bottom: 20px;
 }
+
 .tile-image-container {
     margin: 1px;
 }
+
 .tile-image, 
 .banner-image {
     width: 100%;
 }
+
 .banner-image-container {
     width: 100%;
 }
+
 .banner {
     margin-bottom: 20px;
 }
+
 .link-button {
         margin-top: 5px!important;
         margin-bottom: 5px!important;
@@ -557,11 +583,13 @@ hr { background-color:#b3becb; height:1px; border:none }
         color: #FFFFFF;
         padding: 5px 15px 5px 25px;
 }
+
 .link-button a {
     margin-left: 0px!important;
     background: url([[pix:theme_ucsf|buttonBg]]) no-repeat left #5e95bd !important;
     color: #FFFFFF;
 }
+
 .link-button:hover {
     background: url([[pix:theme_ucsf|buttonBg]]) no-repeat left #af8e31 !important;
     color: #FFFFFF !important;
@@ -574,24 +602,30 @@ hr { background-color:#b3becb; height:1px; border:none }
     background-color: #FFF;
     font-size: 11px !important;
 }
+
 .iconhome {
-	margin-right: 10px;
+    margin-right: 10px;
 }
+
 .breadcrumb > li a {
     color: #365376;
     font-size: 11px;
 }
+
 .navbar .nav > li {
     background: url([[pix:theme_ucsf|menu-separator]]) no-repeat top right; 
 }
+
 .navbar-text {
     background: none!important;
 }
+
 .topmenu_user {
     font-weight: 600;
     float: left;
     margin-right: 10px;
 }
+
 .navbar .nav > li > a {
     padding: 10px 10px;
 	font-size: 11px;
@@ -625,6 +659,7 @@ hr { background-color:#b3becb; height:1px; border:none }
     border-bottom-left-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
 }
+
 .block .header .title h2, .block h3.main {
     font-family: "Open Sans",sans-serif;
     font-size: 12px;
@@ -636,28 +671,35 @@ hr { background-color:#b3becb; height:1px; border:none }
     border-top-right-radius: 0px;
     padding: 5px 15px;
 }
+
 .block a{
     color:#5d93bd;
     font-weight:normal;
 }
+
 .block a:hover {
     color: #5d93bd;
     text-decoration:underline;
 }
+
 .block .header .block_action {
     padding-top: 3px;
     padding-right: 8px;
 }
+
 .block_tree .active_tree_node, 
 .block_tree .active_tree_node a {
     font-weight: 600;
 }
+
 .tree_item span {
     padding-bottom: 10px;
 }
+
 .tree_item img {
     margin-top: 4px;
 }
+
 .block_tree .collapsed .tree_item.branch,
 .block_tree .collapsed .tree_item.emptybranch,
 .block_tree .tree_item.emptybranch,
@@ -678,7 +720,7 @@ hr { background-color:#b3becb; height:1px; border:none }
 
 /* the main center content area */
 .row-fluid .span8 {
-	width: 70.812%;
+    width: 70.812%;
 }
 
 /* the left block */
@@ -687,8 +729,6 @@ hr { background-color:#b3becb; height:1px; border:none }
 }
 
 /* the right block */
-
-
 .row-fluid .span3 {
     width: 18.0769%;
 }
@@ -706,21 +746,16 @@ hr { background-color:#b3becb; height:1px; border:none }
 }
 
 /* docked padding fix */
-
 body.has_dock #page {
     padding-left: 60px !important;
 	
 }
 
 /* docked padding fix front page*/
-
 body#page-site-index.has_dock #page {
     padding-left: 0;
 	
 }
-
-
-
 
 /*------------------------------------------------------------------------------------*/
 /* COURSE PAGE BLOCKS */
@@ -731,21 +766,26 @@ body#page-site-index.has_dock #page {
     background: none!important;
     border: none!important;
 }
+
 .block_course_overview .header .title .block_action {
     display: none;
 }
+
 .block_course_overview .header .title h2 {
     color: #365376;
     font-size: 16px;
  }
+ 
 .block_course_overview .coursebox {
     border-radius: 0px;
     border:1px solid #b3becb;
 }
+
 .block_course_overview a,
 .block_course_overview a:hover {
     color: #365376;
 }
+
 .course-content ul li.section.main {
     border-top: none;
     border-left: none;
@@ -761,22 +801,27 @@ body#page-site-index.has_dock #page {
     font-weight: bold;
     padding: 11px 0 11px 0;
 }
+
 .coursebox > .info > .coursename,
 .coursebox > .info > .coursename a {
     background-position: left 0.25em!important;
 }
+
 .course-content .sectionname {
     font-size: 16px!important;
     line-height: 25px;
 }
+
 .course-content .section-summary .section-title,
-.summary h3{
+.summary h3 {
     line-height: 25px!important;
 }
+
 .course-content .single-section .section-navigation .mdl-left,
 .course-content .single-section .section-navigation .mdl-right {
     margin-bottom: 10px;
 }
+
 .course-content .single-section .section-navigation .mdl-left a, 
 .course-content .single-section .section-navigation .mdl-right a {
     border: 1px solid #ccc;
@@ -784,13 +829,16 @@ body#page-site-index.has_dock #page {
     font-weight: 700;
     padding: 5px 10px;
 }
+
 .mdl-align {
     margin-top: 35px;
 }
+
 .course-content ul.topics li.section .left,
 .course-content ul.topics li.section .right {
     width: 0px;
 }
+
 .block.list_block .unlist > li > .column {
     margin-left: 23px;
 }
@@ -837,41 +885,48 @@ body#page-site-index.has_dock #page {
     border: none;
     color: #365376;
 }
+
 #page-footer a{
     color: #5d93bd
 }
+
 #page-footer a:hover{
     color: #5d93bd;
     text-decoration: underline;
 }
+
 .main-footer {
     background: #e4edf4;
     color: #365376;
     padding: 0 30px;
 }
+
 #page-footer .logininfo {
     color: #365376;
 }
+
 .ucsf_footer_text {
     float: left;
     width: 50%;
     height: 50px;
     text-align: left;
 }
+
 .ucsf_footer_links_container {
     float: left;
     width: 50%;
     height: 50px;
     text-align: right;
 }
+
 .ucsf_footer_link {
     margin-left:20px; 
 }
+
 .ucsf_logininfo {
     margin-top: 20px;
     float: right;
 }
-
 
 /*------------------------------------------------------------------------------------*/
 /* COLUMNS*/
@@ -880,9 +935,11 @@ body#page-site-index.has_dock #page {
     .empty-region-side-post.used-region-side-pre #block-region-side-pre.span4 {
         width: 100%;
     }
+    
     .empty-region-side-post.used-region-side-pre #region-main.span8 {
         width: 100%;
-    }   
+    }  
+    
     #region-main {
         padding:5px;
         padding-bottom:0px;
@@ -900,14 +957,17 @@ body#page-site-index.has_dock #page {
 #dock {
     padding-top: 45px;
 }
+
 #dock .controls {
     bottom: 60px;
 }
+
 #dock .dockedtitle {
     background-image: none;
     background-color: #365376;
     color: #fff
 }
+
 #dock .dockedtitle h2 {
     font-family: "Open Sans",sans-serif;
     font-size: 12px;
@@ -918,12 +978,15 @@ body#page-site-index.has_dock #page {
     border-top-right-radius: 0px;
     padding-top: 5px;
 }
+
 #dock .dockedtitle:hover, #dock .dockedtitle:focus {
     background: #365376;
 }
+
 #dockeditempanel .dockeditempanel_hd {
     background-color:#365376;
 }
+
 #dockeditempanel .dockeditempanel_hd h2{
 font-family: "Open Sans",sans-serif;
     font-size: 12px;
@@ -935,7 +998,6 @@ font-family: "Open Sans",sans-serif;
     border-top-right-radius: 0px;
 }
 
-
 /*------------------------------------------------------------------------------------*/
 /* ILIOS */
 
@@ -945,9 +1007,11 @@ font-family: "Open Sans",sans-serif;
     text-align: center;
     font-size: 14px;
 }
+
 #ilios_block_link a{
     padding-left: 5px;
 }
+
 #ilios_block {
     display: block;
 }
@@ -961,8 +1025,13 @@ font-family: "Open Sans",sans-serif;
     #ilios_block {
         display: none!important;
     }
+    
     #ilios_block_link {
         display: block!important;
+    }
+    
+    .login_user {
+        font-size: 11px;
     }
 }
 
@@ -975,11 +1044,13 @@ font-family: "Open Sans",sans-serif;
     height: 100px;
     background-color: #e4edf4;
 }
+
 .pagelayout-redirect .alert-info {
     background-color: #365376!important;
     color: #FFF!important;
     padding-left: 60px
 }
+
 .pagelayout-redirect .alert-info:before {
     display: none;
 }
@@ -989,4 +1060,148 @@ font-family: "Open Sans",sans-serif;
 
 .que .formulation, .que .outcome, .que .comment {
     color: #000000;
+}
+
+/********** LATEST CHANGES 16. 01. 2015 - Sasa Prsir *************************************************/
+
+/* icons editing buttons */
+.weeks li:first-of-type .content .summary a img.iconsmall {
+    position: relative;
+    right: 28px;
+}
+
+.section .activity .editing_move {
+    margin-left: -7px;
+}
+
+div.summary a img.iconsmall {
+    margin-left: -3px;
+}
+
+/* login */
+.login_user {
+    float: right;
+    clear: both;
+}
+
+.navbar .nav.pull-right {
+    margin-top: 2px;
+    line-height: 40px;
+    font-size: 11px;
+}
+
+.navbar .nav {
+    float: none;
+}
+
+/* responsive button */
+.navbar .btn, .navbar .btn-group {
+    margin-top: -30px;
+}
+
+a.btn.btn-navbar {
+    position: relative;
+    top: -5px;
+}
+
+/* menu background */
+body {
+    background-image: none;
+}
+
+.menu-left {
+    background: #cbdcea;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    z-index: -1;
+}
+
+.menu-right {
+    background-color: #e4edf4;
+    height: 40px;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+}
+
+.navbar .nav > li:last-child {
+    background: none;
+}
+
+
+/* block fixed */
+@media (min-width: 1200px) {
+    #block-region-side-pre.span4 {
+        width: 21.6239%!important;
+    }
+    
+    #region-main.span8 {
+        width: 75.812%!important;
+    }
+}
+
+@media (min-width: 1440px) {
+    #block-region-side-pre.span4 {
+        width: 20.6239%!important;
+    }
+    
+    #region-main.span8 {
+        width: 76.812%!important;
+    }
+}
+
+@media (min-width: 1680px) {
+    #block-region-side-pre.span4 {
+        width: 18.6239%!important;
+    }
+    
+    #region-main.span8 {
+        width: 78.812%!important;
+    }
+}
+
+/* show menu from 779px to 979px */
+@media (min-width: 779px) and (max-width: 979px)  {
+    a.btn.btn-navbar {
+        display: none;
+    }
+    
+    nav-collapse, .nav-collapse.collapse {
+        height: 40px;
+        overflow: visible;
+        display: inline;
+    }
+    
+    .navbar .nav li a {
+        float: left;
+    }
+    
+    .navbar .nav > li > a {
+        color: #777;
+        font-weight: normal;
+    }
+    
+    .navbar .nav > li {
+        background: url([[pix:theme_ucsf|menu-separator]]) no-repeat top right; 
+        float: left;
+    }
+    
+    .navbar .nav > li:last-child{
+        background: none; 
+    }
+    
+}
+
+/* show responsive button on 779px */
+@media ( max-width: 779px) {
+    a.btn.btn-navbar {
+        display: block;
+    }
+    
+    .navbar .nav > li {
+        background: none;
+    }   
 }

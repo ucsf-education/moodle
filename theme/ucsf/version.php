@@ -31,7 +31,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2014082700;
+$plugin->version   = 2015011300;
 $plugin->requires  = 2013110500;
 $plugin->component = 'theme_ucsf';
 $plugin->dependencies = array(
