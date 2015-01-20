@@ -1,4 +1,4 @@
-@qtype @qformat_xml
+@qformat @qformat_xml
 Feature: Test importing questions from Moodle XML format.
   In order to reuse questions
   As an teacher
@@ -30,6 +30,12 @@ Feature: Test importing questions from Moodle XML format.
     When I press "Continue"
     Then I should see "Moodle acronym (False)"
     Then I should see "Moodle acronym (True)"
+
+    # Now export again.
+    And I navigate to "Export" node in "Course administration > Question bank"
+    And I set the field "id_format_xml" to "1"
+    And I press "Export questions to file"
+    And following "click here" should download between "57000" and "58000" bytes
 
   @javascript @_file_upload
   Scenario: import some multiple choice questions from Moodle XML format
