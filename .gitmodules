@@ -40,3 +40,7 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = git://github.com/danmarsden/moodle-mod_attendance.git
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = git://github.com/ucsf-ckm/moodle-mod_oublog.git
+	branch = MOODLE_26_STABLE
