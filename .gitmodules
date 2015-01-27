@@ -44,3 +44,6 @@
 	path = mod/oublog
 	url = git://github.com/ucsf-ckm/moodle-mod_oublog.git
 	branch = MOODLE_26_STABLE
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = git://github.com/lsuits/quickmail.git
