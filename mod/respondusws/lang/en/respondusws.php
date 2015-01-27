@@ -1,7 +1,7 @@
 <?php
 // Respondus 4.0 Web Service Extension For Moodle
-// Copyright (c) 2009-2014 Respondus, Inc.  All Rights Reserved.
-// Date: September 19, 2014.
+// Copyright (c) 2009-2015 Respondus, Inc.  All Rights Reserved.
+// Date: January 07, 2015.
 $respondusws_moodlecfg_file = dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/config.php";
 require_once($respondusws_moodlecfg_file);
 defined("MOODLE_INTERNAL") || die();
@@ -60,13 +60,5 @@ $string["responduswsname"] = "respondusws Name";
 $string["responduswstype"] = "Respondus 4.0 Web Services";
 $string["sharedintro"] = "<strong>Respondus 4.0 Web Service Extension for Moodle</strong>";
 $string["sharedname"] = "Respondus 4.0 Web Services";
-$string["upgradeerrorheader"] = "upgrade error";
-$string["upgradewarningheader"] = "upgrade warning";
-$string["upgradewarning"] =
-  "The respondusws module may not support this version of Moodle. The latest Moodle version tested is: ";
-$string["upgradeerror"] =
-  "The respondusws module does not support this version of Moodle. Please
-  obtain the latest version of the module from Respondus, Inc. The latest
-  Moodle version supported by this module is: ";
 $string['eventquestionspublished'] = 'Questions published from Respondus';
 $string['eventquestionsretrieved'] = 'Questions retrieved by Respondus';

@@ -1,7 +1,7 @@
 <?php
 // Respondus 4.0 Web Service Extension For Moodle
-// Copyright (c) 2009-2014 Respondus, Inc.  All Rights Reserved.
-// Date: September 19, 2014.
+// Copyright (c) 2009-2015 Respondus, Inc.  All Rights Reserved.
+// Date: January 07, 2015.
 $RWSEDBG = false;
 $RWSDBGL = "respondusws_err.log";
 $RWSIHLOG = false;
@@ -70,7 +70,9 @@ if ($r_rsf) {
 if ($r_rsf) {
     $r_rsf = is_readable("$CFG->dirroot/course/lib.php");
 }
-if ($r_rsf) {
+if ($r_rsf && $CFG->version >= 2014111000) {
+    $r_rsf = is_readable("$CFG->dirroot/mod/quiz/locallib.php");
+} else {
     $r_rsf = is_readable("$CFG->dirroot/mod/quiz/editlib.php");
 }
 if ($r_rsf) {
@@ -98,7 +100,11 @@ require_once("$CFG->libdir/grouplib.php");
 require_once("$CFG->libdir/gradelib.php");
 require_once("$CFG->dirroot/mod/quiz/lib.php");
 require_once("$CFG->dirroot/course/lib.php");
-require_once("$CFG->dirroot/mod/quiz/editlib.php");
+if ($CFG->version >= 2014111000) {
+    require_once("$CFG->dirroot/mod/quiz/locallib.php");
+} else {
+    require_once("$CFG->dirroot/mod/quiz/editlib.php");
+}
 require_once("$CFG->dirroot/question/editlib.php");
 if ($RWSECAS) {
     require_once("$CFG->dirroot/auth/cas/CAS/CAS.php");
@@ -339,6 +345,11 @@ function RWSCMBVer() {
         || $r_bv == 2014072400
         || $r_bv == 2014091800
         || $r_bv == 2014091801
+        || $r_bv == 2014102100
+        || $r_bv == 2014102101
+        || $r_bv == 2014102102
+        || $r_bv == 2014112500
+        || $r_bv == 2014112501
     ) {
         return;
     }
@@ -401,8 +412,9 @@ function RWSGTPath() {
     }
     return $r_tp;
 }
-function RWSGSUrl($r_fhts, $r_include_query) {
-    $r_hs = $r_fhts;
+function RWSGSUrl($r_fhts, $r_inq) {
+    global $CFG;
+    $r_hs = ($r_fhts || !empty($CFG->sslproxy));
     if (!$r_hs) {
         $r_hs = (isset($_SERVER['HTTPS'])
             && !empty($_SERVER['HTTPS'])
@@ -439,7 +451,7 @@ function RWSGSUrl($r_fhts, $r_include_query) {
     }
     $r_bu = explode("?", $_SERVER['REQUEST_URI'], 2);
     $r_su .= $r_bu[0];
-    if ($r_include_query) {
+    if ($r_inq) {
         $r_qry = "";
         if ($_GET) {
             $r_pms = array();
@@ -9508,7 +9520,6 @@ function RWSASInfo() {
     $r_ver      = "";
     $r_rel      = "";
     $r_req     = "";
-    $r_lat       = "";
     $r_vf = RWSGMPath() . "/version.php";
     if (is_readable($r_vf)) {
         include($r_vf);
@@ -9525,9 +9536,6 @@ function RWSASInfo() {
         }
         if (!empty($respondusws_info->requires)) {
             $r_req = $respondusws_info->requires;
-        }
-        if (!empty($respondusws_info->respondusws_latest)) {
-            $r_lat = $respondusws_info->respondusws_latest;
         }
     }
     RWSRHXml();
@@ -9576,16 +9584,8 @@ function RWSASInfo() {
     } else {
         echo "\t<module_requires>(authentication required)</module_requires>\r\n";
     }
-    if ($r_ia) {
-        if (!empty($r_lat)) {
-            echo "\t<module_latest>";
-            echo utf8_encode(htmlspecialchars($r_lat));
-            echo "</module_latest>\r\n";
-        } else {
-            echo "\t<module_latest />\r\n";
-        }
-    } else {
-        echo "\t<module_latest>(authentication required)</module_latest>\r\n";
+    if ($r_bv <= 2014102100) {
+        echo "\t<module_latest />\r\n";
     }
     if ($r_ia) {
         echo "\t<endpoint>";
@@ -10275,9 +10275,7 @@ function RWSADQuiz() {
     $r_cid = $r_rcd->course;
     RWSCMUCourse($r_cid, true);
     if (respondusws_floatcompare($CFG->version, 2013051400, 2) >= 0) {
-        if (!delete_course_module($r_qzmi)) {
-            RWSSErr("2069");
-        }
+        course_delete_module($r_qzmi);
     } else {
         if (!quiz_delete_instance($r_rcd->instance)) {
             RWSSErr("2068");
@@ -11694,12 +11692,12 @@ function RWSAAFinish() {
     echo "{\"RWSAuthToken\":\"$r_tok\"}";
     exit;
 }
-function RWSGAMac($r_input) {
+function RWSGAMac($r_inp) {
     $r_srt = get_config("respondusws", "secret");
     if ($r_srt === false || strlen($r_srt) == 0) {
         RWSBErr("Secret not found in module authentication settings.");
     }
-    return sha1($r_input . $r_srt);
+    return sha1($r_inp . $r_srt);
 }
 function RWSELog($r_msg) {
     global $RWSEDBG;
@@ -11720,7 +11718,8 @@ function RWSEHdlr($r_ex) {
     $r_msg = "\r\n-- Exception occurred --";
     $r_msg .= "\r\nmessage: $r_inf->message";
     $r_msg .= "\r\nerrorcode: $r_inf->errorcode";
-    $r_msg .= "\r\nbacktrace: $r_inf->backtrace";
+    $r_msg .= "\r\nfile: " . $r_ex->getFile();
+    $r_msg .= "\r\nline: " . $r_ex->getLine();
     $r_msg .= "\r\nlink: $r_inf->link";
     $r_msg .= "\r\nmoreinfourl: $r_inf->moreinfourl";
     $r_msg .= "\r\na: $r_inf->a";

@@ -1,14 +1,25 @@
 <?php
 // Respondus 4.0 Web Service Extension For Moodle
-// Copyright (c) 2009-2014 Respondus, Inc.  All Rights Reserved.
-// Date: September 19, 2014.
+// Copyright (c) 2009-2015 Respondus, Inc.  All Rights Reserved.
+// Date: January 07, 2015.
 defined("MOODLE_INTERNAL") || die();
+if (!function_exists("respondusws_getsettingsstring")) {
+    function respondusws_getsettingsstring($identifier) {
+        global $CFG;
+        $component = "respondusws";
+        if (isset($CFG) && $CFG->version >= 2012062500) {
+            return new lang_string($identifier, $component);
+        } else {
+            return get_string($identifier, $component);
+        }
+    }
+}
 if ($ADMIN->fulltree) {
     $settings->add(
       new admin_setting_heading(
         "respondusws/moduledescheader",
-        get_string("moduledescheader", "respondusws"),
-        get_string("moduledescription", "respondusws")
+        respondusws_getsettingsstring("moduledescheader"),
+        respondusws_getsettingsstring("moduledescription")
       )
     );
     if (!isset($respondusws_info)) {
@@ -21,34 +32,23 @@ if ($ADMIN->fulltree) {
         $settings->add(
           new admin_setting_heading(
             "respondusws/moduleversionheader",
-            get_string("moduleversionheader", "respondusws"),
+            respondusws_getsettingsstring("moduleversionheader"),
             "$respondusws_info->version ($respondusws_info->respondusws_release)"
           )
         );
     }
-    if (isset($respondusws_info) && $respondusws_info->respondusws_latest < $CFG->version) {
-            $respondusws_warning = get_string("upgradewarning", "respondusws");
-            $respondusws_warning .= $respondusws_info->respondusws_latest;
-            $settings->add(
-              new admin_setting_heading(
-                "respondusws/upgradewarningheader",
-                get_string("upgradewarningheader", "respondusws"),
-                $respondusws_warning
-              )
-            );
-    }
     $settings->add(
       new admin_setting_heading(
         "respondusws/authenticationsettingsheader",
-        get_string("authenticationsettingsheader", "respondusws"),
-        get_string("authenticationsettingsheaderinfo", "respondusws")
+        respondusws_getsettingsstring("authenticationsettingsheader"),
+        respondusws_getsettingsstring("authenticationsettingsheaderinfo")
       )
     );
     $settings->add(
       new admin_setting_configtext(
         "respondusws/username",
-        get_string("username", "respondusws"),
-        get_string("usernameinfo", "respondusws"),
+        respondusws_getsettingsstring("username"),
+        respondusws_getsettingsstring("usernameinfo"),
         "",
         PARAM_TEXT
       )
@@ -56,16 +56,16 @@ if ($ADMIN->fulltree) {
     $settings->add(
       new admin_setting_configpasswordunmask(
         "respondusws/password",
-        get_string("password", "respondusws"),
-        get_string("passwordinfo", "respondusws"),
+        respondusws_getsettingsstring("password"),
+        respondusws_getsettingsstring("passwordinfo"),
         ""
       )
     );
     $settings->add(
       new admin_setting_configpasswordunmask(
         "respondusws/secret",
-        get_string("secret", "respondusws"),
-        get_string("secretinfo", "respondusws"),
+        respondusws_getsettingsstring("secret"),
+        respondusws_getsettingsstring("secretinfo"),
         ""
       )
     );

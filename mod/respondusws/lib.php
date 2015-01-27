@@ -1,7 +1,7 @@
 <?php
 // Respondus 4.0 Web Service Extension For Moodle
-// Copyright (c) 2009-2014 Respondus, Inc.  All Rights Reserved.
-// Date: September 19, 2014.
+// Copyright (c) 2009-2015 Respondus, Inc.  All Rights Reserved.
+// Date: January 07, 2015.
 defined("MOODLE_INTERNAL") || die();
 function respondusws_add_instance($instance) {
     global $DB;
@@ -187,7 +187,6 @@ function respondusws_supports($feature) {
         case FEATURE_GRADE_OUTCOMES:
         case FEATURE_GROUPS:
         case FEATURE_GROUPINGS:
-        case FEATURE_GROUPMEMBERSONLY:
         case FEATURE_IDNUMBER:
         case FEATURE_MODEDIT_DEFAULT_COMPLETION:
         case FEATURE_RATE:
@@ -198,6 +197,11 @@ function respondusws_supports($feature) {
             if (defined("FEATURE_USES_QUESTIONS")) {
                 if ($feature == FEATURE_USES_QUESTIONS) {
                     return true;
+                }
+            }
+            if (defined("FEATURE_GROUPMEMBERSONLY")) {
+                if ($feature == FEATURE_GROUPMEMBERSONLY) {
+                    return false;
                 }
             }
             return null;

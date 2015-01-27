@@ -1,7 +1,7 @@
 <?php
 // Respondus 4.0 Web Service Extension For Moodle
-// Copyright (c) 2009-2014 Respondus, Inc.  All Rights Reserved.
-// Date: September 19, 2014.
+// Copyright (c) 2009-2015 Respondus, Inc.  All Rights Reserved.
+// Date: January 07, 2015.
 $r_rsv = dirname(__FILE__) . "/servicelib.php";
 if (is_readable($r_rsv)) {
     include_once($r_rsv);
