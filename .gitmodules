@@ -43,3 +43,6 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = git://github.com/danmarsden/moodle-mod_attendance.git
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
