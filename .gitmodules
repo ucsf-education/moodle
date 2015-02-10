@@ -44,3 +44,6 @@
 	path = mod/oublog
 	url = git://github.com/ucsf-ckm/moodle-mod_oublog.git
 	branch = MOODLE_26_STABLE
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
