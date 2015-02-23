@@ -47,6 +47,3 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
-[submodule "blocks/quickmail"]
-	path = blocks/quickmail
-	url = git://github.com/lsuits/quickmail.git
