@@ -51,3 +51,6 @@
 	path = blocks/quickmail
 	url = git://github.com/ctam/quickmail.git
 	branch = fix-icon-pos
+[submodule "blocks/lockdownbrowser"]
+	path = blocks/lockdownbrowser
+	url = git://github.com/ucsf-ckm/moodle-block-lockdownbrowser.git
