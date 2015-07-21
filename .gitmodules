@@ -54,3 +54,6 @@
 [submodule "blocks/lockdownbrowser"]
 	path = blocks/lockdownbrowser
 	url = git://github.com/ucsf-ckm/moodle-block-lockdownbrowser.git
+[submodule "blocks/moodleversion"]
+	path = blocks/moodleversion
+	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
