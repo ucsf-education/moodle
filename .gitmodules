@@ -57,6 +57,9 @@
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
+[submodule "mod/respondusws"]
+	path = mod/respondusws
+	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
 [submodule "enrol/ilios"]
 	path = enrol/ilios
-	url = https://github.com/ucsf-ckm/moodle-enrol-ilios.git
+	url = git://github.com/ucsf-ckm/moodle-enrol-ilios.git
