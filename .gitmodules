@@ -1,0 +1,83 @@
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = git://github.com/danmarsden/moodle-block_attendance.git
+	branch = master
+[submodule "blocks/course_favourites"]
+	path = blocks/course_favourites
+	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
+	branch = master
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+	branch = master
+[submodule "blocks/ilios"]
+	path = blocks/ilios
+	url = git://github.com/ilios/moodle-block-ilios.git
+	branch = master
+[submodule "blocks/lockdownbrowser"]
+	path = blocks/lockdownbrowser
+	url = git://github.com/ucsf-ckm/moodle-block-lockdownbrowser.git
+	branch = master
+[submodule "blocks/moodleversion"]
+	path = blocks/moodleversion
+	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
+	branch = master
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = git://github.com/lsuits/quickmail.git
+	branch = master
+[submodule "blocks/som_irocket"]
+	path = blocks/som_irocket
+	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
+	branch = master
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = git://github.com/ilios/moodle-enrol-ilios.git
+	branch = master
+[submodule "internallogin"]
+	path = internallogin
+	url = git://github.com/ucsf-ckm/moodle-internallogin.git
+	branch = MOODLE_27_STABLE
+[submodule "local/archiveup"]
+	path = local/archiveup
+	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
+	branch = master
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = git://github.com/moodleuulm/moodle-local_staticpage.git
+[submodule "mod/attendance"]
+	path = mod/attendance
+	url = git://github.com/danmarsden/moodle-mod_attendance.git
+	branch = MOODLE_27_STABLE
+[submodule "mod/certificate"]
+	path = mod/certificate
+	url = git://github.com/markn86/moodle-mod_certificate.git
+	branch = MOODLE_27_STABLE
+[submodule "mod/questionnaire"]
+	path = mod/questionnaire
+	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
+	branch = MOODLE_27_STABLE
+[submodule "mod/respondusws"]
+	path = mod/respondusws
+	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
+	branch = master
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = git://github.com/moodleou/moodle-mod_oublog.git
+	branch = MOODLE_27_STABLE
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = git://github.com/moodleou/moodle-mod_ouwiki.git
+	branch = MOODLE_27_STABLE
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
+	branch = master
+[submodule "repository/boxnetsso"]
+	path = repository/boxnetsso
+	url = git://github.com/ucsf-ckm/moodle-repository-boxnetsso.git
+	branch = master
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	branch = master
