@@ -81,3 +81,31 @@
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
 	branch = master
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = git://github.com/gjb2048/moodle-format_topcoll.git
+	branch = MOODLE_27
+[submodule "course/format/flexsections"]
+	path = course/format/flexsections
+	url = git://github.com/marinaglancy/moodle-format_flexsections.git
+	branch = MOODLE_27_STABLE
+[submodule "lib/editor/atto/plugins/fullscreen"]
+	path = lib/editor/atto/plugins/fullscreen
+	url = git://github.com/dthies/moodle-atto_fullscreen.git
+	branch = master
+[submodule "lib/editor/atto/plugins/fontsize"]
+	path = lib/editor/atto/plugins/fontsize
+	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
+	branch = master
+[submodule "lib/editor/atto/plugins/hr"]
+	path = lib/editor/atto/plugins/hr
+	url = git://github.com/damyon/moodle-atto_hr.git
+	branch = master
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = git://github.com/projectestac/moodle-atto_fontfamily.git
+	branch = master
+[submodule "lib/editor/atto/plugins/imagedragdrop"]
+	path = lib/editor/atto/plugins/imagedragdrop
+	url = git://github.com/pauln/moodle-atto_imagedragdrop.git
+	branch = master
