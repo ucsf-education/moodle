@@ -2,6 +2,10 @@
 	path = blocks/attendance
 	url = git://github.com/danmarsden/moodle-block_attendance.git
 	branch = MOODLE_27_STABLE
+[submodule "blocks/checklist"]
+	path = blocks/checklist
+	url = git://github.com/davosmith/moodle-block_checklist.git
+	branch = master
 [submodule "blocks/course_favourites"]
 	path = blocks/course_favourites
 	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
@@ -53,6 +57,10 @@
 	path = mod/certificate
 	url = git://github.com/markn86/moodle-mod_certificate.git
 	branch = MOODLE_27_STABLE
+[submodule "mod/checklist"]
+	path = mod/checklist
+	url = git://github.com/davosmith/moodle-checklist.git
+	branch = master
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
