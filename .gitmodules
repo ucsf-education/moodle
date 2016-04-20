@@ -88,7 +88,7 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = master
+	branch = 95e17e6cab31c6c32fa0f7ab0a4bc8c57cfba4cd
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = git://github.com/gjb2048/moodle-format_topcoll.git
