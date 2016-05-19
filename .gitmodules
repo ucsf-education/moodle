@@ -81,10 +81,6 @@
 	path = question/type/oumultiresponse
 	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
 	branch = master
-[submodule "repository/boxnetsso"]
-	path = repository/boxnetsso
-	url = git://github.com/ucsf-ckm/moodle-repository-boxnetsso.git
-	branch = master
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
