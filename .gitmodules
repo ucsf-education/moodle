@@ -22,10 +22,6 @@
 	path = blocks/lockdownbrowser
 	url = git://github.com/ucsf-ckm/moodle-block-lockdownbrowser.git
 	branch = master
-[submodule "blocks/massaction"]
-	path = blocks/massaction
-	url = git://github.com/ucsf-ckm/moodle-block_massaction.git
-	branch = UCSFCLE_27_STABLE
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
