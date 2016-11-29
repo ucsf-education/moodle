@@ -42,6 +42,10 @@
 	path = enrol/ilios
 	url = git://github.com/ilios/moodle-enrol-ilios.git
 	branch = master
+[submodule "enrol/ucsfsis"]
+	path = enrol/ucsfsis
+	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
+	branch = master
 [submodule "internallogin"]
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
