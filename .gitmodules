@@ -85,6 +85,10 @@
 	path = mod/ouwiki
 	url = git://github.com/moodleou/moodle-mod_ouwiki.git
 	branch = MOODLE_27_STABLE
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = git://github.com/ucsf-ckm/knowledgecheck.git
+	branch = master
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
 	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
