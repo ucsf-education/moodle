@@ -18,6 +18,10 @@
 	path = course/format/flexsections
 	url = git://github.com/marinaglancy/moodle-format_flexsections.git
 	branch = master
+[submodule "lib/editor/atto/plugins/fontsize"]
+	path = lib/editor/atto/plugins/fontsize
+	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
+	branch = master
 [submodule "lib/editor/atto/plugins/fullscreen"]
 	path = lib/editor/atto/plugins/fullscreen
 	url = git://github.com/dthies/moodle-atto_fullscreen.git
@@ -38,6 +42,10 @@
 	path = mod/checklist
 	url = git://github.com/davosmith/moodle-checklist.git
 	branch = master
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = git://github.com/markn86/moodle-mod_customcert
+	branch = MOODLE_32_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
