@@ -57,4 +57,4 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = master
+	branch = MOODLE_32_DEVEL
