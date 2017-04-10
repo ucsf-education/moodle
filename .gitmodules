@@ -54,6 +54,10 @@
 	path = mod/respondusws
 	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
 	branch = master
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = git://github.com/ucsf-ckm/knowledgecheck.git
+	branch = master
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
