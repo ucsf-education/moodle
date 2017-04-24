@@ -58,6 +58,10 @@
 	path = question/type/knowledgecheck
 	url = git://github.com/ucsf-ckm/knowledgecheck.git
 	branch = master
+[submodule "report/benchmark"]
+	path = report/benchmark
+	url = git://github.com/mikasmart/benchmark.git
+	branch = master
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
