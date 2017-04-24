@@ -15,15 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file contains the version information for the file submission plugin
+ * Mobile cache definitions.
  *
- * @package    assignsubmission_file
- * @copyright 2012 NetSpot {@link http://www.netspot.com.au}
+ * @package    tool_mobile
+ * @copyright  2017 Skylar Kelty <S.Kelty@kent.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017032000;
-$plugin->requires  = 2016112900;
-$plugin->component = 'assignsubmission_file';
+$definitions = array(
+    'plugininfo' => array(
+        'mode' => cache_store::MODE_APPLICATION,
+        'simplekeys' => true,
+        'staticacceleration' => true,
+        'staticaccelerationsize' => 1
+    )
+);
