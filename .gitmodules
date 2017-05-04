@@ -6,6 +6,14 @@
 	path = blocks/checklist
 	url = git://github.com/davosmith/moodle-block_checklist.git
 	branch = master
+[submodule "blocks/course_favourites"]
+	path = blocks/course_favourites
+	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
+	branch = MOODLE_32_DEVEL
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+	branch = MOODLE_32_DEVEL
 [submodule "blocks/massaction"]
 	path = blocks/massaction
 	url = git://github.com/at-tools/moodle-block_massaction.git
