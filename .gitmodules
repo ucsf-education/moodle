@@ -9,11 +9,11 @@
 [submodule "blocks/course_favourites"]
 	path = blocks/course_favourites
 	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
-	branch = MOODLE_32_DEVEL
+	branch = master
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
-	branch = MOODLE_32_DEVEL
+	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
 	url = git://github.com/at-tools/moodle-block_massaction.git
@@ -25,7 +25,7 @@
 [submodule "course/format/flexsections"]
 	path = course/format/flexsections
 	url = git://github.com/marinaglancy/moodle-format_flexsections.git
-	branch = master
+	branch = MOODLE_32_STABLE
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
