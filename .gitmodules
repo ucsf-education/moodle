@@ -17,7 +17,7 @@
 [submodule "blocks/ilios"]
 	path = blocks/ilios
 	url = git://github.com/ilios/moodle-block-ilios.git
-	branch = master
+	branch = MOODLE_27_STABLE
 [submodule "blocks/lockdownbrowser"]
 	path = blocks/lockdownbrowser
 	url = git://github.com/ucsf-ckm/moodle-block-lockdownbrowser.git
@@ -96,7 +96,7 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = master
+	branch = MOODLE_27_STABLE
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = git://github.com/gjb2048/moodle-format_topcoll.git
