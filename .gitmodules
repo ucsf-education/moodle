@@ -14,6 +14,10 @@
 	path = blocks/course_recent
 	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
 	branch = master
+[submodule "blocks/ilios"]
+	path = blocks/ilios
+	url = git://github.com/ilios/moodle-block-ilios.git
+	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
 	url = git://github.com/at-tools/moodle-block_massaction.git
