@@ -30,6 +30,10 @@
 	path = course/format/flexsections
 	url = git://github.com/marinaglancy/moodle-format_flexsections.git
 	branch = MOODLE_32_STABLE
+[submodule "internallogin"]
+	path = internallogin
+	url = git://github.com/ucsf-ckm/moodle-internallogin.git
+	branch = MOODLE_32_STABLE
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
@@ -41,6 +45,10 @@
 [submodule "lib/editor/atto/plugins/hr"]
 	path = lib/editor/atto/plugins/hr
 	url = git://github.com/damyon/moodle-atto_hr.git
+	branch = master
+[submodule "local/archiveup"]
+	path = local/archiveup
+	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
 	branch = master
 [submodule "local/staticpage"]
 	path = local/staticpage
