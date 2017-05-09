@@ -53,7 +53,7 @@
 [submodule "local/archiveup"]
 	path = local/archiveup
 	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
-	branch = master
+	branch = MOODLE_27_STABLE
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
