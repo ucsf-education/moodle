@@ -66,6 +66,10 @@
 	path = mod/customcert
 	url = git://github.com/markn86/moodle-mod_customcert
 	branch = MOODLE_32_STABLE
+[submodule "mod/giportfolio"]
+	path = mod/giportfolio
+	url = git://github.com/synergylearning/moodle-mod_giportfolio.git
+	branch = master
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
