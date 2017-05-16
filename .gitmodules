@@ -22,6 +22,14 @@
 	path = blocks/massaction
 	url = git://github.com/at-tools/moodle-block_massaction.git
 	branch = moodle-32-master
+[submodule "blocks/moodleversion"]
+	path = blocks/moodleversion
+	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
+	branch = master
+[submodule "blocks/som_irocket"]
+	path = blocks/som_irocket
+	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
+	branch = master
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = git://github.com/gjb2048/moodle-format_topcoll.git
