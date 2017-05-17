@@ -42,6 +42,10 @@
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
 	branch = MOODLE_32_STABLE
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = git://github.com/projectestac/moodle-atto_fontfamily.git
+	branch = master
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
@@ -97,4 +101,4 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = MOODLE_32_DEVEL
+	branch = master
