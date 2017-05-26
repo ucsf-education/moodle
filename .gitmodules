@@ -38,6 +38,14 @@
 	path = course/format/flexsections
 	url = git://github.com/marinaglancy/moodle-format_flexsections.git
 	branch = MOODLE_32_STABLE
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = git://github.com/ilios/moodle-enrol-ilios.git
+	branch = master
+[submodule "enrol/ucsfsis"]
+	path = enrol/ucsfsis
+	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
+	branch = master
 [submodule "internallogin"]
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
