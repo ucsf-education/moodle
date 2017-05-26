@@ -70,6 +70,10 @@
 	path = local/archiveup
 	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
 	branch = master
+[submodule "local/mobile"]
+	path = local/mobile
+	url = git://github.com/moodlehq/moodle-local_mobile.git
+	branch = MOODLE_32_STABLE
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
