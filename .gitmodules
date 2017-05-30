@@ -26,6 +26,10 @@
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
 	branch = master
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = git://github.com/ucsf-ckm/moodle-block_quickmail.git
+	branch = MOODLE_32_STABLE
 [submodule "blocks/som_irocket"]
 	path = blocks/som_irocket
 	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
