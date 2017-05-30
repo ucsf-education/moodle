@@ -1,7 +1,7 @@
 [submodule "blocks/attendance"]
 	path = blocks/attendance
 	url = git://github.com/danmarsden/moodle-block_attendance.git
-	branch = master
+	branch = MOODLE_32_STABLE
 [submodule "blocks/checklist"]
 	path = blocks/checklist
 	url = git://github.com/davosmith/moodle-block_checklist.git
