@@ -1,3 +1,7 @@
+[submodule "availability/condition/mobileapp"]
+	path = availability/condition/mobileapp
+	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
+	branch = MOODLE_32_STABLE
 [submodule "blocks/attendance"]
 	path = blocks/attendance
 	url = git://github.com/danmarsden/moodle-block_attendance.git
