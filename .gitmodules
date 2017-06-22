@@ -125,3 +125,7 @@
 	path = lib/editor/atto/plugins/imagedragdrop
 	url = git://github.com/pauln/moodle-atto_imagedragdrop.git
 	branch = master
+[submodule "report/benchmark"]
+	path = report/benchmark
+	url = git://github.com/mikasmart/benchmark.git
+	branch = master
