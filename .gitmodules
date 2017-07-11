@@ -45,7 +45,9 @@
 [submodule "course/format/flexsections"]
 	path = course/format/flexsections
 	url = git://github.com/marinaglancy/moodle-format_flexsections.git
-	branch = MOODLE_32_STABLE
+	# branch = MOODLE_32_STABLE
+        # Looks like developer has been merging the latest changes to MOODLE_32_STABLE. Use master for now.
+	branch = master
 [submodule "enrol/ilios"]
 	path = enrol/ilios
 	url = git://github.com/ilios/moodle-enrol-ilios.git
