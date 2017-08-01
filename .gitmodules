@@ -1,3 +1,7 @@
+[submodule "admin/tool/ilioscategoryassignment"]
+	path = admin/tool/ilioscategoryassignment
+	url = git://github.com/ilios/tool_ilioscategoryassignment.git
+	branch = master
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
 	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
@@ -79,6 +83,10 @@
 [submodule "local/archiveup"]
 	path = local/archiveup
 	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
+	branch = master
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = git://github.com/ilios/local_iliosapiclient.git
 	branch = master
 [submodule "local/mobile"]
 	path = local/mobile
