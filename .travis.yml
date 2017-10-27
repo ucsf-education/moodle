@@ -52,9 +52,6 @@ matrix:
     fast_finish: true
 
     include:
-          # Run grunt/npm install on lowest supported npm version
-        - php: 7.1
-          env: DB=none     TASK=GRUNT   NVM_VERSION='4'
           # Run grunt/npm install on highest version ('node' is an alias for the latest node.js version.)
         - php: 7.1
           env: DB=none     TASK=GRUNT   NVM_VERSION='node'
@@ -76,8 +73,6 @@ cache:
       - $HOME/.npm
 
 install:
-    - sudo apt-get -y install haveged
-    - sudo service haveged start
     - >
         if [ "$DB" = 'mysqli' ];
         then
@@ -96,7 +91,7 @@ install:
             sudo service postgresql stop
             sudo mv /var/lib/postgresql /mnt/ramdisk
             sudo ln -s /mnt/ramdisk/postgresql /var/lib/postgresql
-            sudo service postgresql start 9.1
+            sudo service postgresql start 9.6
         fi
     - >
         if [ "$TASK" = 'PHPUNIT' ];

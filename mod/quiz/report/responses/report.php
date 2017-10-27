@@ -149,11 +149,7 @@ class quiz_responses_report extends quiz_attempts_report {
         $hasstudents = $hasstudents && (!$currentgroup || $this->hasgroupstudents);
         if ($hasquestions && ($hasstudents || $options->attempts == self::ALL_WITH)) {
 
-            list($fields, $from, $where, $params) = $table->base_sql($allowedjoins);
-
-            $table->set_count_sql("SELECT COUNT(1) FROM $from WHERE $where", $params);
-
-            $table->set_sql($fields, $from, $where, $params);
+            $table->setup_sql_queries($allowedjoins);
 
             if (!$table->is_downloading()) {
                 // Print information on the grading method.
