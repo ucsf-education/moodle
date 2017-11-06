@@ -36,8 +36,9 @@
 	branch = master
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
-	url = git://github.com/ucsf-ckm/moodle-block_quickmail.git
-	branch = MOODLE_32_STABLE
+	url = git://github.com/lsuits/quickmail.git
+	branch = dev-30
+        # Looks like the developer has been using just the release tag and dev-30 branch instead of master or stable branch.
 [submodule "blocks/som_irocket"]
 	path = blocks/som_irocket
 	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
