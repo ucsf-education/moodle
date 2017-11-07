@@ -129,10 +129,6 @@
 	path = mod/respondusws
 	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
 	branch = master
-[submodule "plagiarism/vericite"]
-	path = plagiarism/vericite
-	url = git://github.com/vericite/moodle-plagiarism_vericite.git
-	branch = MOODLE_27-LATEST_STABLE
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = git://github.com/ucsf-ckm/knowledgecheck.git
