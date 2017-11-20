@@ -93,6 +93,10 @@
 	path = local/mobile
 	url = git://github.com/moodlehq/moodle-local_mobile.git
 	branch = MOODLE_32_STABLE
+[submodule "local/navblockhacks"]
+	path = local/navblockhacks
+	url = git://github.com/ucsf-ckm/local_navblockhacks.git
+	branch = master
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
