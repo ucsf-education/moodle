@@ -60,7 +60,7 @@
 [submodule "enrol/ucsfsis"]
 	path = enrol/ucsfsis
 	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
-	branch = master
+	branch = MOODLE_32_STABLE
 [submodule "internallogin"]
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
