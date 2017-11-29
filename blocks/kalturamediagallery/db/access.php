@@ -14,20 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Atto text editor integration version file.
- *
- * @package    atto_media
- * @copyright  2013 Damyon Wiese  <damyon@moodle.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017090432;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->release = 'Kaltura release 4.1.1';
-$plugin->requires  = 2014050800;        // Requires this Moodle version.
-$plugin->component = 'atto_kalturamedia';  // Full name of the plugin (used for diagnostics).
-$plugin->dependencies = array(
-    'local_kaltura' => 2017090432
+$capabilities = array(
+    'block/kalturamediagallery:myaddinstance' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array(
+            'user' => CAP_PROHIBIT
+        ),
+
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
+    ),
+
+    'block/kalturamediagallery:addinstance' => array(
+        'riskbitmask' => RISK_SPAM | RISK_XSS,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
 );

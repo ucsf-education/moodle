@@ -12,25 +12,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Kaltura video presentation version file.
- *
- * @package    mod_kalvidpres
- * @author     Remote-Learner.net Inc
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright  (C) 2014 Remote Learner.net Inc http://www.remote-learner.net
- */
+defined('MOODLE_INTERNAL') || die();
 
-if (!defined('MOODLE_INTERNAL')) {
-    die('Direct access to this script is forbidden.');
-}
-
-$plugin->version = 2017090432;
-$plugin->component  = 'mod_kalvidpres';
-$plugin->release    = 'Kaltura release 4.1.1';
-$plugin->requires = 2014050800;
-$plugin->cron       = 0;
-$plugin->maturity = MATURITY_STABLE;
+$plugin->version   = 2017090432;
+$plugin->release = 'Kaltura release 4.1.1';
+$plugin->requires  = 2014050800;
+$plugin->component = 'block_kalturamediagallery';
 $plugin->dependencies = array(
-    'local_kaltura' => 2017090432
+    'local_kaltura' => 2017090432,
+    'local_kalturamediagallery' => 2017090432
 );
