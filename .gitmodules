@@ -1,0 +1,151 @@
+[submodule "admin/tool/ilioscategoryassignment"]
+	path = admin/tool/ilioscategoryassignment
+	url = git://github.com/ilios/tool_ilioscategoryassignment.git
+	branch = master
+[submodule "availability/condition/mobileapp"]
+	path = availability/condition/mobileapp
+	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
+	branch = MOODLE_32_STABLE
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = git://github.com/danmarsden/moodle-block_attendance.git
+	branch = MOODLE_33_STABLE
+[submodule "blocks/checklist"]
+	path = blocks/checklist
+	url = git://github.com/davosmith/moodle-block_checklist.git
+	branch = master
+[submodule "blocks/course_favourites"]
+	path = blocks/course_favourites
+	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
+	branch = master
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+	branch = master
+[submodule "blocks/ilios"]
+	path = blocks/ilios
+	url = git://github.com/ilios/moodle-block-ilios.git
+	branch = master
+[submodule "blocks/massaction"]
+	path = blocks/massaction
+	url = git://github.com/at-tools/moodle-block_massaction.git
+	branch = moodle-33-master
+[submodule "blocks/moodleversion"]
+	path = blocks/moodleversion
+	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
+	branch = master
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = git://github.com/lsuits/quickmail.git
+[submodule "blocks/som_irocket"]
+	path = blocks/som_irocket
+	url = git://github.com/ucsf-ckm/moodle-block-som_irocket.git
+	branch = master
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = git://github.com/gjb2048/moodle-format_topcoll.git
+	branch = MOODLE_33
+[submodule "course/format/flexsections"]
+	path = course/format/flexsections
+	url = git://github.com/marinaglancy/moodle-format_flexsections.git
+	branch = master
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = git://github.com/ilios/moodle-enrol-ilios.git
+	branch = master
+[submodule "enrol/ucsfsis"]
+	path = enrol/ucsfsis
+	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
+	branch = master
+[submodule "internallogin"]
+	path = internallogin
+	url = git://github.com/ucsf-ckm/moodle-internallogin.git
+	branch = MOODLE_33_STABLE
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = git://github.com/projectestac/moodle-atto_fontfamily.git
+	branch = master
+[submodule "lib/editor/atto/plugins/fontsize"]
+	path = lib/editor/atto/plugins/fontsize
+	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
+	branch = master
+[submodule "lib/editor/atto/plugins/fullscreen"]
+	path = lib/editor/atto/plugins/fullscreen
+	url = git://github.com/dthies/moodle-atto_fullscreen.git
+	branch = master
+[submodule "lib/editor/atto/plugins/hr"]
+	path = lib/editor/atto/plugins/hr
+	url = git://github.com/damyon/moodle-atto_hr.git
+	branch = master
+[submodule "local/archiveup"]
+	path = local/archiveup
+	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
+	branch = master
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = git://github.com/ilios/local_iliosapiclient.git
+	branch = master
+[submodule "local/mobile"]
+	path = local/mobile
+	url = git://github.com/moodlehq/moodle-local_mobile.git
+	branch = MOODLE_33_STABLE
+[submodule "local/navblockhacks"]
+	path = local/navblockhacks
+	url = git://github.com/ucsf-ckm/local_navblockhacks.git
+	branch = master
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = git://github.com/moodleuulm/moodle-local_staticpage.git
+	branch = master
+[submodule "mod/attendance"]
+	path = mod/attendance
+	url = git://github.com/danmarsden/moodle-mod_attendance.git
+	branch = MOODLE_33_STABLE
+[submodule "mod/checklist"]
+	path = mod/checklist
+	url = git://github.com/davosmith/moodle-checklist.git
+	branch = master
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = git://github.com/markn86/moodle-mod_customcert
+	branch = MOODLE_33_STABLE
+[submodule "mod/giportfolio"]
+	path = mod/giportfolio
+	url = git://github.com/synergylearning/moodle-mod_giportfolio.git
+	branch = master
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = git://github.com/moodleou/moodle-mod_oublog.git
+	branch = master
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = git://github.com/moodleou/moodle-mod_ouwiki.git
+	branch = master
+[submodule "mod/questionnaire"]
+	path = mod/questionnaire
+	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
+	branch = MOODLE_33_STABLE
+[submodule "mod/respondusws"]
+	path = mod/respondusws
+	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
+	branch = master
+[submodule "mod/zoom"]
+	path = mod/zoom
+	url = git://github.com/ucla/moodle-mod_zoom.git
+	branch = master
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = git://github.com/ucsf-ckm/knowledgecheck.git
+	branch = master
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
+	branch = master
+[submodule "report/benchmark"]
+	path = report/benchmark
+	url = git://github.com/mikasmart/benchmark.git
+	branch = master
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	branch = master
