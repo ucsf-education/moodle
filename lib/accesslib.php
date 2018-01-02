@@ -3590,7 +3590,6 @@ function get_users_by_capability(context $context, $capability, $fields = '', $s
 
     // We never return deleted users or guest account.
     $wherecond[] = "u.deleted = 0 AND u.id <> :guestid";
-    isguestuser();
     $params['guestid'] = $CFG->siteguest;
 
     // Groups
