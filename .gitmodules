@@ -34,6 +34,10 @@
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
 	branch = master
+[submodule "blocks/panopto"]
+	path = blocks/panopto
+	url = git://github.com/Panopto/Moodle-2.0-plugin-for-Panopto.git
+	branch = master
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = git://github.com/lsuits/quickmail.git
