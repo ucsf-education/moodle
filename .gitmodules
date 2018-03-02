@@ -81,6 +81,10 @@
 	path = lib/editor/atto/plugins/hr
 	url = git://github.com/damyon/moodle-atto_hr.git
 	branch = master
+[submodule "lib/editor/atto/plugins/panoptobutton"]
+	path = lib/editor/atto/plugins/panoptobutton
+	url = git://github.com/Panopto/Panopto-Button-for-Atto.git
+	branch = master
 [submodule "local/archiveup"]
 	path = local/archiveup
 	url = git://github.com/ucsf-ckm/moodle-local-archiveup.git
