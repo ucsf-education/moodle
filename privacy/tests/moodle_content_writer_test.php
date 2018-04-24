@@ -340,7 +340,7 @@ class moodle_content_writer_test extends advanced_testcase {
             'component' => 'core_privacy',
             'filearea' => 'tests',
             'itemid' => 0,
-            'path' => '/',
+            'path' => '/sub/',
             'name' => 'b.txt',
             'content' => 'Test file 1',
         ];
@@ -389,7 +389,7 @@ class moodle_content_writer_test extends advanced_testcase {
                 'filename'  => $file->name,
             ];
 
-            $file->namepath = $file->path . $file->name;
+            $file->namepath = '/' . $file->filearea . '/' . ($file->itemid ?: '') . $file->path . $file->name;
             $file->storedfile = $fs->create_file_from_string($record, $file->content);
         }
 
@@ -401,14 +401,14 @@ class moodle_content_writer_test extends advanced_testcase {
 
         $firstfiles = array_slice($files, 0, 2);
         foreach ($firstfiles as $file) {
-            $contextpath = $this->get_context_path($context, [get_string('files')], $file->namepath);
+            $contextpath = $this->get_context_path($context, ['_files'], $file->namepath);
             $this->assertTrue($fileroot->hasChild($contextpath));
             $this->assertEquals($file->content, $fileroot->getChild($contextpath)->getContent());
         }
 
         $otherfiles = array_slice($files, 2);
         foreach ($otherfiles as $file) {
-            $contextpath = $this->get_context_path($context, [get_string('files')], $file->namepath);
+            $contextpath = $this->get_context_path($context, ['_files'], $file->namepath);
             $this->assertFalse($fileroot->hasChild($contextpath));
         }
     }
@@ -421,16 +421,16 @@ class moodle_content_writer_test extends advanced_testcase {
      * @param   string  $filename File name
      * @param   string  $content Content
      */
-    public function test_export_file($filepath, $filename, $content) {
+    public function test_export_file($filearea, $itemid, $filepath, $filename, $content) {
         $this->resetAfterTest();
         $context = \context_system::instance();
-        $filenamepath = $filepath . $filename;
+        $filenamepath = '/' . $filearea . '/' . ($itemid ?: '') . $filepath . $filename;
 
         $filerecord = array(
             'contextid' => $context->id,
             'component' => 'core_privacy',
-            'filearea'  => 'tests',
-            'itemid'    => 0,
+            'filearea'  => $filearea,
+            'itemid'    => $itemid,
             'filepath'  => $filepath,
             'filename'  => $filename,
         );
@@ -444,7 +444,7 @@ class moodle_content_writer_test extends advanced_testcase {
 
         $fileroot = $this->fetch_exported_content($writer);
 
-        $contextpath = $this->get_context_path($context, [get_string('files')], $filenamepath);
+        $contextpath = $this->get_context_path($context, ['_files'], $filenamepath);
         $this->assertTrue($fileroot->hasChild($contextpath));
         $this->assertEquals($content, $fileroot->getChild($contextpath)->getContent());
     }
@@ -457,36 +457,50 @@ class moodle_content_writer_test extends advanced_testcase {
     public function export_file_provider() {
         return [
             'basic' => [
+                'intro',
+                0,
                 '/',
                 'testfile.txt',
                 'An example file content',
             ],
             'longpath' => [
+                'attachments',
+                '12',
                 '/path/within/a/path/within/a/path/',
                 'testfile.txt',
                 'An example file content',
             ],
             'pathwithspaces' => [
+                'intro',
+                0,
                 '/path with/some spaces/',
                 'testfile.txt',
                 'An example file content',
             ],
             'filewithspaces' => [
+                'submission_attachments',
+                1,
                 '/path with/some spaces/',
                 'test file.txt',
                 'An example file content',
             ],
             'image' => [
+                'intro',
+                0,
                 '/',
                 'logo.png',
                 file_get_contents(__DIR__ . '/fixtures/logo.png'),
             ],
             'UTF8' => [
+                'submission_content',
+                2,
                 '/Žluťoučký/',
                 'koníček.txt',
                 'koníček',
             ],
             'EUC-JP' => [
+                'intro',
+                0,
                 '/言語設定/',
                 '言語設定.txt',
                 '言語設定',
@@ -495,53 +509,114 @@ class moodle_content_writer_test extends advanced_testcase {
     }
 
     /**
-     * User preferences can not be exported against the user context.
+     * User preferences can be exported against a user.
+     *
+     * @dataProvider    export_user_preference_provider
+     * @param   string      $component  Component
+     * @param   string      $key Key
+     * @param   string      $value Value
+     * @param   string      $desc Description
      */
-    public function test_export_user_preference_context_user() {
+    public function test_export_user_preference_context_user($component, $key, $value, $desc) {
         $admin = \core_user::get_user_by_username('admin');
 
         $writer = $this->get_writer_instance();
 
-        $this->expectException('coding_exception');
-        $writer->set_context(\context_user::instance($admin->id))
-            ->export_user_preference('core_privacy', 'validkey', 'value', 'description');
+        $context = \context_user::instance($admin->id);
+        $writer = $this->get_writer_instance()
+            ->set_context($context)
+            ->export_user_preference($component, $key, $value, $desc);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertTrue($fileroot->hasChild($contextpath));
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$key));
+        $data = $expanded->$key;
+        $this->assertEquals($value, $data->value);
+        $this->assertEquals($desc, $data->description);
     }
 
     /**
-     * User preferences can not be exported against the coursecat context.
+     * User preferences can be exported against a course category.
+     *
+     * @dataProvider    export_user_preference_provider
+     * @param   string      $component  Component
+     * @param   string      $key Key
+     * @param   string      $value Value
+     * @param   string      $desc Description
      */
-    public function test_export_user_preference_context_coursecat() {
+    public function test_export_user_preference_context_coursecat($component, $key, $value, $desc) {
         global $DB;
 
         $categories = $DB->get_records('course_categories');
         $firstcategory = reset($categories);
 
-        $this->expectException('coding_exception');
-        $this->get_writer_instance()
-            ->set_context(\context_coursecat::instance($firstcategory->id))
-            ->export_user_preference('core_privacy', 'validkey', 'value', 'description');
+        $context = \context_coursecat::instance($firstcategory->id);
+        $writer = $this->get_writer_instance()
+            ->set_context($context)
+            ->export_user_preference($component, $key, $value, $desc);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertTrue($fileroot->hasChild($contextpath));
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$key));
+        $data = $expanded->$key;
+        $this->assertEquals($value, $data->value);
+        $this->assertEquals($desc, $data->description);
     }
 
     /**
-     * User preferences can not be exported against the course context.
+     * User preferences can be exported against a course.
+     *
+     * @dataProvider    export_user_preference_provider
+     * @param   string      $component  Component
+     * @param   string      $key Key
+     * @param   string      $value Value
+     * @param   string      $desc Description
      */
-    public function test_export_user_preference_context_course() {
+    public function test_export_user_preference_context_course($component, $key, $value, $desc) {
         global $DB;
 
         $this->resetAfterTest();
 
         $course = $this->getDataGenerator()->create_course();
 
-        $this->expectException('coding_exception');
-        $this->get_writer_instance()
-            ->set_context(\context_course::instance($course->id))
-            ->export_user_preference('core_privacy', 'validkey', 'value', 'description');
+        $context = \context_course::instance($course->id);
+        $writer = $this->get_writer_instance()
+            ->set_context($context)
+            ->export_user_preference($component, $key, $value, $desc);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertTrue($fileroot->hasChild($contextpath));
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$key));
+        $data = $expanded->$key;
+        $this->assertEquals($value, $data->value);
+        $this->assertEquals($desc, $data->description);
     }
 
     /**
-     * User preferences can not be exported against a module context.
+     * User preferences can be exported against a module context.
+     *
+     * @dataProvider    export_user_preference_provider
+     * @param   string      $component  Component
+     * @param   string      $key Key
+     * @param   string      $value Value
+     * @param   string      $desc Description
      */
-    public function test_export_user_preference_context_module() {
+    public function test_export_user_preference_context_module($component, $key, $value, $desc) {
         global $DB;
 
         $this->resetAfterTest();
@@ -549,25 +624,55 @@ class moodle_content_writer_test extends advanced_testcase {
         $course = $this->getDataGenerator()->create_course();
         $forum = $this->getDataGenerator()->create_module('forum', ['course' => $course->id]);
 
-        $this->expectException('coding_exception');
-        $this->get_writer_instance()
-            ->set_context(\context_module::instance($forum->cmid))
-            ->export_user_preference('core_privacy', 'validkey', 'value', 'description');
+        $context = \context_module::instance($forum->cmid);
+        $writer = $this->get_writer_instance()
+            ->set_context($context)
+            ->export_user_preference($component, $key, $value, $desc);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertTrue($fileroot->hasChild($contextpath));
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$key));
+        $data = $expanded->$key;
+        $this->assertEquals($value, $data->value);
+        $this->assertEquals($desc, $data->description);
     }
 
     /**
      * User preferences can not be exported against a block context.
+     *
+     * @dataProvider    export_user_preference_provider
+     * @param   string      $component  Component
+     * @param   string      $key Key
+     * @param   string      $value Value
+     * @param   string      $desc Description
      */
-    public function test_export_user_preference_context_block() {
+    public function test_export_user_preference_context_block($component, $key, $value, $desc) {
         global $DB;
 
         $blocks = $DB->get_records('block_instances');
         $block = reset($blocks);
 
-        $this->expectException('coding_exception');
-        $this->get_writer_instance()
-            ->set_context(\context_block::instance($block->id))
-            ->export_user_preference('core_privacy', 'validkey', 'value', 'description');
+        $context = \context_block::instance($block->id);
+        $writer = $this->get_writer_instance()
+            ->set_context($context)
+            ->export_user_preference($component, $key, $value, $desc);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertTrue($fileroot->hasChild($contextpath));
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$key));
+        $data = $expanded->$key;
+        $this->assertEquals($value, $data->value);
+        $this->assertEquals($desc, $data->description);
     }
 
     /**
@@ -743,5 +848,52 @@ class moodle_content_writer_test extends advanced_testcase {
             $rcm->setAccessible(true);
             return $rcm->invoke($writer, $subcontext, $name);
         }
+    }
+
+    /**
+     * Test correct rewriting of @@PLUGINFILE@@ in the exported contents.
+     *
+     * @dataProvider rewrite_pluginfile_urls_provider
+     * @param string $filearea The filearea within that component.
+     * @param int $itemid Which item those files belong to.
+     * @param string $input Raw text as stored in the database.
+     * @param string $expectedoutput Expected output of URL rewriting.
+     */
+    public function test_rewrite_pluginfile_urls($filearea, $itemid, $input, $expectedoutput) {
+
+        $writer = $this->get_writer_instance();
+        $writer->set_context(\context_system::instance());
+
+        $realoutput = $writer->rewrite_pluginfile_urls([], 'core_test', $filearea, $itemid, $input);
+
+        $this->assertEquals($expectedoutput, $realoutput);
+    }
+
+    /**
+     * Provides testable sample data for {@link self::test_rewrite_pluginfile_urls()}.
+     *
+     * @return array
+     */
+    public function rewrite_pluginfile_urls_provider() {
+        return [
+            'zeroitemid' => [
+                'intro',
+                0,
+                '<p><img src="@@PLUGINFILE@@/hello.gif" /></p>',
+                '<p><img src="_files/intro/hello.gif" /></p>',
+            ],
+            'nonzeroitemid' => [
+                'submission_content',
+                34,
+                '<p><img src="@@PLUGINFILE@@/first.png" alt="First" /></p>',
+                '<p><img src="_files/submission_content/34/first.png" alt="First" /></p>',
+            ],
+            'withfilepath' => [
+                'post_content',
+                9889,
+                '<a href="@@PLUGINFILE@@/embedded/docs/muhehe.exe">Click here!</a>',
+                '<a href="_files/post_content/9889/embedded/docs/muhehe.exe">Click here!</a>',
+            ],
+        ];
     }
 }
