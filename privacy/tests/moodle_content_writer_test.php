@@ -417,6 +417,8 @@ class moodle_content_writer_test extends advanced_testcase {
      * Exporting a single stored_file should cause that file to be output in the files directory.
      *
      * @dataProvider    export_file_provider
+     * @param   string  $filearea File area
+     * @param   int     $itemid Item ID
      * @param   string  $filepath File path
      * @param   string  $filename File name
      * @param   string  $content Content
@@ -676,6 +678,62 @@ class moodle_content_writer_test extends advanced_testcase {
     }
 
     /**
+     * Writing user preferences for two different blocks with the same name and
+     * same parent context should generate two different context paths and export
+     * files.
+     */
+    public function test_export_user_preference_context_block_multiple_instances() {
+        $this->resetAfterTest();
+
+        $generator = $this->getDataGenerator();
+        $course = $generator->create_course();
+        $coursecontext = context_course::instance($course->id);
+        $block1 = $generator->create_block('online_users', ['parentcontextid' => $coursecontext->id]);
+        $block2 = $generator->create_block('online_users', ['parentcontextid' => $coursecontext->id]);
+        $block1context = context_block::instance($block1->id);
+        $block2context = context_block::instance($block2->id);
+        $component = 'block';
+        $desc = 'test preference';
+        $block1key = 'block1key';
+        $block1value = 'block1value';
+        $block2key = 'block2key';
+        $block2value = 'block2value';
+        $writer = $this->get_writer_instance();
+
+        // Confirm that we have two different block contexts with the same name
+        // and the same parent context id.
+        $this->assertNotEquals($block1context->id, $block2context->id);
+        $this->assertEquals($block1context->get_context_name(), $block2context->get_context_name());
+        $this->assertEquals($block1context->get_parent_context()->id, $block2context->get_parent_context()->id);
+
+        $retrieveexport = function($context) use ($writer, $component) {
+            $fileroot = $this->fetch_exported_content($writer);
+
+            $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+            $this->assertTrue($fileroot->hasChild($contextpath));
+
+            $json = $fileroot->getChild($contextpath)->getContent();
+            return json_decode($json);
+        };
+
+        $writer->set_context($block1context)
+            ->export_user_preference($component, $block1key, $block1value, $desc);
+        $writer->set_context($block2context)
+            ->export_user_preference($component, $block2key, $block2value, $desc);
+
+        $block1export = $retrieveexport($block1context);
+        $block2export = $retrieveexport($block2context);
+
+        // Confirm that the exports didn't write to the same file.
+        $this->assertTrue(isset($block1export->$block1key));
+        $this->assertTrue(isset($block2export->$block2key));
+        $this->assertFalse(isset($block1export->$block2key));
+        $this->assertFalse(isset($block2export->$block1key));
+        $this->assertEquals($block1value, $block1export->$block1key->value);
+        $this->assertEquals($block2value, $block2export->$block2key->value);
+    }
+
+    /**
      * User preferences can be exported against the system.
      *
      * @dataProvider    export_user_preference_provider
@@ -790,6 +848,268 @@ class moodle_content_writer_test extends advanced_testcase {
                 'twokey',
                 'value',
                 'This is a much longer description which actually states what this is used for. Blah blah blah.',
+            ],
+        ];
+    }
+
+    /**
+     * Test that exported data is human readable.
+     *
+     * @dataProvider unescaped_unicode_export_provider
+     * @param string $text
+     */
+    public function test_export_data_unescaped_unicode($text) {
+        $context = \context_system::instance();
+        $subcontext = [];
+        $data = (object) ['key' => $text];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_data($subcontext, $data);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'data.json');
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertEquals($data, $expanded);
+    }
+
+    /**
+     * Test that exported metadata is human readable.
+     *
+     * @dataProvider unescaped_unicode_export_provider
+     * @param string $text
+     */
+    public function test_export_metadata_unescaped_unicode($text) {
+        $context = \context_system::instance();
+        $subcontext = ['a', 'b', 'c'];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_metadata($subcontext, $text, $text, $text);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'metadata.json');
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text.*$text.*$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$text));
+        $this->assertEquals($text, $expanded->$text->value);
+        $this->assertEquals($text, $expanded->$text->description);
+    }
+
+    /**
+     * Test that exported related data is human readable.
+     *
+     * @dataProvider unescaped_unicode_export_provider
+     * @param string $text
+     */
+    public function test_export_related_data_unescaped_unicode($text) {
+        $context = \context_system::instance();
+        $subcontext = [];
+        $data = (object) ['key' => $text];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_related_data($subcontext, 'name', $data);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'name.json');
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertEquals($data, $expanded);
+    }
+
+    /**
+     * Test that exported user preference is human readable.
+     *
+     * @dataProvider unescaped_unicode_export_provider
+     * @param string $text
+     */
+    public function test_export_user_preference_unescaped_unicode($text) {
+        $context = \context_system::instance();
+        $component = 'core_privacy';
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_user_preference($component, $text, $text, $text);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text.*$text.*$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$text));
+        $this->assertEquals($text, $expanded->$text->value);
+        $this->assertEquals($text, $expanded->$text->description);
+    }
+
+    /**
+     * Provider for various user preferences.
+     *
+     * @return array
+     */
+    public function unescaped_unicode_export_provider() {
+        return [
+            'Unicode' => ['ةكءيٓ‌پچژکگیٹڈڑہھےâîûğŞAaÇÖáǽ你好!'],
+        ];
+    }
+
+    /**
+     * Test that exported data is shortened when exceeds the limit.
+     *
+     * @dataProvider long_filename_provider
+     * @param string $longtext
+     * @param string $expected
+     * @param string $text
+     */
+    public function test_export_data_long_filename($longtext, $expected, $text) {
+        $context = \context_system::instance();
+        $subcontext = [$longtext];
+        $data = (object) ['key' => $text];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_data($subcontext, $data);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'data.json');
+        $expectedpath = "System {$context->id}/{$expected}/data.json";
+        $this->assertEquals($expectedpath, $contextpath);
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertEquals($data, $expanded);
+    }
+
+    /**
+     * Test that exported related data is shortened when exceeds the limit.
+     *
+     * @dataProvider long_filename_provider
+     * @param string $longtext
+     * @param string $expected
+     * @param string $text
+     */
+    public function test_export_related_data_long_filename($longtext, $expected, $text) {
+        $context = \context_system::instance();
+        $subcontext = [$longtext];
+        $data = (object) ['key' => $text];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_related_data($subcontext, 'name', $data);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'name.json');
+        $expectedpath = "System {$context->id}/{$expected}/name.json";
+        $this->assertEquals($expectedpath, $contextpath);
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertEquals($data, $expanded);
+    }
+
+    /**
+     * Test that exported metadata is shortened when exceeds the limit.
+     *
+     * @dataProvider long_filename_provider
+     * @param string $longtext
+     * @param string $expected
+     * @param string $text
+     */
+    public function test_export_metadata_long_filename($longtext, $expected, $text) {
+        $context = \context_system::instance();
+        $subcontext = [$longtext];
+        $data = (object) ['key' => $text];
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_metadata($subcontext, $text, $text, $text);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, $subcontext, 'metadata.json');
+        $expectedpath = "System {$context->id}/{$expected}/metadata.json";
+        $this->assertEquals($expectedpath, $contextpath);
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text.*$text.*$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$text));
+        $this->assertEquals($text, $expanded->$text->value);
+        $this->assertEquals($text, $expanded->$text->description);
+    }
+
+    /**
+     * Test that exported user preference is shortened when exceeds the limit.
+     *
+     * @dataProvider long_filename_provider
+     * @param string $longtext
+     * @param string $expected
+     * @param string $text
+     */
+    public function test_export_user_preference_long_filename($longtext, $expected, $text) {
+        $this->resetAfterTest();
+
+        if (!array_key_exists('json', core_filetypes::get_types())) {
+            // Add json as mime type to avoid lose the extension when shortening filenames.
+            core_filetypes::add_type('json', 'application/json', 'archive', [], '', 'JSON file archive');
+        }
+        $context = \context_system::instance();
+        $expectedpath = "System {$context->id}/User preferences/{$expected}.json";
+
+        $component = $longtext;
+
+        $writer = $this->get_writer_instance()
+                ->set_context($context)
+                ->export_user_preference($component, $text, $text, $text);
+
+        $fileroot = $this->fetch_exported_content($writer);
+
+        $contextpath = $this->get_context_path($context, [get_string('userpreferences')], "{$component}.json");
+        $this->assertEquals($expectedpath, $contextpath);
+
+        $json = $fileroot->getChild($contextpath)->getContent();
+        $this->assertRegExp("/$text.*$text.*$text/", $json);
+
+        $expanded = json_decode($json);
+        $this->assertTrue(isset($expanded->$text));
+        $this->assertEquals($text, $expanded->$text->value);
+        $this->assertEquals($text, $expanded->$text->description);
+    }
+
+    /**
+     * Provider for long filenames.
+     *
+     * @return array
+     */
+    public function long_filename_provider() {
+        return [
+            'More than 100 characters' => [
+                'Etiam sit amet dui vel leo blandit viverra. Proin viverra suscipit velit. Aenean efficitur suscipit nibh nec suscipit',
+                'Etiam sit amet dui vel leo blandit viverra. Proin viverra suscipit velit. Aenean effici - 22f7a5030d',
+                'value',
             ],
         ];
     }
