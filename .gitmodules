@@ -34,6 +34,10 @@
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
 	branch = master
+[submodule "blocks/panopto"]
+	path = blocks/panopto
+	url = git://github.com/Panopto/Moodle-2.0-plugin-for-Panopto.git
+	branch = master
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = git://github.com/lsuits/quickmail.git
@@ -76,6 +80,10 @@
 [submodule "lib/editor/atto/plugins/hr"]
 	path = lib/editor/atto/plugins/hr
 	url = git://github.com/damyon/moodle-atto_hr.git
+	branch = master
+[submodule "lib/editor/atto/plugins/panoptobutton"]
+	path = lib/editor/atto/plugins/panoptobutton
+	url = git://github.com/Panopto/Panopto-Button-for-Atto.git
 	branch = master
 [submodule "local/archiveup"]
 	path = local/archiveup
