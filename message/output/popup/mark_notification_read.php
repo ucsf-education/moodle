@@ -15,16 +15,33 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Glossary module version information
+ * Mark a notification read and redirect to the relevant content.
  *
- * @package mod_glossary
- * @copyright  2011 onwards Eloy Lafuente (stronk7) {@link http://stronk7.com}
+ * @package    message_popup
+ * @copyright  2018 Michael Hawkins
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+require_once(__DIR__ . '/../../../config.php');
 
-$plugin->version   = 2017111301;       // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2017110800;    // Requires this Moodle version
-$plugin->component = 'mod_glossary';   // Full name of the plugin (used for diagnostics)
-$plugin->cron      = 0;
+require_login(null, false);
+
+if (isguestuser()) {
+    redirect($CFG->wwwroot);
+}
+
+$notificationid = required_param('notificationid', PARAM_INT);
+$redirecturl = optional_param('redirecturl', $CFG->wwwroot, PARAM_LOCALURL);
+
+$notification = $DB->get_record('message', array('id' => $notificationid, 'notification' => 1));
+
+// If found, is unread, so mark read if belongs to this user.
+if ($notification) {
+    if ($USER->id == $notification->useridto) {
+        message_mark_message_read($notification, time());
+    } else {
+        $redirecturl = $CFG->wwwroot;
+    }
+}
+
+redirect($redirecturl);
