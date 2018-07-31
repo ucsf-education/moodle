@@ -120,11 +120,11 @@
 [submodule "mod/oublog"]
 	path = mod/oublog
 	url = git://github.com/moodleou/moodle-mod_oublog.git
-	branch = master
+	branch = MOODLE_34_STABLE
 [submodule "mod/ouwiki"]
 	path = mod/ouwiki
 	url = git://github.com/moodleou/moodle-mod_ouwiki.git
-	branch = master
+	branch = MOODLE_34_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/remotelearner/moodle-mod_questionnaire.git
