@@ -370,7 +370,12 @@ class cachestore_file extends cache_store implements cache_is_key_aware, cache_i
         // Unlock it.
         flock($handle, LOCK_UN);
         // Return it unserialised.
-        return $this->prep_data_after_read($data);
+        try {
+            return $this->prep_data_after_read($data);
+        } catch(coding_exception $e) {
+            error_log("Failed to unserialise cached data from file. Key: $key, File: $file, Contents: " . var_export($data, true), 4);
+            throw $e;
+        }
     }
 
     /**
