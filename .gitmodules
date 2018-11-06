@@ -1,3 +1,6 @@
+#
+# Keep it Simple: don't use ssh or https protocol, just use 'git'.
+#
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
 	url = git://github.com/ilios/tool_ilioscategoryassignment.git
@@ -155,5 +158,5 @@
 	branch = master
 [submodule "theme/ucsf"]
 	path = theme/ucsf
-	url = https://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
 	branch = master
