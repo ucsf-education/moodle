@@ -159,4 +159,4 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = master
+	branch = MOODLE_34_STABLE
