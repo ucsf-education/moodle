@@ -62,6 +62,10 @@
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
 	branch = MOODLE_35_STABLE
+[submodule "lib/editor/atto/plugins/count"]
+	path = lib/editor/atto/plugins/count
+	url = git://github.com/damyon/moodle-atto_count.git
+	branch = master
 [submodule "lib/editor/atto/plugins/fontfamily"]
 	path = lib/editor/atto/plugins/fontfamily
 	url = git://github.com/projectestac/moodle-atto_fontfamily.git
