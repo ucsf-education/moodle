@@ -1,0 +1,20 @@
+version: "2"
+services:
+  webserver:
+    build: ./
+    environment:
+      MOODLE_DOCKER_DBTYPE: mariadb
+      MOODLE_DOCKER_DBNAME: moodle
+      MOODLE_DOCKER_DBUSER: moodle
+      MOODLE_DOCKER_DBPASS: "m@0dl3ing"
+    ports:
+            - "8000:80"
+    volumes:
+        - ./:/var/www/html:delegated
+  db:
+    image: mariadb:10.4
+    environment:
+      MYSQL_USER: moodle
+      MYSQL_PASSWORD: "m@0dl3ing"
+      MYSQL_DATABASE: moodle
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
