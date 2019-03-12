@@ -1272,12 +1272,20 @@ function forum_user_outline($course, $user, $mod, $forum) {
         $result->info = get_string("numposts", "forum", $count->postcount);
         $result->time = $count->lastpost;
         if ($grade) {
-            $result->info .= ', ' . get_string('grade') . ': ' . $grade->str_long_grade;
+            if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+                $result->info .= ', ' . get_string('grade') . ': ' . $grade->str_long_grade;
+            } else {
+                $result->info = get_string('grade') . ': ' . get_string('hidden', 'grades');
+            }
         }
         return $result;
     } else if ($grade) {
         $result = new stdClass();
-        $result->info = get_string('grade') . ': ' . $grade->str_long_grade;
+        if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+            $result->info = get_string('grade') . ': ' . $grade->str_long_grade;
+        } else {
+            $result->info = get_string('grade') . ': ' . get_string('hidden', 'grades');
+        }
 
         //datesubmitted == time created. dategraded == time modified or time overridden
         //if grade was last modified by the user themselves use date graded. Otherwise use date submitted
@@ -1309,9 +1317,13 @@ function forum_user_complete($course, $user, $mod, $forum) {
     $grades = grade_get_grades($course->id, 'mod', 'forum', $forum->id, $user->id);
     if (!empty($grades->items[0]->grades)) {
         $grade = reset($grades->items[0]->grades);
-        echo $OUTPUT->container(get_string('grade').': '.$grade->str_long_grade);
-        if ($grade->str_feedback) {
-            echo $OUTPUT->container(get_string('feedback').': '.$grade->str_feedback);
+        if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+            echo $OUTPUT->container(get_string('grade').': '.$grade->str_long_grade);
+            if ($grade->str_feedback) {
+                echo $OUTPUT->container(get_string('feedback').': '.$grade->str_feedback);
+            }
+        } else {
+            echo $OUTPUT->container(get_string('grade') . ': ' . get_string('hidden', 'grades'));
         }
     }
 
@@ -3925,7 +3937,7 @@ function forum_print_discussion_header(&$post, $forum, $group = -1, $datestring 
     }
 
     echo '<td class="lastpost">';
-    $usedate = (empty($post->created)) ? $post->timemodified : $post->created;
+    $usedate = (empty($post->timemodified)) ? $post->created : $post->timemodified;
     $parenturl = '';
     $usermodified = new stdClass();
     $usermodified->id = $post->usermodified;
@@ -4558,10 +4570,6 @@ function forum_update_post($newpost, $mform, $unused = null) {
     }
     $post->modified = time();
 
-    // Last post modified tracking.
-    $discussion->timemodified = $post->modified;
-    $discussion->usermodified = $post->userid;
-
     if (!$post->parent) {   // Post is a discussion starter - update discussion title and times too
         $discussion->name      = $post->subject;
         $discussion->timestart = $post->timestart;
@@ -4574,6 +4582,7 @@ function forum_update_post($newpost, $mform, $unused = null) {
     $post->message = file_save_draft_area_files($newpost->itemid, $context->id, 'mod_forum', 'post', $post->id,
             mod_forum_post_form::editor_options($context, $post->id), $post->message);
     $DB->update_record('forum_posts', $post);
+    // Note: Discussion modified time/user are intentionally not updated, to enable them to track the latest new post.
     $DB->update_record('forum_discussions', $discussion);
 
     forum_add_attachment($post, $forum, $cm, $mform);
@@ -7497,7 +7506,7 @@ function forum_cm_info_view(cm_info $cm) {
 
     if (forum_tp_can_track_forums()) {
         if ($unread = forum_tp_count_forum_unread_posts($cm, $cm->get_course())) {
-            $out = '<span class="unread"> <a href="' . $cm->url . '">';
+            $out = '<span class="unread"> <a href="' . $cm->url . '#unread">';
             if ($unread == 1) {
                 $out .= get_string('unreadpostsone', 'forum');
             } else {

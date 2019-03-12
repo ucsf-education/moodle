@@ -50,7 +50,7 @@ Feature: Mapping courses in a feedback
     And I add a "Multiple choice" question to the feedback with:
       | Question               | this is a simple multiple choice    |
       | Label                  | multichoicesimple                   |
-      | Multiple choice type   | Multiple choice - single answer allowed (dropdownlist) |
+      | Multiple choice type   | Multiple choice - single answer allowed (drop-down menu) |
       | Multiple choice values | option d\noption e\noption f                           |
     And I log out
     And I log in as "teacher"
@@ -138,10 +138,6 @@ Feature: Mapping courses in a feedback
     And I follow "Map feedback to courses"
     And I set the field "Courses" to "Course 2"
     And I set the field "Courses" to "Course 3"
-    # Weird solution to make the editable field to lose the focus
-    # but with the focus, "save changes" uses to fail because of
-    # the suggestions hiding the button.
-    And I press key "27" in the field "Courses"
     And I press "Save changes"
     And I should see "Course mapping has been changed"
     And I log out

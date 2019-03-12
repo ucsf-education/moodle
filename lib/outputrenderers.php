@@ -2524,9 +2524,16 @@ class core_renderer extends renderer_base {
 
         $src = $userpicture->get_url($this->page, $this);
 
-        $attributes = array('src'=>$src, 'alt'=>$alt, 'title'=>$alt, 'class'=>$class, 'width'=>$size, 'height'=>$size);
+        $attributes = array('src' => $src, 'class' => $class, 'width' => $size, 'height' => $size);
         if (!$userpicture->visibletoscreenreaders) {
             $attributes['role'] = 'presentation';
+            $alt = '';
+            $attributes['aria-hidden'] = 'true';
+        }
+
+        if (!empty($alt)) {
+            $attributes['alt'] = $alt;
+            $attributes['title'] = $alt;
         }
 
         // get the image html output fisrt
@@ -3440,7 +3447,7 @@ EOD;
                         // Process this as a link item.
                         $pix = null;
                         if (isset($value->pix) && !empty($value->pix)) {
-                            $pix = new pix_icon($value->pix, $value->title, null, array('class' => 'iconsmall'));
+                            $pix = new pix_icon($value->pix, '', null, array('class' => 'iconsmall'));
                         } else if (isset($value->imgsrc) && !empty($value->imgsrc)) {
                             $value->title = html_writer::img(
                                 $value->imgsrc,
@@ -3531,6 +3538,9 @@ EOD;
             }
             if ($item->hidden) {
                 $attributes['class'] = 'dimmed_text';
+            }
+            if ($item->is_last()) {
+                $attributes['aria-current'] = 'page';
             }
             $content = html_writer::tag('span', $content, array('itemprop' => 'title'));
             $content = html_writer::link($item->action, $content, $attributes);
