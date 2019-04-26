@@ -153,3 +153,7 @@
 	path = theme/boost_campus
 	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
 	branch = master
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	branch = master
