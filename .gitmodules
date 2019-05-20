@@ -31,6 +31,10 @@
 	path = blocks/quickmail
 	url = git://github.com/lsuits/quickmail.git
 	tag = v1.7.6
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+	branch = master
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = git://github.com/gjb2048/moodle-format_topcoll.git
