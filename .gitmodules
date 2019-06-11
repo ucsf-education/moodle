@@ -165,3 +165,7 @@
 [submodule "admin/tool/course_favourites_migration"]
 	path = admin/tool/course_favourites_migration
 	url = git://github.com/ucsf-ckm/tool_course_favourites_migration.git
+[submodule "blocks/course_favourites"]
+	path = blocks/course_favourites
+	url = git://github.com/ucsf-ckm/moodle-block-course_favourites.git
+	branch = master
