@@ -161,7 +161,7 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
-	branch = MOODLE_36_DEVEL
+	branch = MOODLE_36_STABLE
 [submodule "admin/tool/course_favourites_migration"]
 	path = admin/tool/course_favourites_migration
 	url = git://github.com/ucsf-ckm/tool_course_favourites_migration.git
