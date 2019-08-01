@@ -134,6 +134,11 @@
 	path = mod/respondusws
 	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
 	branch = master
+[submodule "mod/turnitintooltwo"]
+	path = mod/turnitintooltwo
+	url = git://github.com/turnitin/moodle-mod_turnitintooltwo.git
+	branch = master
+	tag = v2019070201
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = git://github.com/ucla/moodle-mod_zoom.git
