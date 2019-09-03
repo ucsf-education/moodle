@@ -171,7 +171,7 @@
 	path = report/benchmark
 	url = git://github.com/mikasmart/benchmark.git
 	branch = master
-	tag = v1.2.0
+	tag = v1.3.0
 [submodule "theme/boost_campus"]
 	path = theme/boost_campus
 	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
