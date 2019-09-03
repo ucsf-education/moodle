@@ -152,7 +152,7 @@
 	path = mod/zoom
 	url = git://github.com/ucla/moodle-mod_zoom.git
 	branch = master
-	tag = v2.0.1
+	tag = v2.2
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
