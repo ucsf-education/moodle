@@ -53,6 +53,10 @@
 	path = enrol/ucsfsis
 	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
 	branch = master
+[submodule "filter/ucsfezproxy"]
+	path = filter/ucsfezproxy
+	url = git://github.com/ucsf-ckm/moodle-filter_ucsfezproxy.git
+	branch = master
 [submodule "internallogin"]
 	path = internallogin
 	url = git://github.com/ucsf-ckm/moodle-internallogin.git
