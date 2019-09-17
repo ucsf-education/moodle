@@ -4182,6 +4182,9 @@ function delete_user(stdClass $user) {
 
     // Now do a brute force cleanup.
 
+    // Remove user's calendar subscriptions.
+    $DB->delete_records('event_subscriptions', ['userid' => $user->id]);
+
     // Remove from all cohorts.
     $DB->delete_records('cohort_members', array('userid' => $user->id));
 
@@ -4787,7 +4790,12 @@ function get_complete_user_data($field, $value, $mnethostid = null, $throwexcept
     $field = core_text::strtolower($field);
 
     // List of case insensitive fields.
-    $caseinsensitivefields = ['username', 'email'];
+    $caseinsensitivefields = ['email'];
+
+    // Username input is forced to lowercase and should be case sensitive.
+    if ($field == 'username') {
+        $value = core_text::strtolower($value);
+    }
 
     // Build the WHERE clause for an SQL query.
     $params = array('fieldval' => $value);
