@@ -180,3 +180,7 @@
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
 	branch = MOODLE_36_STABLE
+[submodule "admin/tool/externaltaskmonitor"]
+	path = admin/tool/externaltaskmonitor
+	url = https://github.com/ucsf-ckm/tool_externaltaskmonitor.git
+	branch = MOODLE_36_DEVEL
