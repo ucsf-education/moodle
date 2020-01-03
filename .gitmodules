@@ -43,7 +43,7 @@
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = git://github.com/ucsf-ckm/moodle-block_quickmail.git
-	branch = UCSFCLE_37_DEVEL
+	branch = UCSFCLE_37_STABLE
 [submodule "blocks/turnitin"]
 	path = blocks/turnitin
 	url = git://github.com/turnitin/moodle-block_turnitin.git
