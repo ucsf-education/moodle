@@ -12346,7 +12346,7 @@ span.editinstructions {
 
 #coursesearch {
   margin-top: 1em;
-  text-align: center; }
+  text-align: left; }
 
 #page-course-pending .pendingcourserequests {
   margin-bottom: 1em; }
@@ -12823,6 +12823,9 @@ span.editinstructions {
 
 #nav-drawer.closed {
   left: -305px; }
+
+#nav-drawer[aria-hidden=true] .list-group-item {
+  display: none; }
 
 /* Use a variable for the drawer background colors. */
 [data-region="drawer"] {
@@ -14364,7 +14367,10 @@ body.path-question-type {
 .que .questioncorrectnessicon {
   vertical-align: text-bottom; }
 
-.que input.questionflagimage {
+body.jsenabled .questionflag input[type=checkbox] {
+  display: none; }
+
+.que .questionflagimage {
   padding-right: 3px;
   height: 16px;
   width: 16px; }
@@ -16524,7 +16530,6 @@ body {
     flex-shrink: 0; }
 
 .popover-region {
-  float: right;
   position: relative; }
   .popover-region.collapsed .popover-region-toggle:before, .popover-region.collapsed .popover-region-toggle:after {
     display: none; }
@@ -16639,7 +16644,7 @@ body {
     display: none; }
 
 .navbar .popover-region {
-  float: right;
+  float: left;
   margin-right: 10px; }
   .navbar .popover-region.collapsed .popover-region-container {
     opacity: 0;

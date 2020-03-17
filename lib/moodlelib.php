@@ -4220,9 +4220,15 @@ function delete_user(stdClass $user) {
     // This might be slow but it is really needed - modules might do some extra cleanup!
     role_unassign_all(array('userid' => $user->id));
 
+    // Notify the competency subsystem.
+    \core_competency\api::hook_user_deleted($user->id);
+
     // Now do a brute force cleanup.
 
-    // Remove user's calendar subscriptions.
+    // Delete all user events and subscription events.
+    $DB->delete_records_select('event', 'userid = :userid AND subscriptionid IS NOT NULL', ['userid' => $user->id]);
+
+    // Now, delete all calendar subscription from the user.
     $DB->delete_records('event_subscriptions', ['userid' => $user->id]);
 
     // Remove from all cohorts.
@@ -9098,24 +9104,13 @@ function cleardoubleslashes ($path) {
  * @return bool
  */
 function remoteip_in_list($list) {
-    $inlist = false;
     $clientip = getremoteaddr(null);
 
     if (!$clientip) {
         // Ensure access on cli.
         return true;
     }
-
-    $list = explode("\n", $list);
-    foreach ($list as $line) {
-        $tokens = explode('#', $line);
-        $subnet = trim($tokens[0]);
-        if (address_in_subnet($clientip, $subnet)) {
-            $inlist = true;
-            break;
-        }
-    }
-    return $inlist;
+    return \core\ip_utils::is_ip_in_subnet_list($clientip, $list);
 }
 
 /**
@@ -9143,7 +9138,15 @@ function getremoteaddr($default='0.0.0.0') {
     if (!($variablestoskip & GETREMOTEADDR_SKIP_HTTP_X_FORWARDED_FOR)) {
         if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $forwardedaddresses = explode(",", $_SERVER['HTTP_X_FORWARDED_FOR']);
-            $address = $forwardedaddresses[0];
+
+            $forwardedaddresses = array_filter($forwardedaddresses, function($ip) {
+                global $CFG;
+                return !\core\ip_utils::is_ip_in_subnet_list($ip, $CFG->reverseproxyignore, ',');
+            });
+
+            // Multiple proxies can append values to this header including an
+            // untrusted original request header so we must only trust the last ip.
+            $address = end($forwardedaddresses);
 
             if (substr_count($address, ":") > 1) {
                 // Remove port and brackets from IPv6.
@@ -9480,7 +9483,7 @@ function get_performance_info() {
                     $mode = ' <span title="request cache">[r]</span>';
                     break;
             }
-            $html .= '<ul class="cache-definition-stats list-unstyled ml-1 mb-1 cache-mode-'.$modeclass.' card d-inline-block">';
+            $html .= '<li class="d-inline-flex"><ul class="cache-definition-stats list-unstyled ml-1 mb-1 cache-mode-'.$modeclass.' card d-inline-block">';
             $html .= '<li class="cache-definition-stats-heading p-t-1 card-header bg-dark bg-inverse font-weight-bold">' .
                 $definition . $mode.'</li>';
             $text .= "$definition {";
@@ -9503,7 +9506,7 @@ function get_performance_info() {
                     $html .= "<li class=\"cache-store-stats $cachestoreclass p-x-1\">&nbsp;</li>";
                 }
             }
-            $html .= '</ul>';
+            $html .= '</ul></li>';
             $text .= '} ';
         }
         $html .= '</ul> ';
