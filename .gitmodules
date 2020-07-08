@@ -161,7 +161,7 @@
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
 	branch = master
-	tag = v2019121701
+	tag = v2020070801
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = git://github.com/ucsf-ckm/knowledgecheck.git
@@ -181,7 +181,7 @@
 	path = theme/boost_campus
 	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
 	branch = master
-	tag = v3.7-r4
+	tag = v3.8-r1
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
