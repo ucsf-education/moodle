@@ -111,7 +111,7 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = git://github.com/danmarsden/moodle-mod_attendance.git
-	branch = MOODLE_37_STABLE
+	branch = main
 [submodule "mod/checklist"]
 	path = mod/checklist
 	url = git://github.com/davosmith/moodle-checklist.git
