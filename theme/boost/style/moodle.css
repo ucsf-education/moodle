@@ -11511,6 +11511,9 @@ body.h5p-embed .h5pmessages {
 .alert-dark a {
   color: #040505; }
 
+.alert a, #page-admin-index .releasenoteslink a, #page-admin-index .adminwarning a, #page-admin-index .adminerror a, .que .formulation a, .que .outcome a, .que .comment a, .assignfeedback_editpdf_widget .label a {
+  font-weight: 700; }
+
 .icon {
   font-size: 16px;
   width: 16px;
@@ -17667,16 +17670,19 @@ p.arrow_button {
 /**
  * Grader report.
  */
-.path-grade-report-grader .gradeparent tr .cell {
+.path-grade-report-grader .gradeparent tr .cell,
+.path-grade-report-grader .gradeparent .floater .cell {
   background-color: #fff; }
 
 .path-grade-report-grader .gradeparent table,
 .path-grade-report-grader .gradeparent .cell {
   border-color: #dee2e6; }
 
-.path-grade-report-grader .gradeparent tr:nth-of-type(even) .cell,
-.path-grade-report-grader .gradeparent .floater .cell,
-.path-grade-report-grader .gradeparent .avg {
+.path-grade-report-grader .gradeparent .userrow.odd .cell,
+.path-grade-report-grader .gradeparent .floater .cell.odd,
+.path-grade-report-grader .gradeparent .heading .cell,
+.path-grade-report-grader .gradeparent .cell.category,
+.path-grade-report-grader .gradeparent .avg .cell {
   background-color: #f8f9fa; }
 
 .path-grade-report-grader .gradeparent table .clickable {
@@ -17895,7 +17901,7 @@ body.reset-style #page-content {
     padding-right: 1.25rem;
     vertical-align: top; }
     body.reset-style #page-content #region-main-box #region-main div[role="main"] {
-      flex: 1; }
+      flex: 1 0 auto; }
     body.reset-style #page-content #region-main-box #region-main .activity-navigation {
       overflow: hidden; }
     body.reset-style #page-content #region-main-box #region-main.has-blocks {
