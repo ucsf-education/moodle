@@ -25,8 +25,8 @@
 	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
-	url = git://github.com/at-tools/moodle-block_massaction.git
-	branch = moodle-34-master
+	url = git://github.com/ucsf-ckm/moodle-block_massaction.git
+	branch = UCSFCLE_39_DEVEL
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
 	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
