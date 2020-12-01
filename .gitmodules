@@ -162,7 +162,7 @@
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
 	branch = master
-	tag = v2020072201
+	tag = v2020113001
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = git://github.com/ucsf-ckm/knowledgecheck.git
