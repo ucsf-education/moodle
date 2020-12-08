@@ -106,8 +106,8 @@
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = git://github.com/markn86/moodle-mod_customcert
-	branch = MOODLE_38_STABLE
-	tag = v3.8.4
+	branch = MOODLE_39_STABLE
+	tag = v3.9.0
 [submodule "mod/giportfolio"]
 	path = mod/giportfolio
 	url = git://github.com/synergylearning/moodle-mod_giportfolio.git
