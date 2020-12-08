@@ -119,7 +119,7 @@
 [submodule "mod/ouwiki"]
 	path = mod/ouwiki
 	url = git://github.com/moodleou/moodle-mod_ouwiki.git
-	branch = MOODLE_38_STABLE
+	branch = MOODLE_39_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = git://github.com/PoetOS/moodle-mod_questionnaire.git
