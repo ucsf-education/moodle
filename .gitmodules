@@ -167,8 +167,8 @@
 [submodule "theme/boost_campus"]
 	path = theme/boost_campus
 	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
-	branch = master
-	tag = v3.9-r1
+	branch = MOODLE_39_STABLE
+	tag = v3.9-r4
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
