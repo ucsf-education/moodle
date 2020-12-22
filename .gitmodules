@@ -161,8 +161,8 @@
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
 	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
-	branch = master
-	tag = v2.2
+	branch = main
+	tag = v2.3
 [submodule "report/benchmark"]
 	path = report/benchmark
 	url = git://github.com/mikasmart/benchmark.git
