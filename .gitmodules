@@ -93,7 +93,7 @@
 	path = local/maintenance_livecheck
 	url = git://github.com/moodleuulm/moodle-local_maintenance_livecheck.git
 	branch = master
-	tag = v3.9-r1
+	tag = v3.9-r2
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
