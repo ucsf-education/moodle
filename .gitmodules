@@ -92,13 +92,13 @@
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = git://github.com/moodleuulm/moodle-local_maintenance_livecheck.git
-	branch = master
+	branch = MOODLE_39_STABLE
 	tag = v3.9-r2
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
-	branch = master
-	tag = v3.9-r1
+	branch = MOODLE_39_STABLE
+	tag = v3.9-r2
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = git://github.com/danmarsden/moodle-mod_attendance.git
