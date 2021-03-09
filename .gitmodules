@@ -171,3 +171,7 @@
 	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
 	branch = MOODLE_310_STABLE
 	tag = v3.10-r3
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	branch = MOODLE_310_DEVEL
