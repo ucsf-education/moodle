@@ -3017,5 +3017,36 @@ function xmldb_main_upgrade($oldversion) {
         upgrade_main_savepoint(true, 2020110900.01);
     }
 
+    if ($oldversion < 2020110901.03) {
+        $DB->delete_records_select('event', "eventtype = 'category' AND categoryid = 0 AND userid <> 0");
+
+        upgrade_main_savepoint(true, 2020110901.03);
+    }
+
+    if ($oldversion < 2020110901.08) {
+        // Get all the external backpacks and update the sortorder column, to avoid repeated/wrong values. As sortorder was not
+        // used since now, the id column will be the criteria to follow for re-ordering them with a valid value.
+        $i = 1;
+        $records = $DB->get_records('badge_external_backpack', null, 'id ASC');
+        foreach ($records as $record) {
+            $record->sortorder = $i++;
+            $DB->update_record('badge_external_backpack', $record);
+        }
+
+        upgrade_main_savepoint(true, 2020110901.08);
+    }
+
+    if ($oldversion < 2020110901.09) {
+        // This upgrade step will update all shared events setting userid to 0.
+        // Site, category, course, group and action events (except user overrides) dont belong to the user who creates them.
+        $DB->execute("UPDATE {event} SET userid = 0 WHERE eventtype <> 'user' OR priority <> 0");
+
+        // Only user type of subscription should record user id.
+        $DB->execute("UPDATE {event_subscriptions} SET userid = 0 WHERE eventtype <> 'user'");
+
+        // Main savepoint reached.
+        upgrade_main_savepoint(true, 2020110901.09);
+    }
+
     return true;
 }
