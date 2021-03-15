@@ -23,6 +23,10 @@
 	path = blocks/checklist
 	url = git://github.com/davosmith/moodle-block_checklist.git
 	branch = master
+[submodule "blocks/configurable_reports"]
+	path = blocks/configurable_reports
+	url = git://github.com/jleyva/moodle-block_configurablereports.git
+	branch = HEAD
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
