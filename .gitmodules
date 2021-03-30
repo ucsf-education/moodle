@@ -82,7 +82,7 @@
 	branch = master
 [submodule "local/fullscreen"]
 	path = local/fullscreen
-	url = http://bitbucket.org/uonmoodle/moodle-local_fullscreen.git
+	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen.git
 	branch = master
 [submodule "local/iliosapiclient"]
 	path = local/iliosapiclient
