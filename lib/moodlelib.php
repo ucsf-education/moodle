@@ -4277,7 +4277,7 @@ function delete_user(stdClass $user) {
     // Now do a brute force cleanup.
 
     // Delete all user events and subscription events.
-    $DB->delete_records_select('event', 'userid = :userid', ['userid' => $user->id]);
+    $DB->delete_records_select('event', 'userid = :userid AND subscriptionid IS NOT NULL', ['userid' => $user->id]);
 
     // Now, delete all calendar subscription from the user.
     $DB->delete_records('event_subscriptions', ['userid' => $user->id]);
@@ -10585,7 +10585,7 @@ class lang_string {
         // changes are not carried across.
         // To do this we always ensure $a or its properties/values are strings
         // and that any properties/values that arn't convertable are forgotten.
-        if (!empty($a)) {
+        if ($a !== null) {
             if (is_scalar($a)) {
                 $this->a = $a;
             } else if ($a instanceof lang_string) {
