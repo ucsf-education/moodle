@@ -14,7 +14,7 @@
 	path = availability/condition/mobileapp
 	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
 	branch = MOODLE_32_STABLE
-	tag = 3.0
+	tag = 4.0
 [submodule "blocks/attendance"]
 	path = blocks/attendance
 	url = git://github.com/danmarsden/moodle-block_attendance.git
@@ -145,7 +145,7 @@
 	path = mod/zoom
 	url = git://github.com/ucla/moodle-mod_zoom.git
 	branch = master
-	tag = v3.4
+	tag = v3.6
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
