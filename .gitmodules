@@ -10,6 +10,10 @@
 	path = admin/tool/ldapsync
 	url = git://github.com/ucsf-ckm/moodle-admin-tool-ldapsync.git
 	branch = master
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = git@github.com:ucsf-ckm/tool_ucsfsomapi.git
+	branch = master
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
 	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
