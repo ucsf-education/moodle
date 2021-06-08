@@ -140,7 +140,7 @@
 	path = mod/turnitintooltwo
 	url = git://github.com/turnitin/moodle-mod_turnitintooltwo.git
 	branch = master
-	tag = v2020111801
+	tag = v2021060801
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = git://github.com/ucla/moodle-mod_zoom.git
@@ -150,7 +150,7 @@
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
 	branch = master
-	tag = v2020113001
+	tag = v2021060801
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = git://github.com/ucsf-ckm/knowledgecheck.git
