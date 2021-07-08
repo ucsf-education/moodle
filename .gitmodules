@@ -107,7 +107,7 @@
 	path = mod/checklist
 	url = git://github.com/davosmith/moodle-checklist.git
 	branch = master
-        tag = 3.9.0.1
+        tag = 3.9.0.2
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = git://github.com/markn86/moodle-mod_customcert
