@@ -133,6 +133,7 @@
 	path = mod/quiz/report/archive
 	url = git://github.com/bfh/moodle-quiz_archive.git
 	branch = master
+	tag = v3.11-r1
 [submodule "mod/respondusws"]
 	path = mod/respondusws
 	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
