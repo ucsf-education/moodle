@@ -133,6 +133,7 @@
 	path = mod/questionnaire
 	url = git://github.com/PoetOS/moodle-mod_questionnaire.git
 	branch = MOODLE_310_STABLE
+	tag = 3.10.1
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
 	url = git://github.com/bfh/moodle-quiz_archive.git
