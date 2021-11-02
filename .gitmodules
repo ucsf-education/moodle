@@ -88,8 +88,8 @@
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = git://github.com/moodleuulm/moodle-local_maintenance_livecheck.git
-	branch = MOODLE_310_STABLE
-	tag = v3.10-r1
+	branch = MOODLE_311_STABLE
+	tag = v3.11-r2
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
