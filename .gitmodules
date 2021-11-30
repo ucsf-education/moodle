@@ -47,7 +47,7 @@
 	path = course/format/topcoll
 	url = git://github.com/gjb2048/moodle-format_topcoll.git
 	branch = MOODLE_310
-	tag = V3.10.1.3
+	tag = V3.10.1.5
 [submodule "enrol/ilios"]
 	path = enrol/ilios
 	url = git://github.com/ilios/moodle-enrol-ilios.git
