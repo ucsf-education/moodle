@@ -93,8 +93,8 @@
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = git://github.com/moodleuulm/moodle-local_staticpage.git
-	branch = MOODLE_310_STABLE
-	tag = v3.10-r2
+	branch = MOODLE_311_STABLE
+	tag = v3.11-r1
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = git://github.com/danmarsden/moodle-mod_attendance.git
