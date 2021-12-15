@@ -115,8 +115,8 @@
 	branch = master
 [submodule "mod/oublog"]
 	path = mod/oublog
-	url = git://github.com/moodleou/moodle-mod_oublog.git
-	branch = MOODLE_311_STABLE
+	url = git://github.com/ucsf-ckm/moodle-mod_oublog.git
+	branch = UCSFCLE_311_STABLE
 [submodule "mod/ouwiki"]
 	path = mod/ouwiki
 	url = git://github.com/moodleou/moodle-mod_ouwiki.git
