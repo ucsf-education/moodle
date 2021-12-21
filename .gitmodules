@@ -6,6 +6,14 @@
 	path = admin/tool/ilioscategoryassignment
 	url = git://github.com/ilios/tool_ilioscategoryassignment.git
 	branch = master
+[submodule "admin/tool/ldapsync"]
+	path = admin/tool/ldapsync
+	url = git://github.com/ucsf-ckm/moodle-admin-tool-ldapsync.git
+	branch = master
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = git@github.com:ucsf-ckm/tool_ucsfsomapi.git
+	branch = master
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
 	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
@@ -174,6 +182,3 @@
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
 	branch = master
-[submodule "admin/tool/ucsfsomapi"]
-	path = admin/tool/ucsfsomapi
-	url = git@github.com:ucsf-ckm/tool_ucsfsomapi.git
