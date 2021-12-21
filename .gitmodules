@@ -174,3 +174,6 @@
 	path = theme/ucsf
 	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
 	branch = master
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = git@github.com:ucsf-ckm/tool_ucsfsomapi.git
