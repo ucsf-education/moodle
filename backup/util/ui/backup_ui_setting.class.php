@@ -147,6 +147,9 @@ class base_setting_ui {
      * @param string $label
      */
     public function set_label(string $label) :void {
+        if (trim($label) === '') { // Let's handle the specific case of allowed whitespace labels here.
+            $label = '&nbsp;';
+        }
         $label = clean_param($label, PARAM_CLEANHTML);
 
         if ($label === '') {
