@@ -87,6 +87,10 @@
 	path = lib/editor/atto/plugins/hr
 	url = git://github.com/damyon/moodle-atto_hr.git
 	branch = master
+[submodule "lib/editor/tinymce/plugins/h5p"]
+	path = lib/editor/tinymce/plugins/h5p
+	url = git://github.com/catalyst/tinymce_h5p.git
+	branch = main
 [submodule "local/fullscreen"]
 	path = local/fullscreen
 	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen.git
