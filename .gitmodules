@@ -158,8 +158,8 @@
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = git://github.com/ncstate-delta/moodle-mod_zoom.git
-	branch = master
-	tag = v4.3.2
+	branch = main
+	tag = v4.3.3
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
 	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
