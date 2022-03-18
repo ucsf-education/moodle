@@ -51,6 +51,7 @@
 [submodule "cle-patches"]
 	path = cle-patches
 	url = https://github.com/ucsf-ckm/moodle-cle-patches
+	branch = main
 [submodule "enrol/ilios"]
 	path = enrol/ilios
 	url = git://github.com/ilios/moodle-enrol-ilios.git
