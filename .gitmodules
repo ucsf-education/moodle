@@ -1,51 +1,51 @@
 [submodule "admin/tool/externaltaskmonitor"]
 	path = admin/tool/externaltaskmonitor
-	url = git://github.com/ucsf-ckm/tool_externaltaskmonitor.git
+	url = https://github.com/ucsf-ckm/tool_externaltaskmonitor
 	branch = MOODLE_37_STABLE
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
-	url = git://github.com/ilios/tool_ilioscategoryassignment.git
+	url = https://github.com/ilios/tool_ilioscategoryassignment
 	branch = master
 [submodule "admin/tool/ldapsync"]
 	path = admin/tool/ldapsync
-	url = git://github.com/ucsf-ckm/moodle-admin-tool-ldapsync.git
+	url = https://github.com/ucsf-ckm/moodle-admin-tool-ldapsync
 	branch = master
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
-	url = git@github.com:ucsf-ckm/tool_ucsfsomapi.git
+	url = git@github.com:ucsf-ckm/tool_ucsfsomapi
 	branch = master
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
-	url = git://github.com/moodlehq/moodle-availability_mobileapp.git
+	url = https://github.com/moodlehq/moodle-availability_mobileapp
 	branch = MOODLE_32_STABLE
 	tag = 4.0
 [submodule "blocks/attendance"]
 	path = blocks/attendance
-	url = git://github.com/danmarsden/moodle-block_attendance.git
+	url = https://github.com/danmarsden/moodle-block_attendance
 	branch = main
 [submodule "blocks/checklist"]
 	path = blocks/checklist
-	url = git://github.com/davosmith/moodle-block_checklist.git
+	url = https://github.com/davosmith/moodle-block_checklist
 	branch = master
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
-	url = git://github.com/ucsf-ckm/moodle-block-course_recent.git
+	url = https://github.com/ucsf-ckm/moodle-block-course_recent
 	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
-	url = git://github.com/ucsf-ckm/moodle-block_massaction.git
+	url = https://github.com/ucsf-ckm/moodle-block_massaction
 	branch = UCSFCLE_39_DEVEL
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
-	url = git://github.com/iautomatebr/moodle-block_moodleversion.git
+	url = https://github.com/iautomatebr/moodle-block_moodleversion
 	branch = master
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
-	url = git://github.com/ucsf-ckm/moodle-block_quickmail.git
+	url = https://github.com/ucsf-ckm/moodle-block_quickmail
 	branch = UCSFCLE_37_STABLE
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
-	url = git://github.com/gjb2048/moodle-format_topcoll.git
+	url = https://github.com/gjb2048/moodle-format_topcoll
 	branch = master
 	tag = V3.11.0.5
 [submodule "cle-patches"]
@@ -54,139 +54,139 @@
 	branch = main
 [submodule "enrol/ilios"]
 	path = enrol/ilios
-	url = git://github.com/ilios/moodle-enrol-ilios.git
+	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = master
 [submodule "enrol/ucsfsis"]
 	path = enrol/ucsfsis
-	url = git://github.com/ucsf-ckm/moodle-enrol-ucsfsis.git
+	url = https://github.com/ucsf-ckm/moodle-enrol-ucsfsis
 	branch = master
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
-	url = git://github.com/ucsf-ckm/moodle-filter_ucsfezproxy.git
+	url = https://github.com/ucsf-ckm/moodle-filter_ucsfezproxy
 	branch = master
 [submodule "internallogin"]
 	path = internallogin
-	url = git://github.com/ucsf-ckm/moodle-internallogin.git
+	url = https://github.com/ucsf-ckm/moodle-internallogin
 	branch = MOODLE_311_STABLE
 [submodule "lib/editor/atto/plugins/count"]
 	path = lib/editor/atto/plugins/count
-	url = git://github.com/damyon/moodle-atto_count.git
+	url = https://github.com/damyon/moodle-atto_count
 	branch = master
 [submodule "lib/editor/atto/plugins/fontfamily"]
 	path = lib/editor/atto/plugins/fontfamily
-	url = git://github.com/projectestac/moodle-atto_fontfamily.git
+	url = https://github.com/projectestac/moodle-atto_fontfamily
 	branch = master
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
-	url = git://github.com/andrewnicols/moodle-atto_fontsize.git
+	url = https://github.com/andrewnicols/moodle-atto_fontsize
 	branch = master
 [submodule "lib/editor/atto/plugins/fullscreen"]
 	path = lib/editor/atto/plugins/fullscreen
-	url = git://github.com/dthies/moodle-atto_fullscreen.git
+	url = https://github.com/dthies/moodle-atto_fullscreen
 	branch = master
 [submodule "lib/editor/atto/plugins/hr"]
 	path = lib/editor/atto/plugins/hr
-	url = git://github.com/damyon/moodle-atto_hr.git
+	url = https://github.com/damyon/moodle-atto_hr
 	branch = master
 [submodule "lib/editor/tinymce/plugins/h5p"]
 	path = lib/editor/tinymce/plugins/h5p
-	url = git://github.com/catalyst/tinymce_h5p.git
+	url = https://github.com/catalyst/tinymce_h5p
 	branch = main
 [submodule "local/fullscreen"]
 	path = local/fullscreen
-	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen.git
+	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen
 	branch = master
 [submodule "local/iliosapiclient"]
 	path = local/iliosapiclient
-	url = git://github.com/ilios/local_iliosapiclient.git
+	url = https://github.com/ilios/local_iliosapiclient
 	branch = master
 	tag = v1.2.0
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
-	url = git://github.com/moodleuulm/moodle-local_maintenance_livecheck.git
+	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
 	branch = MOODLE_311_STABLE
 	tag = v3.11-r2
 [submodule "local/staticpage"]
 	path = local/staticpage
-	url = git://github.com/moodleuulm/moodle-local_staticpage.git
+	url = https://github.com/moodleuulm/moodle-local_staticpage
 	branch = MOODLE_311_STABLE
 	tag = v3.11-r1
 [submodule "mod/attendance"]
 	path = mod/attendance
-	url = git://github.com/danmarsden/moodle-mod_attendance.git
+	url = https://github.com/danmarsden/moodle-mod_attendance
 	branch = MOODLE_311_STABLE
 [submodule "mod/checklist"]
 	path = mod/checklist
-	url = git://github.com/davosmith/moodle-checklist.git
+	url = https://github.com/davosmith/moodle-checklist
 	branch = master
         tag = 3.9.0.2
 [submodule "mod/customcert"]
 	path = mod/customcert
-	url = git://github.com/markn86/moodle-mod_customcert
+	url = https://github.com/markn86/moodle-mod_customcert
 	branch = MOODLE_311_STABLE
 	tag = v3.11.1
 [submodule "mod/giportfolio"]
 	path = mod/giportfolio
-	url = git://github.com/synergylearning/moodle-mod_giportfolio.git
+	url = https://github.com/synergylearning/moodle-mod_giportfolio
 	branch = master
 [submodule "mod/oublog"]
 	path = mod/oublog
-	url = git://github.com/ucsf-ckm/moodle-mod_oublog.git
+	url = https://github.com/ucsf-ckm/moodle-mod_oublog
 	branch = UCSFCLE_311_STABLE
 [submodule "mod/ouwiki"]
 	path = mod/ouwiki
-	url = git://github.com/moodleou/moodle-mod_ouwiki.git
+	url = https://github.com/moodleou/moodle-mod_ouwiki
 	branch = master
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
-	url = git://github.com/PoetOS/moodle-mod_questionnaire.git
+	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_310_STABLE
         tag = 3.10.2
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
-	url = git://github.com/bfh/moodle-quiz_archive.git
+	url = https://github.com/bfh/moodle-quiz_archive
 	branch = master
         tag = v3.11-r1
 [submodule "mod/respondusws"]
 	path = mod/respondusws
-	url = git://github.com/ucsf-ckm/moodle-mod-respondusws.git
+	url = https://github.com/ucsf-ckm/moodle-mod-respondusws
 	branch = master
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
-	url = git://github.com/turnitin/moodle-mod_turnitintooltwo.git
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
 	branch = master
 	tag = v2022020301
 [submodule "mod/zoom"]
 	path = mod/zoom
-	url = git://github.com/ncstate-delta/moodle-mod_zoom.git
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v4.3.3
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
-	url = git://github.com/turnitin/moodle-plagiarism_turnitin.git
+	url = https://github.com/turnitin/moodle-plagiarism_turnitin
 	branch = master
 	tag = v2021091501
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
-	url = git://github.com/ucsf-ckm/knowledgecheck.git
+	url = https://github.com/ucsf-ckm/knowledgecheck
 	branch = master
 	tag = 1.0.1
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
-	url = git://github.com/moodleou/moodle-qtype_oumultiresponse.git
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
 	branch = main
 	tag = v2.3
 [submodule "report/benchmark"]
 	path = report/benchmark
-	url = git://github.com/mikasmart/benchmark.git
+	url = https://github.com/mikasmart/benchmark
 	branch = master
 	tag = v1.4.1
 [submodule "theme/boost_campus"]
 	path = theme/boost_campus
-	url = git://github.com/moodleuulm/moodle-theme_boost_campus.git
+	url = https://github.com/moodleuulm/moodle-theme_boost_campus
 	branch = MOODLE_311_STABLE
 	tag = v3.11-r2
 [submodule "theme/ucsf"]
 	path = theme/ucsf
-	url = git://github.com/ucsf-ckm/moodle-theme-ucsf.git
+	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
 	branch = master
