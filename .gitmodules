@@ -47,8 +47,8 @@
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = https://github.com/gjb2048/moodle-format_topcoll
-	branch = master
-	tag = V3.11.0.5
+	branch = MOODLE_311
+	tag = V3.11.1.0
 [submodule "cle-patches"]
 	path = cle-patches
 	url = https://github.com/ucsf-ckm/moodle-cle-patches
