@@ -110,7 +110,7 @@
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
 	branch = MOODLE_311_STABLE
-	tag = v3.11-r2
+	tag = v3.11-r3
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodleuulm/moodle-local_staticpage
