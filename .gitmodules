@@ -186,11 +186,6 @@
 	url = https://github.com/mikasmart/benchmark
 	branch = master
 	tag = v1.4.1
-[submodule "theme/boost_campus"]
-	path = theme/boost_campus
-	url = https://github.com/moodleuulm/moodle-theme_boost_campus
-	branch = MOODLE_311_STABLE
-	tag = v3.11-r2
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
