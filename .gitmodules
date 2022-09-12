@@ -185,7 +185,7 @@
 	path = report/benchmark
 	url = https://github.com/mikasmart/benchmark
 	branch = master
-	tag = v1.4.1
+	tag = v1.4.2
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
