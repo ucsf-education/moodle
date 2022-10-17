@@ -35,7 +35,7 @@
 	path = blocks/massaction
 	url = https://github.com/Syxton/moodle-block_massaction
 	branch = 39_311_stable
-	tag = 6.1.0
+	tag = 6.1.1
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
 	url = https://github.com/iautomatebr/moodle-block_moodleversion
