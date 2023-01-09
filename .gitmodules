@@ -151,7 +151,7 @@
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
 	branch = master
-        tag = v3.11-r1
+        tag = v4.1-r1
 [submodule "mod/respondusws"]
 	path = mod/respondusws
 	url = https://github.com/ucsf-ckm/moodle-mod-respondusws
@@ -190,3 +190,6 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
 	branch = master
+[submodule "admin/tool/ribbons"]
+	path = admin/tool/ribbons
+	url = https://github.com/cwarwicker/moodle-tool_ribbons
