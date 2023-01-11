@@ -10,6 +10,10 @@
 	path = admin/tool/ldapsync
 	url = https://github.com/ucsf-ckm/moodle-admin-tool-ldapsync
 	branch = master
+[submodule "admin/tool/ribbons"]
+	path = admin/tool/ribbons
+	url = https://github.com/cwarwicker/moodle-tool_ribbons
+	branch = main
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
 	url = git@github.com:ucsf-ckm/tool_ucsfsomapi
@@ -190,6 +194,4 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
 	branch = master
-[submodule "admin/tool/ribbons"]
-	path = admin/tool/ribbons
-	url = https://github.com/cwarwicker/moodle-tool_ribbons
+
