@@ -1,0 +1,164 @@
+[submodule "admin/tool/externaltaskmonitor"]
+	path = admin/tool/externaltaskmonitor
+	url = https://github.com/ucsf-education/tool_externaltaskmonitor
+	branch = MOODLE_401_STABLE
+[submodule "admin/tool/ilioscategoryassignment"]
+	path = admin/tool/ilioscategoryassignment
+	url = https://github.com/ilios/tool_ilioscategoryassignment
+	branch = MOODLE_401_STABLE
+[submodule "admin/tool/ldapsync"]
+	path = admin/tool/ldapsync
+	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
+	branch = MOODLE_401_STABLE
+[submodule "admin/tool/ribbons"]
+	path = admin/tool/ribbons
+	url = https://github.com/cwarwicker/moodle-tool_ribbons
+	branch = main
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
+	branch = MOODLE_401_STABLE
+[submodule "availability/condition/mobileapp"]
+	path = availability/condition/mobileapp
+	url = https://github.com/moodlehq/moodle-availability_mobileapp
+	branch = master
+	tag = 4.0
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = https://github.com/danmarsden/moodle-block_attendance
+	branch = main
+[submodule "blocks/checklist"]
+	path = blocks/checklist
+	url = https://github.com/davosmith/moodle-block_checklist
+	branch = master
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = https://github.com/ucsf-education/moodle-block-course_recent
+	branch = MOODLE_401_STABLE
+[submodule "blocks/massaction"]
+	path = blocks/massaction
+	url = https://github.com/Syxton/moodle-block_massaction
+	branch = master
+	tag = 7.1.1
+[submodule "blocks/moodleversion"]
+	path = blocks/moodleversion
+	url = https://github.com/iautomatebr/moodle-block_moodleversion
+	branch = master
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = https://github.com/gjb2048/moodle-format_topcoll
+	branch = MOODLE_400
+	tag = V401.0.1
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = https://github.com/ilios/moodle-enrol-ilios
+	branch = MOODLE_401_STABLE
+[submodule "enrol/ucsfsis"]
+	path = enrol/ucsfsis
+	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
+	branch = MOODLE_401_STABLE
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = https://github.com/ilios/local_iliosapiclient
+	branch = MOODLE_401_STABLE
+[submodule "filter/ucsfezproxy"]
+	path = filter/ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
+	branch = MOODLE_401_STABLE
+[submodule "lib/editor/atto/plugins/count"]
+	path = lib/editor/atto/plugins/count
+	url = https://github.com/damyon/moodle-atto_count
+	branch = master
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = https://github.com/projectestac/moodle-atto_fontfamily
+	branch = master
+[submodule "lib/editor/atto/plugins/fontsize"]
+	path = lib/editor/atto/plugins/fontsize
+	url = https://github.com/andrewnicols/moodle-atto_fontsize
+	branch = master
+[submodule "lib/editor/atto/plugins/fullscreen"]
+	path = lib/editor/atto/plugins/fullscreen
+	url = https://github.com/dthies/moodle-atto_fullscreen
+	branch = master
+[submodule "lib/editor/atto/plugins/hr"]
+	path = lib/editor/atto/plugins/hr
+	url = https://github.com/damyon/moodle-atto_hr
+	branch = master
+[submodule "lib/editor/atto/plugins/morefontcolors"]
+	path = lib/editor/atto/plugins/morefontcolors
+	url = https://github.com/ndunand/moodle-atto_morefontcolors
+	branch = master
+[submodule "lib/editor/tinymce/plugins/h5p"]
+	path = lib/editor/tinymce/plugins/h5p
+	url = https://github.com/catalyst/tinymce_h5p
+	branch = main
+[submodule "local/fullscreen"]
+	path = local/fullscreen
+	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen
+	branch = master
+[submodule "local/maintenance_livecheck"]
+	path = local/maintenance_livecheck
+	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
+	branch = MOODLE_400_STABLE
+	tag = v4.0-r1
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = https://github.com/moodleuulm/moodle-local_staticpage
+	branch = MOODLE_400_STABLE
+	tag = v4.0-r1
+[submodule "mod/attendance"]
+	path = mod/attendance
+	url = https://github.com/danmarsden/moodle-mod_attendance
+	branch = MOODLE_401_STABLE
+[submodule "mod/checklist"]
+	path = mod/checklist
+	url = https://github.com/davosmith/moodle-checklist
+	branch = master
+	tag = 3.9.3.2
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = https://github.com/markn86/moodle-mod_customcert
+	branch = MOODLE_400_STABLE
+	tag = v4.0.2
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = https://github.com/moodleou/moodle-mod_oublog
+	branch = MOODLE_400_STABLE
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = https://github.com/moodleou/moodle-mod_ouwiki
+	branch = MOODLE_400_STABLE
+[submodule "mod/questionnaire"]
+	path = mod/questionnaire
+	url = https://github.com/PoetOS/moodle-mod_questionnaire
+	branch = MOODLE_400_STABLE
+[submodule "mod/turnitintooltwo"]
+	path = mod/turnitintooltwo
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
+	branch = master
+	tag = v2022051201
+[submodule "mod/zoom"]
+	path = mod/zoom
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
+	branch = main
+	tag = v4.10.0
+	tag = v2022092101
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck
+	branch = MOODLE_401_STABLE
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
+	branch = main
+	tag = v2.4
+[submodule "report/benchmark"]
+	path = report/benchmark
+	url = https://github.com/mikasmart/benchmark
+	branch = master
+	tag = v1.5.1
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
+	branch = MOODLE_401_DEVEL
