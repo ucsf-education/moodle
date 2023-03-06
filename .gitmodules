@@ -1,6 +1,6 @@
 [submodule "admin/tool/externaltaskmonitor"]
 	path = admin/tool/externaltaskmonitor
-	url = https://github.com/ucsf-ckm/tool_externaltaskmonitor
+	url = https://github.com/ucsf-education/tool_externaltaskmonitor
 	branch = MOODLE_37_STABLE
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
@@ -8,7 +8,7 @@
 	branch = master
 [submodule "admin/tool/ldapsync"]
 	path = admin/tool/ldapsync
-	url = https://github.com/ucsf-ckm/moodle-admin-tool-ldapsync
+	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
 	branch = master
 [submodule "admin/tool/ribbons"]
 	path = admin/tool/ribbons
@@ -16,7 +16,7 @@
 	branch = main
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
-	url = git@github.com:ucsf-ckm/tool_ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
 	branch = master
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
@@ -33,7 +33,7 @@
 	branch = master
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
-	url = https://github.com/ucsf-ckm/moodle-block-course_recent
+	url = https://github.com/ucsf-education/moodle-block-course_recent
 	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
@@ -46,7 +46,7 @@
 	branch = master
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
-	url = https://github.com/ucsf-ckm/moodle-block_quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
 	branch = UCSFCLE_37_STABLE
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
@@ -55,7 +55,7 @@
 	tag = V3.11.1.0
 [submodule "cle-patches"]
 	path = cle-patches
-	url = https://github.com/ucsf-ckm/moodle-cle-patches
+	url = https://github.com/ucsf-education/moodle-cle-patches
 	branch = main
 [submodule "enrol/ilios"]
 	path = enrol/ilios
@@ -63,15 +63,15 @@
 	branch = master
 [submodule "enrol/ucsfsis"]
 	path = enrol/ucsfsis
-	url = https://github.com/ucsf-ckm/moodle-enrol-ucsfsis
+	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = master
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
-	url = https://github.com/ucsf-ckm/moodle-filter_ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
 	branch = master
 [submodule "internallogin"]
 	path = internallogin
-	url = https://github.com/ucsf-ckm/moodle-internallogin
+	url = https://github.com/ucsf-education/moodle-internallogin
 	branch = MOODLE_311_STABLE
 [submodule "lib/editor/atto/plugins/count"]
 	path = lib/editor/atto/plugins/count
@@ -140,7 +140,7 @@
 	branch = master
 [submodule "mod/oublog"]
 	path = mod/oublog
-	url = https://github.com/ucsf-ckm/moodle-mod_oublog
+	url = https://github.com/ucsf-education/moodle-mod_oublog
 	branch = UCSFCLE_311_STABLE
 [submodule "mod/ouwiki"]
 	path = mod/ouwiki
@@ -158,7 +158,7 @@
         tag = v4.1-r1
 [submodule "mod/respondusws"]
 	path = mod/respondusws
-	url = https://github.com/ucsf-ckm/moodle-mod-respondusws
+	url = https://github.com/ucsf-education/moodle-mod-respondusws
 	branch = master
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
@@ -177,7 +177,7 @@
 	tag = v2022092101
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
-	url = https://github.com/ucsf-ckm/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck
 	branch = master
 	tag = 1.0.1
 [submodule "question/type/oumultiresponse"]
@@ -192,6 +192,6 @@
 	tag = v1.5.1
 [submodule "theme/ucsf"]
 	path = theme/ucsf
-	url = https://github.com/ucsf-ckm/moodle-theme-ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = master
 
