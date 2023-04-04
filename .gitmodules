@@ -93,10 +93,6 @@
 	path = lib/editor/tinymce/plugins/h5p
 	url = https://github.com/catalyst/tinymce_h5p
 	branch = main
-[submodule "local/fullscreen"]
-	path = local/fullscreen
-	url = https://bitbucket.org/uonmoodle/moodle-local_fullscreen
-	branch = master
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
