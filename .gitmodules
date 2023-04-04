@@ -133,6 +133,10 @@
 	path = mod/questionnaire
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_400_STABLE
+[submodule "mod/quiz/report/archive"]
+	path = mod/quiz/report/archive
+	url = https://github.com/bfh/moodle-quiz_archive
+	branch = moodle_401
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
 	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
