@@ -144,6 +144,11 @@
 	branch = main
 	tag = v4.10.0
 	tag = v2022092101
+[submodule "plagiarism/turnitin"]
+	path = plagiarism/turnitin
+	url = https://github.com/turnitin/moodle-plagiarism_turnitin
+	branch = master
+	tag = v2023033001
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck
