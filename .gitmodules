@@ -57,10 +57,6 @@
 	path = enrol/ucsfsis
 	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = MOODLE_401_STABLE
-[submodule "local/iliosapiclient"]
-	path = local/iliosapiclient
-	url = https://github.com/ilios/local_iliosapiclient
-	branch = MOODLE_401_STABLE
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
@@ -93,6 +89,10 @@
 	path = lib/editor/tinymce/plugins/h5p
 	url = https://github.com/catalyst/tinymce_h5p
 	branch = main
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = https://github.com/ilios/local_iliosapiclient
+	branch = MOODLE_401_STABLE
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
