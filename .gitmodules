@@ -116,7 +116,7 @@
 	path = mod/customcert
 	url = https://github.com/markn86/moodle-mod_customcert
 	branch = MOODLE_400_STABLE
-	tag = v4.0.2
+	tag = v4.0.3
 [submodule "mod/oublog"]
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
