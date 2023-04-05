@@ -101,8 +101,8 @@
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodleuulm/moodle-local_staticpage
-	branch = MOODLE_400_STABLE
-	tag = v4.0-r1
+	branch = master
+	tag = v4.1-r1
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
