@@ -122,6 +122,10 @@
 	url = https://github.com/drachels/moodle-mod_diary
 	branch = MOODLE_372_STABLE
 	tag = v3.7.2
+[submodule "mod/journal"]
+	path = mod/journal
+	url = https://github.com/elearningsoftware/moodle-mod_journal
+	branch = master
 [submodule "mod/oublog"]
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
