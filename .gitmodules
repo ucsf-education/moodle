@@ -138,7 +138,7 @@
 	path = mod/turnitintooltwo
 	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
 	branch = master
-	tag = v2022051201
+	tag = v2023032701
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
