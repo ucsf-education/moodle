@@ -31,6 +31,10 @@
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
 	branch = master
+[submodule "blocks/clampmail"]
+	path = blocks/clampmail
+	url = https://github.com/CLAMP-IT/clampmail
+	branch = main
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
@@ -194,4 +198,3 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = master
-
