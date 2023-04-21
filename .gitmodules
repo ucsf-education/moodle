@@ -40,7 +40,7 @@
 	path = blocks/massaction
 	url = https://github.com/Syxton/moodle-block_massaction
 	branch = master
-	tag = 7.1.1
+	tag = 7.1.2
 [submodule "blocks/moodleversion"]
 	path = blocks/moodleversion
 	url = https://github.com/iautomatebr/moodle-block_moodleversion
