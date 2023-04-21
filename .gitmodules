@@ -121,8 +121,8 @@
 [submodule "mod/diary"]
 	path = mod/diary
 	url = https://github.com/drachels/moodle-mod_diary
-	branch = MOODLE_372_STABLE
-	tag = v3.7.2
+	branch = MOODLE_373_STABLE
+	tag = v3.7.3
 [submodule "mod/journal"]
 	path = mod/journal
 	url = https://github.com/elearningsoftware/moodle-mod_journal
