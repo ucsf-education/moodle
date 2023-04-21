@@ -31,6 +31,7 @@
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
 	branch = master
+	tag = 3.4.1.0
 [submodule "blocks/clampmail"]
 	path = blocks/clampmail
 	url = https://github.com/CLAMP-IT/clampmail
@@ -132,7 +133,7 @@
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
 	branch = master
-        tag = 3.9.3.2
+        tag = 3.9.3.4
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = https://github.com/markn86/moodle-mod_customcert
