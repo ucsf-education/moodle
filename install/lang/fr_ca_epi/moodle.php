@@ -29,8 +29,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['language'] = 'زبان';
-$string['moodlelogo'] = 'موڈل لوگو';
-$string['next'] = 'اگلے';
-$string['previous'] = 'پچھلا';
-$string['reload'] = 'دوبارہ لوڈ کریں';
+$string['language'] = 'Langue';
+$string['next'] = 'Suivant';
+$string['previous'] = 'Précédent';

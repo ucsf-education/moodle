@@ -29,8 +29,5 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['language'] = 'زبان';
-$string['moodlelogo'] = 'موڈل لوگو';
-$string['next'] = 'اگلے';
-$string['previous'] = 'پچھلا';
-$string['reload'] = 'دوبارہ لوڈ کریں';
+$string['parentlanguage'] = 'sv';
+$string['thislanguage'] = 'Svenska för Workplace';
