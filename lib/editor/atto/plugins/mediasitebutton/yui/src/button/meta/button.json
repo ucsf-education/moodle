@@ -1,0 +1,8 @@
+{
+    "moodle-atto_mediasitebutton-button": {
+        "requires": [
+            "moodle-editor_atto-plugin",
+            "get"
+        ]
+    }
+}
