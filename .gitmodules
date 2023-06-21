@@ -45,6 +45,10 @@
 	path = blocks/moodleversion
 	url = https://github.com/iautomatebr/moodle-block_moodleversion
 	branch = master
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
+	branch = UCSFCLE_37_STABLE
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = https://github.com/gjb2048/moodle-format_topcoll
