@@ -132,6 +132,10 @@
 	url = https://github.com/drachels/moodle-mod_diary
 	branch = master
 	tag = v3.7.4
+[submodule "mod/giportfolio"]
+	path = mod/giportfolio
+	url = https://github.com/synergylearning/moodle-mod_giportfolio
+	branch = master
 [submodule "mod/journal"]
 	path = mod/journal
 	url = https://github.com/elearningsoftware/moodle-mod_journal
