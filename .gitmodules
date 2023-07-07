@@ -1,0 +1,63 @@
+[submodule "auth/emailadmin"]
+	path = auth/emailadmin
+	url = https://github.com/hrimhari/moodle-auth_emailadmin
+	branch = master
+	tag = 1.4.6
+[submodule "blocks/completion_progress"]
+	path = blocks/completion_progress
+	url = https://github.com/jonof/moodle-block_completion_progress
+	branch = master
+	tag = 2022112800
+[submodule "course/format/collapsibletopics"]
+	path = course/format/collapsibletopics
+	url = https://github.com/cellule-tice/moodle-format_collapsibletopics
+	branch = moodle39
+[submodule "course/format/onetopic"]
+	path = course/format/onetopic
+	url = https://github.com/davidherney/moodle-format_onetopic
+	branch = master
+	tag = v3.11.04
+[submodule "enrol/coursecompleted"]
+	path = enrol/coursecompleted
+	url = https://github.com/ewallah/moodle-enrol_coursecompleted
+	branch = main
+	tag = v3.9.5
+[submodule "enrol/easy"]
+	path = enrol/easy
+	url = https://github.com/dbnschools/moodle-enrol_easy
+	branch = master
+[submodule "local/profilecohort"]
+	path = local/profilecohort
+	url = https://github.com/moodle-an-hochschulen/moodle-local_profilecohort
+	branch = MOODLE_39_STABLE
+	tag = v3.9-r5
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = https://github.com/mdjnelson/moodle-mod_customcert
+	branch = MOODLE_39_STABLE
+	tag = v3.9.1
+[submodule "mod/facetoface"]
+	path = mod/facetoface
+	url = https://github.com/catalyst/moodle-mod_facetoface
+	branch = MOODLE_34_STABLE
+[submodule "mod/questionnaire"]
+	path = mod/questionnaire
+	url = https://github.com/PoetOS/moodle-mod_questionnaire
+	branch = MOODLE_311_STABLE
+	tag = v3.11.2
+[submodule "report/coursestats"]
+	path = report/coursestats
+	url = https://github.com/dired-ufla/coursestats
+	branch = master
+[submodule "user/profile/field/associated"]
+	path = user/profile/field/associated
+	url = https://github.com/rezaies/moodle-profilefield_associated
+	branch = master
+[submodule "user/profile/field/conditional"]
+	path = user/profile/field/conditional
+	url = https://github.com/rezaies/moodle-profilefield_conditional
+	branch = 34
+[submodule "user/profile/field/multiselect"]
+	path = user/profile/field/multiselect
+	url = https://github.com/nitinwaves/moodle-profilefield_multiselect
+	branch = master
