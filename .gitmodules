@@ -193,5 +193,5 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
-	branch = main
+	branch = MOODLE_401_STABLE
 	tag = v4.1
