@@ -77,7 +77,8 @@
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = https://github.com/andrewnicols/moodle-atto_fontsize
-	branch = master
+	branch = main
+	tag = v2023091901
 [submodule "lib/editor/atto/plugins/fullscreen"]
 	path = lib/editor/atto/plugins/fullscreen
 	url = https://github.com/dthies/moodle-atto_fullscreen
