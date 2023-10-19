@@ -102,8 +102,8 @@
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
-	branch = master
-	tag = v4.1-r1
+	branch = MOODLE_401_STABLE
+	tag = v4.1-r2
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodleuulm/moodle-local_staticpage
