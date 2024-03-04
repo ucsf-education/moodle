@@ -165,8 +165,9 @@
 	tag = v4.3-r3
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
-	url = https://github.com/ucsf-education/moodle-mod_turnitintooltwo
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
 	branch = master
+	tag = v2024020601
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
