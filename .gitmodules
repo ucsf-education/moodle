@@ -51,7 +51,7 @@
 	branch = UCSFCLE_37_STABLE
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
-	url = https://github.com/gjb2048/moodle-format_topcoll
+	url = https://github.com/gjbarnard/moodle-format_topcoll
 	branch = MOODLE_401
 	tag = V401.1.1
 [submodule "enrol/ilios"]
