@@ -1,5 +1,5 @@
 #page-mod-kalvidassign-single_submission #page #page-header .navbar {
-    display:none;
+    display: none;
 }
 
 
@@ -10,7 +10,7 @@
 
 #page-mod-kalvidassign-view .feedback {
     border: 1px solid #DDDDDD;
-    margin:10px auto;
+    margin: 10px auto;
 }
 
 #page-mod-kalvidassign-view .feedback .grade {
@@ -30,7 +30,7 @@
 }
 
 #slider_border {
-    width:  10%;
+    width: 10%;
     height: 18px;
     border: 1px solid #000000;
     overflow: hidden;

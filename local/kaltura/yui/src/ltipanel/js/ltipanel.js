@@ -54,7 +54,9 @@ Y.extend(LTIPANEL, Y.Base, {
      */
     init : function(params) {
         // Check to make sure parameters are initialized
-        if ('0' === params.addvidbtnid || '0' === params.ltilaunchurl || 0 === params.courseid || 0 === params.height || 0 === params.width) {
+        if ('0' === params.addvidbtnid || '0' === params.ltilaunchurl
+            || 0 === params.courseid || 0 === params.height || 0 === params.width) {
+            // jshint undef:false
             alert('Some parameters were not initialized.');
             return;
         }
@@ -77,12 +79,13 @@ Y.extend(LTIPANEL, Y.Base, {
         var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
         var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
 
-        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        width = window.innerWidth || document.documentElement.clientWidth || screen.width;
+        height = window.innerHeight || document.documentElement.clientHeight || screen.height;
 
         var left = ((width / 2) - (w / 2)) + dualScreenLeft;
         var top = ((height / 2) - (h / 2)) + dualScreenTop;
-        var bsePopup = window.open(url, M.util.get_string("browse_and_embed", "local_kaltura"), 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        var bsePopup = window.open(url, M.util.get_string("browse_and_embed", "local_kaltura"),
+                                    'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
         if (window.focus) {
             bsePopup.focus();
@@ -164,8 +167,8 @@ Y.extend(LTIPANEL, Y.Base, {
 
 /**
  * This method calls the base class constructor.  The primary difference between LTIPANELMEDIAASSIGNMENT and LTIPANEL is that
- * LTIPANELMEDIAASSIGNMENT creates a node and appends it to the body tag of the page.  The reason for this is due to an issue with the Moodle
- * navbar covering up part of the YUI panel, if the panel markup is appended to a child element within the body tag.
+ * LTIPANELMEDIAASSIGNMENT creates a node and appends it to the body tag of the page.  The reason for this is due to an issue with
+ * the Moodle navbar covering up part of the YUI panel, if the panel markup is appended to a child element within the body tag.
  * @method LTIPANELMEDIAASSIGNMENT
  */
 var LTIPANELMEDIAASSIGNMENT = function() {
@@ -180,7 +183,8 @@ Y.extend(LTIPANELMEDIAASSIGNMENT, Y.Base, {
      */
     init : function(params) {
         // Check to make sure parameters are initialized
-        if ('0' === params.addvidbtnid || '0' === params.ltilaunchurl || 0 === params.courseid || 0 === params.height || 0 === params.width) {
+        if ('0' === params.addvidbtnid || '0' === params.ltilaunchurl
+            || 0 === params.courseid || 0 === params.height || 0 === params.width) {
             return;
         }
 
@@ -199,12 +203,13 @@ Y.extend(LTIPANELMEDIAASSIGNMENT, Y.Base, {
         var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
         var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
 
-        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        width = window.innerWidth || document.documentElement.clientWidth || screen.width;
+        height = window.innerHeight || document.documentElement.clientHeight || screen.height;
 
         var left = ((width / 2) - (w / 2)) + dualScreenLeft;
         var top = ((height / 2) - (h / 2)) + dualScreenTop;
-        var bsePopup = window.open(url, M.util.get_string("browse_and_embed", "local_kaltura"), 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        var bsePopup = window.open(url, M.util.get_string("browse_and_embed", "local_kaltura"),
+                                    'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
         if (window.focus) {
             bsePopup.focus();
