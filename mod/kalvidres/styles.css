@@ -2,13 +2,14 @@
     float: left;
 }
 
-#id_video_properties, #id_video_preview {
+#id_video_properties,
+#id_video_preview {
     float: left;
     margin-left: 5px;
 }
 
 #slider_border {
-    width:  100%;
+    width: 100%;
     height: 18px;
     border: 1px solid #000000;
     overflow: hidden;
