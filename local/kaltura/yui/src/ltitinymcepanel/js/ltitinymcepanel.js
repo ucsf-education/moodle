@@ -45,7 +45,9 @@ Y.extend(LTITINYMCEPANEL, Y.Base, {
          */
         init : function(params) {
             // Check to make sure parameters are initialized.
-            if ('' === params.ltilaunchurl || '' === params.objecttagheight || '' === params.objecttagid || '' === params.previewiframeid) {
+            if ('' === params.ltilaunchurl || '' === params.objecttagheight
+                || '' === params.objecttagid || '' === params.previewiframeid) {
+                // jshint undef:false
                 alert('Some parameters were not initialized.');
                 return;
             }
@@ -54,7 +56,8 @@ Y.extend(LTITINYMCEPANEL, Y.Base, {
             this.load_lti_content(params.ltilaunchurl, params.objecttagid, params.objecttagheight);
 
             // Listen to simulated click event send from local/kaltura/service.php
-            Y.one('#closeltipanel').on('click', this.user_selected_video_callback, this, params.objecttagid, params.previewiframeid, params.objecttagheight);
+            Y.one('#closeltipanel').on('click', this.user_selected_video_callback, this, params.objecttagid,
+                                        params.previewiframeid, params.objecttagheight);
 
             if (null !== Y.one('#page-footer')) {
                 Y.one('#page-footer').setStyle('display', 'none');
@@ -72,14 +75,17 @@ Y.extend(LTITINYMCEPANEL, Y.Base, {
                 this.contextid = Y.one('#lti_launch_context_id').get('value');
             }
 
-            var content = '<iframe id="lti_view_element" height="'+iframeheight+'px" width="100%" src="'+url+'&amp;contextid='+this.contextid+'" allow="autoplay *; fullscreen *; encrypted-media *; camera *; microphone *; display-capture *;"></iframe>';
+            var content = '<iframe id="lti_view_element" height="' + iframeheight + 'px" width="100%" src="' + url
+                            + '&amp;contextid=' + this.contextid
+                            + '" allow="autoplay *; fullscreen *; encrypted-media *; camera *; microphone *; display-capture *;">'
+                            + '</iframe>';
             Y.one('#'+iframeid).setContent(content);
         },
 
         /**
          * This function serves as a call back method for when the closeltipanel div has been clicked.  It means that the user has
-         * selected a video for embedding into the TinyMCE edotor.  Enabling the insert button, removing the contents LTI launch element and
-         * adding content to the media preview element.
+         * selected a video for embedding into the TinyMCE edotor.  Enabling the insert button, removing the contents LTI launch
+         * element and adding content to the media preview element.
          * @property {Object} e Event object.
          * @property {String} objecttagid Object tag id.
          * @property {String} previewiframeid Preview iframe tag id.

@@ -40,7 +40,8 @@ Y.extend(LTICONTAINER, Y.Base, {
      lastheight: null,
 
     /**
-     * Add padding to make the bottom of the iframe visible.  The iframe wasn't visible on some themes. Probably because of border widths, etc.
+     * Add padding to make the bottom of the iframe visible.  The iframe wasn't
+     * visible on some themes. Probably because of border widths, etc.
      * @property padding
      * @type {Integer}
      * @default 15
@@ -108,11 +109,10 @@ Y.extend(LTICONTAINER, Y.Base, {
      * @property params
      * @type {Object}
      */
-    init : function(params) {
-        var bodynode = Y.one('body[class~='+params.bodyclass+']');
+    init: function(params) {
+        var bodynode = Y.one('body[class~=' + params.bodyclass + ']');
 
-        if(params.height && params.width)
-        {
+        if (params.height && params.width) {
             this.height = params.height;
             this.width = params.width;
         }
@@ -132,14 +132,15 @@ Y.extend(LTICONTAINER, Y.Base, {
     /**
      * This function resizes the iframe height and width.
      */
-    resize : function() {
+    resize: function() {
         if (this.lastheight !== Math.min(this.documentheight, this.viewportheight)) {
             var newheight = this.viewportheight - this.ltiframe.getY() - this.padding;
-            //Get the original height which is 600px, but we're getting it as 600px and need to remove the last two characters
-            var originalheight = this.ltiframe._node.height.slice(0,this.ltiframe._node.height.length-2);
-            if (newheight < originalheight)
+            // Get the original height which is 600px, but we're getting it as 600px and need to remove the last two characters
+            var originalheight = this.ltiframe._node.height.slice(0, this.ltiframe._node.height.length - 2);
+            if (newheight < originalheight) {
                 return;
-            this.ltiframe.setStyle('height', newheight+'px');
+            }
+            this.ltiframe.setStyle('height', newheight + 'px');
             this.lastheight = Math.min(this.documentheight, this.viewportheight);
         }
 
@@ -154,32 +155,31 @@ Y.extend(LTICONTAINER, Y.Base, {
 
                 // If "newsize" if over allowed size then set it to the maximum allowed.
                 if (newsize > allowedsize) {
-                    this.ltiframe.setStyle('width', allowedsize+'px');
+                    this.ltiframe.setStyle('width', allowedsize + 'px');
                 } else {
-                    this.ltiframe.setStyle('width', newsize+'px');
+                    this.ltiframe.setStyle('width', newsize + 'px');
                 }
             }
         }
 
-        // if we have the entry's dimensions - use them to adjust the iframe size.
-        if(this.height && this.width)
-        {
-            this.ltiframe.setStyle('width', this.width+'px');
-            this.ltiframe.setStyle('height', this.height+'px');
+        // If we have the entry's dimensions - use them to adjust the iframe size.
+        if (this.height && this.width) {
+            this.ltiframe.setStyle('width', this.width + 'px');
+            this.ltiframe.setStyle('height', this.height + 'px');
         }
     }
 },
 {
-    NAME : 'moodle-local_kaltura-lticontainer',
-    ATTRS : {
-        bodyclass : {
-            value : null
+    NAME: 'moodle-local_kaltura-lticontainer',
+    ATTRS: {
+        bodyclass: {
+            value: null
         },
-        lastheight : {
-            value : null
+        lastheight: {
+            value: null
         },
         padding: {
-            value : 15
+            value: 15
         }
     }
 });
