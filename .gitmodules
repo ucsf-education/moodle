@@ -1,0 +1,4 @@
+[submodule "availability/condition/mobileapp"]
+	path = availability/condition/mobileapp
+	url = https://github.com/ucsf-education/moodle-availability_mobileapp
+	branch = UCSFCLE_403_STABLE 

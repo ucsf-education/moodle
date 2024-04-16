@@ -118,6 +118,8 @@ jobs:
 
       - name: Checking out code from ${{ env.GITHUB_REF_SLUG }}
         uses: actions/checkout@v4
+        with:
+          submodules: 'true'
 
       # Needs to be done after php is available, git configured and Moodle checkout has happened.
       - name: Setting up moodle-exttests service
