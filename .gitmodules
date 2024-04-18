@@ -2,6 +2,10 @@
 	path = availability/condition/mobileapp
 	url = https://github.com/ucsf-education/moodle-availability_mobileapp
 	branch = UCSFCLE_403_STABLE 
+[submodule "mod/facetoface"]
+	path = mod/facetoface
+	url = https://github.com/catalyst/moodle-mod_facetoface
+	branch = MOODLE_403_STABLE
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
