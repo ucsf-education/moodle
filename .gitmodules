@@ -2,6 +2,11 @@
 	path = availability/condition/mobileapp
 	url = https://github.com/ucsf-education/moodle-availability_mobileapp
 	branch = UCSFCLE_403_STABLE 
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = https://github.com/moodleuulm/moodle-local_staticpage
+	branch = MOODLE_403_STABLE
+	tag = v4.3-r1
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
