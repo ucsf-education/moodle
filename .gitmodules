@@ -1,7 +1,11 @@
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
 	url = https://github.com/ucsf-education/moodle-availability_mobileapp
-	branch = UCSFCLE_403_STABLE 
+	branch = UCSFCLE_403_STABLE
+[submodule "mod/attendance"]
+	path = mod/attendance
+	url = https://github.com/danmarsden/moodle-mod_attendance
+	branch = MOODLE_403_STABLE
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
