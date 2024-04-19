@@ -19,6 +19,9 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
+[submodule "mod/facetoface"]
+	path = mod/facetoface
+	url = https://github.com/catalyst/moodle-mod_facetoface
 	branch = MOODLE_403_STABLE
 [submodule "mod/zoom"]
 	path = mod/zoom
