@@ -23,6 +23,11 @@
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface
 	branch = MOODLE_403_STABLE
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = https://github.com/gjb2048/moodle-format_topcoll
+	branch = MOODLE_403
+	tag = V403.1.1
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
