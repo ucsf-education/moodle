@@ -33,3 +33,7 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.0
+[submodule "repository/boxnet"]
+	path = repository/boxnet
+	url = https://github.com/moodlehq/moodle-repository_boxnet
+	branch = master
