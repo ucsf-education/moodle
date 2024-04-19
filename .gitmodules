@@ -33,3 +33,7 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.0
+[submodule "lib/editor/atto/plugins/fullscreen"]
+	path = lib/editor/atto/plugins/fullscreen
+	url = https://github.com/dthies/moodle-atto_fullscreen
+	branch = master
