@@ -7,6 +7,11 @@
 	url = https://github.com/Syxton/moodle-block_massaction
 	branch = MOODLE_403_STABLE
 	tag = 7.2.1
+[submodule "local/maintenance_livecheck"]
+	path = local/maintenance_livecheck
+	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
+	branch = MOODLE_403_STABLE
+	tag = v4.3-r1
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
