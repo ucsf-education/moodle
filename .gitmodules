@@ -33,3 +33,8 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.0
+[submodule "lib/editor/atto/plugins/morefontcolors"]
+	path = lib/editor/atto/plugins/morefontcolors
+	url = https://github.com/ndunand/moodle-atto_morefontcolors
+	branch = master
+	tag = 2021062100
