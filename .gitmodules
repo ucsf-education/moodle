@@ -12,6 +12,10 @@
 	url = https://github.com/gjb2048/moodle-format_topcoll
 	branch = MOODLE_403
 	tag = V403.1.1
+[submodule "lib/editor/atto/plugins/fullscreen"]
+	path = lib/editor/atto/plugins/fullscreen
+	url = https://github.com/dthies/moodle-atto_fullscreen
+	branch = master
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
@@ -23,10 +27,15 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
-	branch = MOODLE_403_STABLE
 [submodule "mod/facetoface"]
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface
+	branch = MOODLE_403_STABLE
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = https://github.com/gjb2048/moodle-format_topcoll
+	branch = MOODLE_403
+	tag = V403.1.1
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
