@@ -60,3 +60,8 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.0
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
+	branch = main
+	tag = v2.4
