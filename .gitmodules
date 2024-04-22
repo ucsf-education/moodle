@@ -32,6 +32,11 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
+[submodule "mod/checklist"]
+	path = mod/checklist
+	url = https://github.com/davosmith/moodle-checklist
+	branch = master
+	tag = 3.9.4.1
 [submodule "mod/facetoface"]
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface
