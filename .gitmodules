@@ -7,6 +7,11 @@
 	url = https://github.com/Syxton/moodle-block_massaction
 	branch = MOODLE_403_STABLE
 	tag = 7.2.1
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = https://github.com/gjb2048/moodle-format_topcoll
+	branch = MOODLE_403
+	tag = V403.1.1
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
