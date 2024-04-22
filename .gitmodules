@@ -79,3 +79,7 @@
 	path = repository/boxnet
 	url = https://github.com/moodlehq/moodle-repository_boxnet
 	branch = master
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = https://github.com/ucsf-education/moodle-mod_ouwiki
+	branch = MOODLE_402_STABLE
