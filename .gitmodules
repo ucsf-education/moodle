@@ -79,3 +79,7 @@
 	path = repository/boxnet
 	url = https://github.com/moodlehq/moodle-repository_boxnet
 	branch = master
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = https://github.com/ilios/local_iliosapiclient
+	branch = MOODLE_403_DEVEL
