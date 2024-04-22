@@ -70,3 +70,8 @@
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
 	branch = master
 	tag = v2.50
+[submodule "report/benchmark"]
+	path = report/benchmark
+	url = https://github.com/mikasmart/benchmark
+	branch = master
+	tag = v1.5.1
