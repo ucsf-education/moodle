@@ -21,6 +21,10 @@
 	url = https://github.com/ndunand/moodle-atto_morefontcolors
 	branch = master
 	tag = 2021062100
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = https://github.com/ilios/local_iliosapiclient
+	branch = MOODLE_403_DEVEL
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
@@ -50,6 +54,10 @@
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
 	branch = MOODLE_402_STABLE
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = https://github.com/ucsf-education/moodle-mod_ouwiki
+	branch = MOODLE_402_STABLE
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
@@ -60,6 +68,10 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.0
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck
+	branch = MOODLE_403_DEVEL
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
 	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
@@ -79,11 +91,3 @@
 	path = repository/boxnet
 	url = https://github.com/moodlehq/moodle-repository_boxnet
 	branch = master
-[submodule "mod/ouwiki"]
-	path = mod/ouwiki
-	url = https://github.com/ucsf-education/moodle-mod_ouwiki
-	branch = MOODLE_402_STABLE
-[submodule "question/type/knowledgecheck"]
-	path = question/type/knowledgecheck
-	url = https://github.com/ucsf-education/knowledgecheck
-	branch = MOODLE_403_DEVEL
