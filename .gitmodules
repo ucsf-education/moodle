@@ -100,3 +100,7 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_403_DEVEL
 	tag = v4.1
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = https://github.com/projectestac/moodle-atto_fontfamily
+	branch = master
