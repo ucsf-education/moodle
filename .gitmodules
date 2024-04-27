@@ -2,6 +2,14 @@
 	path = availability/condition/mobileapp
 	url = https://github.com/ucsf-education/moodle-availability_mobileapp
 	branch = UCSFCLE_403_STABLE 
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = https://github.com/danmarsden/moodle-block_attendance
+	branch = main
+[submodule "blocks/checklist"]
+	path = blocks/checklist
+	url = https://github.com/davosmith/moodle-block_checklist
+	branch = master
 [submodule "blocks/massaction"]
 	path = blocks/massaction
 	url = https://github.com/Syxton/moodle-block_massaction
@@ -108,7 +116,4 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_403_DEVEL
 	tag = v4.1
-[submodule "blocks/attendance"]
-	path = blocks/attendance
-	url = https://github.com/danmarsden/moodle-block_attendance
-	branch = main
+	tag = 3.4.3.0
