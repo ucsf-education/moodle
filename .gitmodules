@@ -16,9 +16,17 @@
 	path = lib/editor/atto/plugins/count
 	url = https://github.com/damyon/moodle-atto_count
 	branch = master
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = https://github.com/projectestac/moodle-atto_fontfamily
+	branch = master
 [submodule "lib/editor/atto/plugins/fullscreen"]
 	path = lib/editor/atto/plugins/fullscreen
 	url = https://github.com/dthies/moodle-atto_fullscreen
+	branch = master
+[submodule "lib/editor/atto/plugins/hr"]
+	path = lib/editor/atto/plugins/hr
+	url = https://github.com/damyon/moodle-atto_hr
 	branch = master
 [submodule "lib/editor/atto/plugins/morefontcolors"]
 	path = lib/editor/atto/plugins/morefontcolors
@@ -100,7 +108,3 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_403_DEVEL
 	tag = v4.1
-[submodule "lib/editor/atto/plugins/fontfamily"]
-	path = lib/editor/atto/plugins/fontfamily
-	url = https://github.com/projectestac/moodle-atto_fontfamily
-	branch = master
