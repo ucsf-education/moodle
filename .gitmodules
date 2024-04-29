@@ -189,3 +189,7 @@
 	path = enrol/ucsfsis
 	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = MOODLE_401_STABLE
+[submodule "filter/ucsfezproxy"]
+	path = filter/ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
+	branch = MOODLE_403_DEVEL
