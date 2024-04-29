@@ -45,6 +45,11 @@
 	path = lib/editor/atto/plugins/fontfamily
 	url = https://github.com/projectestac/moodle-atto_fontfamily
 	branch = master
+[submodule "lib/editor/atto/plugins/fontsize"]
+	path = lib/editor/atto/plugins/fontsize
+	url = https://github.com/andrewnicols/moodle-atto_fontsize
+	branch = main
+	tag = v2023091901
 [submodule "lib/editor/atto/plugins/fullscreen"]
 	path = lib/editor/atto/plugins/fullscreen
 	url = https://github.com/dthies/moodle-atto_fullscreen
@@ -148,8 +153,11 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_403_DEVEL
-[submodule "lib/editor/atto/plugins/fontsize"]
-	path = lib/editor/atto/plugins/fontsize
-	url = https://github.com/andrewnicols/moodle-atto_fontsize
-	branch = main
-	tag = v2023091901
+[submodule "admin/tool/externaltaskmonitor"]
+	path = admin/tool/externaltaskmonitor
+	url = https://github.com/ucsf-education/tool_externaltaskmonitor
+	branch = MOODLE_403_DEVEL
+[submodule "admin/tool/ilioscategoryassignment"]
+	path = admin/tool/ilioscategoryassignment
+	url = https://github.com/ilios/tool_ilioscategoryassignment
+	branch = MOODLE_403_DEVEL
