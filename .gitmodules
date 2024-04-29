@@ -203,3 +203,8 @@
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_400_STABLE
 	tag = v4.0.1
+[submodule "mod/turnitintooltwo"]
+	path = mod/turnitintooltwo
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
+	branch = master
+	tag = v2024032901
