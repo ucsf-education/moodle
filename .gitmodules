@@ -165,3 +165,7 @@
 	path = admin/tool/ldapsync
 	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
 	branch = main
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
+	branch = MOODLE_403_DEVEL
