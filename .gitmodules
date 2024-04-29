@@ -177,3 +177,7 @@
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
 	branch = MOODLE_403_DEVEL
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
+	branch = UCSFCLE_37_STABLE
