@@ -208,3 +208,8 @@
 	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
 	branch = master
 	tag = v2024032901
+[submodule "plagiarism/turnitin"]
+	path = plagiarism/turnitin
+	url = https://github.com/turnitin/moodle-plagiarism_turnitin
+	branch = master
+	tag = v2024020501
