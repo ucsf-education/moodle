@@ -31,7 +31,7 @@
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
 	branch = master
-	tag = 4.1.0.1
+	tag = 3.4.3.1
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
