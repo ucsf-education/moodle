@@ -206,3 +206,7 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_401_STABLE
 	tag = v4.1
+[submodule "mod/respondusws"]
+	path = mod/respondusws
+	url = https://github.com/ucsf-education/moodle-mod-respondusws
+	branch = master
