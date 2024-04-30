@@ -132,7 +132,7 @@
 	path = mod/diary
 	url = https://github.com/drachels/moodle-mod_diary
 	branch = master
-	tag = v3.7.7
+	tag = v3.7.9
 [submodule "mod/facetoface"]
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface
