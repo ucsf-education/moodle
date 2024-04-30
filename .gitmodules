@@ -127,7 +127,7 @@
 	path = mod/customcert
 	url = https://github.com/markn86/moodle-mod_customcert
 	branch = MOODLE_401_STABLE
-	tag = v4.1.3
+	tag = v4.1.4
 [submodule "mod/diary"]
 	path = mod/diary
 	url = https://github.com/drachels/moodle-mod_diary
