@@ -113,6 +113,11 @@
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
 	branch = MOODLE_401_STABLE
+[submodule "mod/booking"]
+	path = mod/booking
+	url = https://github.com/Wunderbyte-GmbH/moodle-mod_booking
+	branch = MOODLE_401_STABLE
+	tag = v8.2.4-stable
 [submodule "mod/checklist"]
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
