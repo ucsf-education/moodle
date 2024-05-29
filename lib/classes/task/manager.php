@@ -62,6 +62,15 @@ class manager {
     public static $mode;
 
     /**
+     * Reset the state of the task manager.
+     */
+    public static function reset_state(): void {
+        self::$miniqueue = null;
+        self::$numtasks = null;
+        self::$mode = null;
+    }
+
+    /**
      * Given a component name, will load the list of tasks in the db/tasks.php file for that component.
      *
      * @param string $componentname - The name of the component to fetch the tasks for.
@@ -1412,7 +1421,7 @@ class manager {
             2 => ['pipe', 'w'], // STDERR.
         ];
         flush();
-        $process = proc_open($command, $descriptorspec, $pipes, realpath('./'), []);
+        $process = proc_open($command, $descriptorspec, $pipes, realpath('./'));
         if (is_resource($process)) {
             while ($s = fgets($pipes[1])) {
                 mtrace($s, '');
