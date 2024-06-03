@@ -83,8 +83,8 @@
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
-	branch = master
-	tag = v4.3-r3
+	branch = main
+	tag = v4.4-r1
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
