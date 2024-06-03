@@ -103,7 +103,7 @@
 	path = question/type/wordselect
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
 	branch = master
-	tag = v2.50
+	tag = v2.52
 [submodule "report/benchmark"]
 	path = report/benchmark
 	url = https://github.com/mikasmart/benchmark
