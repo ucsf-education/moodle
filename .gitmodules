@@ -67,7 +67,7 @@
 	path = mod/choicegroup
 	url = https://github.com/ndunand/moodle-mod_choicegroup
 	branch = master
-	tag = 2024010400
+	tag = 2024051600
 [submodule "mod/facetoface"]
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface
