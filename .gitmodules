@@ -62,7 +62,7 @@
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
 	branch = master
-	tag = 3.9.4.1
+	tag =  4.1.0.2
 [submodule "mod/choicegroup"]
 	path = mod/choicegroup
 	url = https://github.com/ndunand/moodle-mod_choicegroup
