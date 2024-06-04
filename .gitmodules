@@ -29,6 +29,10 @@
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_403_DEVEL
+[submodule "filter/ucsfezproxy"]
+	path = filter/ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
+	branch = MOODLE_403_DEVEL
 [submodule "lib/editor/atto/plugins/count"]
 	path = lib/editor/atto/plugins/count
 	url = https://github.com/damyon/moodle-atto_count
