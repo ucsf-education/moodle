@@ -180,7 +180,7 @@
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = https://github.com/ucsf-education/moodle-block_quickmail
-	branch = UCSFCLE_37_STABLE
+	branch = UCSFCLE_403_STABLE
 [submodule "enrol/ilios"]
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
