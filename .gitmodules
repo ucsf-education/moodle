@@ -1,7 +1,7 @@
 [submodule "admin/tool/externaltaskmonitor"]
 	path = admin/tool/externaltaskmonitor
 	url = https://github.com/ucsf-education/tool_externaltaskmonitor
-	branch = MOODLE_403_DEVEL
+	branch = MOODLE_403_STABLE
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
 	url = https://github.com/ilios/tool_ilioscategoryassignment
@@ -152,10 +152,6 @@
 [submodule "theme/ucsf"]
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
-	branch = MOODLE_403_DEVEL
-[submodule "admin/tool/externaltaskmonitor"]
-	path = admin/tool/externaltaskmonitor
-	url = https://github.com/ucsf-education/tool_externaltaskmonitor
 	branch = MOODLE_403_DEVEL
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
