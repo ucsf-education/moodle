@@ -168,7 +168,7 @@
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
 	url = https://github.com/ucsf-education/tool_ucsfsomapi
-	branch = MOODLE_403_DEVEL
+	branch = MOODLE_403_STABLE
 [submodule "admin/tool/ribbons"]
 	path = admin/tool/ribbons
 	url = https://github.com/cwarwicker/moodle-tool_ribbons
