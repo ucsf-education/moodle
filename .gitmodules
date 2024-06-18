@@ -192,7 +192,7 @@
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
-	branch = MOODLE_403_DEVEL
+	branch = MOODLE_403_STABLE
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = https://github.com/andrewnicols/moodle-atto_fontsize
