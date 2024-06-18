@@ -1,6 +1,10 @@
 [submodule "admin/tool/externaltaskmonitor"]
 	path = admin/tool/externaltaskmonitor
 	url = https://github.com/ucsf-education/tool_externaltaskmonitor
+	branch = MOODLE_403_STABLE
+[submodule "admin/tool/ilioscategoryassignment"]
+	path = admin/tool/ilioscategoryassignment
+	url = https://github.com/ilios/tool_ilioscategoryassignment
 	branch = MOODLE_403_DEVEL
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
@@ -149,10 +153,6 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_403_DEVEL
-[submodule "admin/tool/externaltaskmonitor"]
-	path = admin/tool/externaltaskmonitor
-	url = https://github.com/ucsf-education/tool_externaltaskmonitor
-	branch = MOODLE_403_DEVEL
 [submodule "admin/tool/ilioscategoryassignment"]
 	path = admin/tool/ilioscategoryassignment
 	url = https://github.com/ilios/tool_ilioscategoryassignment
@@ -188,7 +188,7 @@
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
-	branch = MOODLE_403_DEVEL
+	branch = MOODLE_403_STABLE
 [submodule "lib/editor/atto/plugins/fontsize"]
 	path = lib/editor/atto/plugins/fontsize
 	url = https://github.com/andrewnicols/moodle-atto_fontsize
