@@ -4,8 +4,10 @@ name: Simple Test for Private Repos
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Triggers the workflow on push or pull request events but only for the "moodle-403-testing-gha-with-private-repo" branch
   push:
+    branches: [ "moodle-403-testing-gha-with-private-repo" ]
+  pull_request:
     branches: [ "moodle-403-testing-gha-with-private-repo" ]
 
   # Allows you to run this workflow manually from the Actions tab
