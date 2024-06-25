@@ -1,0 +1,4 @@
+[submodule "admin/tool/ucsfsomapi"]
+	path = admin/tool/ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
+	branch = MOODLE_403_STABLE
