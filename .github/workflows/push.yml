@@ -18,6 +18,25 @@ env:
   php: 8.2
 
 jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Runs a set of commands to debug submodule checkouts
+      - name: Debugging for submodules
+        run: |
+          echo Run ls -alR admin/tool/ucsfsomapi 
+          ls -alR admin/tool/ucsfsomapi
+          echo Run cat .gitmodules
+          cat .gitmodules
+          
   Grunt:
     runs-on: ubuntu-22.04
 
