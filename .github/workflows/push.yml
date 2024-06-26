@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
+          token: ${{ secrets.GH_PAT }}
 
       # Runs a set of commands to debug submodule checkouts
       - name: Debugging for submodules
