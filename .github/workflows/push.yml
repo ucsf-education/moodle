@@ -46,6 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+          token: ${{ secrets.GH_PAT }}
 
       - name: Configuring node & npm
         uses: actions/setup-node@v4
@@ -130,6 +131,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+          token: ${{ secrets.GH_PAT }}
 
       - name: Setting up PHPUnit
         env:
