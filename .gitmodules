@@ -66,3 +66,7 @@
 	path = lib/editor/atto/plugins/count
 	url = https://github.com/damyon/moodle-atto_count
 	branch = master
+[submodule "lib/editor/atto/plugins/fontfamily"]
+	path = lib/editor/atto/plugins/fontfamily
+	url = https://github.com/projectestac/moodle-atto_fontfamily
+	branch = master
