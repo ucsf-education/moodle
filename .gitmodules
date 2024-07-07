@@ -133,3 +133,7 @@
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
 	branch = MOODLE_403_STABLE
+[submodule "mod/ouwiki"]
+	path = mod/ouwiki
+	url = https://github.com/ucsf-education/moodle-mod_ouwiki
+	branch = MOODLE_402_STABLE
