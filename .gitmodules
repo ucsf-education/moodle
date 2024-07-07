@@ -147,3 +147,8 @@
 	url = https://github.com/bfh/moodle-quiz_archive
 	branch = main
 	tag = v4.4-r1
+[submodule "mod/zoom"]
+	path = mod/zoom
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
+	branch = main
+	tag = v5.2.2
