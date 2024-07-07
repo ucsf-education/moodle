@@ -83,3 +83,8 @@
 	path = lib/editor/atto/plugins/hr
 	url = https://github.com/damyon/moodle-atto_hr
 	branch = master
+[submodule "lib/editor/atto/plugins/morefontcolors"]
+	path = lib/editor/atto/plugins/morefontcolors
+	url = https://github.com/ndunand/moodle-atto_morefontcolors
+	branch = master
+	tag = 2021062100
