@@ -114,3 +114,8 @@
 	url = https://github.com/davosmith/moodle-checklist
 	branch = master
 	tag = 4.1.0.2
+[submodule "mod/choicegroup"]
+	path = mod/choicegroup
+	url = https://github.com/ndunand/moodle-mod_choicegroup
+	branch = master
+	tag = 2024051600
