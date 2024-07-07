@@ -93,3 +93,7 @@
 	url = https://github.com/bfh/moodle-tiny_fontcolor
 	branch = main
 	tag = V0.5
+[submodule "local/iliosapiclient"]
+	path = local/iliosapiclient
+	url = https://github.com/ilios/local_iliosapiclient
+	branch = MOODLE_403_STABLE
