@@ -50,3 +50,7 @@
 	url = https://github.com/gjb2048/moodle-format_topcoll
 	branch = MOODLE_403
 	tag = V403.1.1
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = https://github.com/ilios/moodle-enrol-ilios
+	branch = MOODLE_403_STABLE
