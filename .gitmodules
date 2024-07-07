@@ -79,3 +79,7 @@
 	path = lib/editor/atto/plugins/fullscreen
 	url = https://github.com/dthies/moodle-atto_fullscreen
 	branch = master
+[submodule "lib/editor/atto/plugins/hr"]
+	path = lib/editor/atto/plugins/hr
+	url = https://github.com/damyon/moodle-atto_hr
+	branch = master
