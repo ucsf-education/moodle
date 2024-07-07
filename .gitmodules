@@ -54,3 +54,7 @@
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_403_STABLE
+[submodule "enrol/ucsfsis"]
+	path = enrol/ucsfsis
+	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
+	branch = MOODLE_403_STABLE
