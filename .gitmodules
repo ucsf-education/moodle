@@ -119,3 +119,8 @@
 	url = https://github.com/ndunand/moodle-mod_choicegroup
 	branch = master
 	tag = 2024051600
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = https://github.com/markn86/moodle-mod_customcert
+	branch = MOODLE_403_STABLE
+	tag = v4.3.1
