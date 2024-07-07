@@ -45,3 +45,8 @@
 	path = blocks/quickmail
 	url = https://github.com/ucsf-education/moodle-block_quickmail
 	branch = UCSFCLE_403_STABLE
+[submodule "course/format/topcoll"]
+	path = course/format/topcoll
+	url = https://github.com/gjb2048/moodle-format_topcoll
+	branch = MOODLE_403
+	tag = V403.1.1
