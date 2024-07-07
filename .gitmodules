@@ -129,3 +129,7 @@
 	url = https://github.com/drachels/moodle-mod_diary
 	branch = master
 	tag = v3.8.0
+[submodule "mod/oublog"]
+	path = mod/oublog
+	url = https://github.com/moodleou/moodle-mod_oublog
+	branch = MOODLE_403_STABLE
