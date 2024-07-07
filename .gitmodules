@@ -97,3 +97,6 @@
 	path = local/iliosapiclient
 	url = https://github.com/ilios/local_iliosapiclient
 	branch = MOODLE_403_STABLE
+[submodule "local/maintenance_livecheck"]
+	path = local/maintenance_livecheck
+	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
