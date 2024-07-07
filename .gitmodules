@@ -142,3 +142,8 @@
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_401_STABLE
 	tag = v4.0.1
+[submodule "mod/quiz/report/archive"]
+	path = mod/quiz/report/archive
+	url = https://github.com/bfh/moodle-quiz_archive
+	branch = main
+	tag = v4.4-r1
