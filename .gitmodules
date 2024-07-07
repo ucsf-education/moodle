@@ -137,3 +137,8 @@
 	path = mod/ouwiki
 	url = https://github.com/ucsf-education/moodle-mod_ouwiki
 	branch = MOODLE_402_STABLE
+[submodule "mod/questionnaire"]
+	path = mod/questionnaire
+	url = https://github.com/PoetOS/moodle-mod_questionnaire
+	branch = MOODLE_401_STABLE
+	tag = v4.0.1
