@@ -41,3 +41,7 @@
 	url = https://github.com/Syxton/moodle-block_massaction
 	branch = MOODLE_403_STABLE
 	tag = 7.2.1
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
+	branch = UCSFCLE_403_STABLE
