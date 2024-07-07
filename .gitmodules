@@ -88,3 +88,8 @@
 	url = https://github.com/ndunand/moodle-atto_morefontcolors
 	branch = master
 	tag = 2021062100
+[submodule "lib/editor/tiny/plugins/fontcolor"]
+	path = lib/editor/tiny/plugins/fontcolor
+	url = https://github.com/bfh/moodle-tiny_fontcolor
+	branch = main
+	tag = V0.5
