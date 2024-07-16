@@ -100,6 +100,10 @@
 [submodule "local/maintenance_livecheck"]
 	path = local/maintenance_livecheck
 	url = https://github.com/moodleuulm/moodle-local_maintenance_livecheck
+[submodule "local/navbarhelpmenu"]
+	path = local/navbarhelpmenu
+	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
+	branch = MOODLE_403_STABLE
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodleuulm/moodle-local_staticpage
