@@ -11,8 +11,8 @@
 [submodule "course/format/onetopic"]
 	path = course/format/onetopic
 	url = https://github.com/davidherney/moodle-format_onetopic
-	branch = master
-	tag = v4.1.05
+	branch = MOODLE_401_STABLE
+	tag = v4.1.10
 [submodule "enrol/coursecompleted"]
 	path = enrol/coursecompleted
 	url = https://github.com/ewallah/moodle-enrol_coursecompleted
