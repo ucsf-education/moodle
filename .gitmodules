@@ -17,7 +17,7 @@
 	path = enrol/coursecompleted
 	url = https://github.com/ewallah/moodle-enrol_coursecompleted
 	branch = main
-	tag = v4.0.9
+	tag = v4.1.1
 [submodule "enrol/easy"]
 	path = enrol/easy
 	url = https://github.com/dbnschools/moodle-enrol_easy
