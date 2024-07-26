@@ -416,8 +416,13 @@ class stateactions {
                 $allowstealth = !empty($CFG->allowstealth) && $format->allow_stealth_module_visibility($cm, $section);
                 $coursevisible = ($allowstealth) ? 0 : 1;
             }
-            set_coursemodule_visible($cm->id, $visible, $coursevisible);
+            set_coursemodule_visible($cm->id, $visible, $coursevisible, false);
             course_module_updated::create_from_cm($cm, $modcontext)->trigger();
+        }
+        course_modinfo::purge_course_modules_cache($course->id, $ids);
+        rebuild_course_cache($course->id, false, true);
+
+        foreach ($cms as $cm) {
             $updates->add_cm_put($cm->id);
         }
     }
@@ -526,7 +531,7 @@ class stateactions {
     }
 
     /**
-     * Update the course content section collapsed value.
+     * Update the course content section state to collapse.
      *
      * @param stateupdates $updates the affected course elements track
      * @param stdClass $course the course object
@@ -545,11 +550,34 @@ class stateactions {
             $this->validate_sections($course, $ids, __FUNCTION__);
         }
         $format = course_get_format($course->id);
-        $format->set_sections_preference('contentcollapsed', $ids);
+        $format->add_section_preference_ids('contentcollapsed', $ids);
     }
 
     /**
-     * Update the course index section collapsed value.
+     * Update the course content section state to expand.
+     *
+     * @param stateupdates $updates the affected course elements track
+     * @param stdClass $course the course object
+     * @param int[] $ids the collapsed section ids
+     * @param int|null $targetsectionid not used
+     * @param int|null $targetcmid not used
+     */
+    public function section_content_expanded(
+        stateupdates $updates,
+        stdClass $course,
+        array $ids = [],
+        ?int $targetsectionid = null,
+        ?int $targetcmid = null
+    ): void {
+        if (!empty($ids)) {
+            $this->validate_sections($course, $ids, __FUNCTION__);
+        }
+        $format = course_get_format($course->id);
+        $format->remove_section_preference_ids('contentcollapsed', $ids);
+    }
+
+    /**
+     * Update the course index section state to collapse.
      *
      * @param stateupdates $updates the affected course elements track
      * @param stdClass $course the course object
@@ -568,7 +596,30 @@ class stateactions {
             $this->validate_sections($course, $ids, __FUNCTION__);
         }
         $format = course_get_format($course->id);
-        $format->set_sections_preference('indexcollapsed', $ids);
+        $format->add_section_preference_ids('indexcollapsed', $ids);
+    }
+
+    /**
+     * Update the course index section state to expand.
+     *
+     * @param stateupdates $updates the affected course elements track
+     * @param stdClass $course the course object
+     * @param int[] $ids the collapsed section ids
+     * @param int $targetsectionid not used
+     * @param int $targetcmid not used
+     */
+    public function section_index_expanded(
+        stateupdates $updates,
+        stdClass $course,
+        array $ids = [],
+        ?int $targetsectionid = null,
+        ?int $targetcmid = null
+    ): void {
+        if (!empty($ids)) {
+            $this->validate_sections($course, $ids, __FUNCTION__);
+        }
+        $format = course_get_format($course->id);
+        $format->remove_section_preference_ids('indexcollapsed', $ids);
     }
 
     /**

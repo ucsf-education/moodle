@@ -407,14 +407,16 @@ $string['courserequestdetails'] = 'Details of the course you are requesting';
 $string['courserequestfailed'] = 'For some reason, your course request could not be saved';
 $string['courserequestintro'] = 'Use this form to request a course to be created for you.<br />Try and fill in as much information as you can to allow<br />the administrators to understand your reasons for wanting this course.';
 $string['courserequestreason'] = 'Reasons for wanting this course';
-$string['courserequestsuccess'] = 'Your course request has been saved successfully. You will be sent an email to inform you whether your request was approved.';
+$string['courserequestroleerror'] = 'The creators\' role in new courses configuration is invalid. Please see <a href="{$a}">user policies</a>.';
+$string['courserequestsuccess'] = 'Course request submitted.';
 $string['courserequestsupport'] = 'Supporting information to help the administrator evaluate this request';
 $string['courserequestwarning'] = 'The user requesting this course will be automatically enrolled and assigned the role of {$a}.';
 $string['courserestore'] = 'Course restore';
 $string['coursereuse'] = 'Course reuse';
 $string['courses'] = 'Courses';
 $string['coursesectionsummaries'] = 'Course section summaries';
-$string['coursesectiontitle'] = 'Course: {$a->course}, {$a->sectionname}: {$a->sectiontitle}';
+$string['coursesectiontitle'] = '{$a->sectionname}: {$a->sectiontitle} | {$a->course}';
+$string['coursesectiontitleediting'] = 'Edit {$a->sectionname}: {$a->sectiontitle} | {$a->course}';
 $string['coursesettings'] = 'Course default settings';
 $string['coursesmovedout'] = 'Courses moved out from {$a}';
 $string['coursespending'] = 'Courses pending approval';
@@ -428,6 +430,7 @@ $string['coursestart'] = 'Course start';
 $string['coursesummary'] = 'Course summary';
 $string['coursesummary_help'] = 'A short description of your course. The content you add here is searchable.';
 $string['coursetitle'] = 'Course: {$a->course}';
+$string['coursetitleediting'] = 'Edit course: {$a->course}';
 $string['courseupdates'] = 'Course updates';
 $string['coursevisibility'] = 'Course visibility';
 $string['coursevisibility_help'] = '* Show: The course appears in the list of courses and students can access it.
@@ -962,7 +965,7 @@ This program is free software; you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-See the Moodle License information page for full details: https://docs.moodle.org/dev/License';
+See the Moodle License information page for full details: https://moodledev.io/general/license';
 $string['gpllicense'] = 'GPL license';
 $string['gpl3'] = 'Copyright (C) 1999 onwards Martin Dougiamas (https://moodle.com)
 
@@ -970,7 +973,7 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-See the Moodle License information page for full details: https://docs.moodle.org/dev/License';
+See the Moodle License information page for full details: https://moodledev.io/general/license';
 $string['grades'] = 'Grades';
 $string['gradenoun'] = 'Grade';
 $string['gradeverb'] = 'Grade';
@@ -2329,7 +2332,7 @@ $string['weeks'] = 'weeks';
 $string['weekhide'] = 'Hide this week from {$a}';
 $string['weeklyoutline'] = 'Weekly outline';
 $string['weekshow'] = 'Show this week to {$a}';
-$string['welcomeback'] = 'Welcome back, {$a->firstname}! 👋';
+$string['welcomeback'] = 'Hi, {$a->firstname}! 👋';
 $string['welcometosite'] = 'Welcome, {$a->firstname}! 👋';
 $string['welcometocourse'] = 'Welcome to {$a}';
 $string['welcometocoursetext'] = 'Welcome to {$a->coursename}!

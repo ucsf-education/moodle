@@ -226,7 +226,7 @@ class behat_util extends testing_util {
 
             behat_error (BEHAT_EXITCODE_REQUIREMENT, $CFG->behat_wwwroot . ' is not available, ensure you specified ' .
                 'correct url and that the server is set up and started.' . PHP_EOL . ' More info in ' .
-                behat_command::DOCS_URL . PHP_EOL);
+                behat_command::DOCS_URL . PHP_EOL . parent::get_site_info());
         }
 
         // Check if cli version is same as web version.
@@ -431,6 +431,9 @@ class behat_util extends testing_util {
 
         // Inform data generator.
         self::get_data_generator()->reset();
+
+        // Reset the task manager.
+        \core\task\manager::reset_state();
 
         // Initialise $CFG with default values. This is needed for behat cli process, so we don't have modified
         // $CFG values from the old run. @see set_config.
