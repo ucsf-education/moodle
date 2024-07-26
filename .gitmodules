@@ -7,7 +7,7 @@
 	path = blocks/completion_progress
 	url = https://github.com/jonof/moodle-block_completion_progress
 	branch = master
-	tag = 2023063000
+	tag = 2024042200
 [submodule "course/format/onetopic"]
 	path = course/format/onetopic
 	url = https://github.com/davidherney/moodle-format_onetopic
