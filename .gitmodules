@@ -26,7 +26,7 @@
 	path = local/profilecohort
 	url = https://github.com/moodle-an-hochschulen/moodle-local_profilecohort
 	branch = MOODLE_401_STABLE
-	tag = v4.1-r2
+	tag = v4.1-r3
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = https://github.com/mdjnelson/moodle-mod_customcert
