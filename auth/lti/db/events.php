@@ -15,25 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Legacy Cron Quiz Reports Task
+ * LTI Auth plugin event handler definition.
  *
- * @package    quiz_statistics
- * @copyright  2017 Michael Hughes, University of Strathclyde
- * @author Michael Hughes <michaelhughes@strath.ac.uk>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
+ * @package auth_lti
+ * @category event
+ * @copyright 2024 Jake Dallimore <jrhdallimore@gmail.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$tasks = [
+$observers = [
     [
-        'classname' => 'quiz_statistics\task\recalculate',
-        'blocking' => 0,
-        'minute' => 'R',
-        'hour' => '*/4',
-        'day' => '*',
-        'dayofweek' => '*',
-        'month' => '*'
-    ]
+        'eventname' => '\core\event\user_loggedin',
+        'callback' => '\auth_lti\local\ltiadvantage\event\event_handler::handle_user_loggedin',
+    ],
 ];

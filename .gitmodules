@@ -7,17 +7,17 @@
 	path = blocks/completion_progress
 	url = https://github.com/jonof/moodle-block_completion_progress
 	branch = master
-	tag = 2023063000
+	tag = 2024042200
 [submodule "course/format/onetopic"]
 	path = course/format/onetopic
 	url = https://github.com/davidherney/moodle-format_onetopic
-	branch = master
-	tag = v4.1.05
+	branch = MOODLE_401_STABLE
+	tag = v4.1.10
 [submodule "enrol/coursecompleted"]
 	path = enrol/coursecompleted
 	url = https://github.com/ewallah/moodle-enrol_coursecompleted
 	branch = main
-	tag = v4.0.9
+	tag = v4.1.1
 [submodule "enrol/easy"]
 	path = enrol/easy
 	url = https://github.com/dbnschools/moodle-enrol_easy
@@ -26,12 +26,12 @@
 	path = local/profilecohort
 	url = https://github.com/moodle-an-hochschulen/moodle-local_profilecohort
 	branch = MOODLE_401_STABLE
-	tag = v4.1-r2
+	tag = v4.1-r3
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = https://github.com/mdjnelson/moodle-mod_customcert
 	branch = MOODLE_401_STABLE
-	tag = v4.1.1
+	tag = v4.1.5
 [submodule "mod/facetoface"]
 	path = mod/facetoface
 	url = https://github.com/catalyst/moodle-mod_facetoface

@@ -99,7 +99,7 @@ class user extends tablelike implements selectable_items {
     public function init($selfitemisempty = false) {
 
         if (!$selfitemisempty) {
-            $validusers = $this->load_users();
+            $validusers = \grade_report::get_gradable_users($this->courseid, $this->groupid);
             if (!isset($validusers[$this->itemid])) {
                 // If the passed user id is not valid, show the first user from the list instead.
                 $this->item = reset($validusers);
@@ -187,14 +187,9 @@ class user extends tablelike implements selectable_items {
         $itemicon = html_writer::div($this->format_icon($item), 'mr-1');
         $itemtype = \html_writer::span($this->structure->get_element_type_string($gradetreeitem),
             'd-block text-uppercase small dimmed_text');
-        // If a behat test site is running avoid outputting the information about the type of the grade item.
-        // This additional information currently causes issues in behat particularly with the existing xpath used to
-        // interact with table elements.
-        if (!defined('BEHAT_SITE_RUNNING')) {
-            $itemcontent = html_writer::div($itemtype . $itemname);
-        } else {
-            $itemcontent = html_writer::div($itemname);
-        }
+
+        $itemtitle = html_writer::div($itemname, 'rowtitle');
+        $itemcontent = html_writer::div($itemtype . $itemtitle);
 
         $line = [
             html_writer::div($itemicon . $itemcontent .  $lockicon, "{$type} d-flex align-items-center"),
@@ -302,7 +297,9 @@ class user extends tablelike implements selectable_items {
      * @return string
      */
     public function heading(): string {
-        return get_string('gradeuser', 'gradereport_singleview', fullname($this->item));
+        global $PAGE;
+        $headinglangstring = $PAGE->user_is_editing() ? 'gradeuseredit' : 'gradeuser';
+        return get_string($headinglangstring, 'gradereport_singleview', fullname($this->item));
     }
 
     /**

@@ -910,7 +910,16 @@ class upgradelib_test extends advanced_testcase {
 
         upgrade_core_licenses();
 
-        $expectedshortnames = ['allrightsreserved', 'cc', 'cc-nc', 'cc-nc-nd', 'cc-nc-sa', 'cc-nd', 'cc-sa', 'public'];
+        $expectedshortnames = [
+            'allrightsreserved',
+            'cc-4.0',
+            'cc-nc-4.0',
+            'cc-nc-nd-4.0',
+            'cc-nc-sa-4.0',
+            'cc-nd-4.0',
+            'cc-sa-4.0',
+            'public',
+        ];
         $licenses = $DB->get_records('license');
 
         foreach ($licenses as $license) {
@@ -1375,6 +1384,38 @@ class upgradelib_test extends advanced_testcase {
         } else {
             $this->assertTrue($result->getStatus());
         }
+    }
+
+    /**
+     * Test the check_oracle_usage check when the Moodle instance is not using Oracle as a database architecture.
+     *
+     * @covers ::check_oracle_usage
+     */
+    public function test_check_oracle_usage_is_not_used(): void {
+        global $CFG;
+
+        $this->resetAfterTest();
+        $CFG->dbtype = 'pgsql';
+
+        $result = new environment_results('custom_checks');
+        $this->assertNull(check_oracle_usage($result));
+    }
+
+    /**
+     * Test the check_oracle_usage check when the Moodle instance is using Oracle as a database architecture.
+     *
+     * @covers ::check_oracle_usage
+     */
+    public function test_check_oracle_usage_is_used(): void {
+        global $CFG;
+
+        $this->resetAfterTest();
+        $CFG->dbtype = 'oci';
+
+        $result = new environment_results('custom_checks');
+        $this->assertInstanceOf(environment_results::class, check_oracle_usage($result));
+        $this->assertEquals('oracle_database_usage', $result->getInfo());
+        $this->assertFalse($result->getStatus());
     }
 
     /**

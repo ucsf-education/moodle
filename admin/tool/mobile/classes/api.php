@@ -118,8 +118,12 @@ class api {
                         $langs = $stringmanager->get_list_of_translations(true);
                         foreach ($langs as $langid => $langname) {
                             foreach ($addoninfo['lang'] as $stringinfo) {
-                                $lang[$langid][$stringinfo[0]] =
-                                    $stringmanager->get_string($stringinfo[0], $stringinfo[1], null, $langid);
+                                $lang[$langid][$stringinfo[0]] = $stringmanager->get_string(
+                                    $stringinfo[0],
+                                    $stringinfo[1] ?? '',
+                                    null,
+                                    $langid
+                                );
                             }
                         }
                     }
@@ -415,13 +419,13 @@ class api {
     public static function get_qrlogin_key(stdClass $mobilesettings) {
         global $USER;
         // Delete previous keys.
-        delete_user_key('tool_mobile', $USER->id);
+        delete_user_key('tool_mobile/qrlogin', $USER->id);
 
         // Create a new key.
         $iprestriction = !empty($mobilesettings->qrsameipcheck) ? getremoteaddr(null) : null;
         $qrkeyttl = !empty($mobilesettings->qrkeyttl) ? $mobilesettings->qrkeyttl : self::LOGIN_QR_KEY_TTL;
         $validuntil = time() + $qrkeyttl;
-        return create_user_key('tool_mobile', $USER->id, null, $iprestriction, $validuntil);
+        return create_user_key('tool_mobile/qrlogin', $USER->id, null, $iprestriction, $validuntil);
     }
 
     /**

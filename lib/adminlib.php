@@ -366,8 +366,8 @@ function drop_plugin_tables($name, $file, $feedback=true) {
     global $CFG, $DB;
 
     // first try normal delete
-    if (file_exists($file) and $DB->get_manager()->delete_tables_from_xmldb_file($file)) {
-        return true;
+    if (file_exists($file)) {
+        $DB->get_manager()->delete_tables_from_xmldb_file($file);
     }
 
     // then try to find all tables that start with name and are not in any xml file
@@ -3265,6 +3265,7 @@ class admin_setting_configmulticheckbox extends admin_setting {
         $context = (object) [
             'id' => $this->get_id(),
             'name' => $this->get_full_name(),
+            'readonly' => $this->is_readonly(),
         ];
 
         $options = array();
@@ -8817,8 +8818,6 @@ function admin_externalpage_setup($section, $extrabutton = '', array $extraurlpa
         $USER->editing = $adminediting;
     }
 
-    $visiblepathtosection = array_reverse($extpage->visiblepath);
-
     if ($PAGE->user_allowed_editing() && !$PAGE->theme->haseditswitch) {
         if ($PAGE->user_is_editing()) {
             $caption = get_string('blockseditoff');
@@ -8830,7 +8829,7 @@ function admin_externalpage_setup($section, $extrabutton = '', array $extraurlpa
         $PAGE->set_button($OUTPUT->single_button($url, $caption, 'get'));
     }
 
-    $PAGE->set_title("$SITE->shortname: " . implode(": ", $visiblepathtosection));
+    $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $extpage->visiblepath));
     $PAGE->set_heading($SITE->fullname);
 
     if ($hassiteconfig && empty($options['nosearch'])) {
