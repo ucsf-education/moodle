@@ -60,7 +60,7 @@ services:
         - php admin/tool/generator/cli/maketestsite.php --size=S --bypasscheck
         
   db:
-    image: "tugboatqa/mariadb:10.11.9"
+    image: "tugboatqa/mariadb:10.11.8"
     commands:
       init:
         - echo "*** intializing database ***"
