@@ -37,7 +37,7 @@ services:
         - chmod 0777 /var/www/moodledata
 
       update:
-        - echo "****** updatig webserver *****"
+        - echo "****** updating webserver *****"
         - composer install --optimize-autoloader --ignore-platform-req=ext-zip --ignore-platform-req=ext-intl
         - service apache2 start
       
@@ -73,7 +73,3 @@ services:
         - export MYSQL_USER=${MOODLE_DBUSER}
         - export MYSQL_PASSWORD=${MOODLE_DBPASS}
         - mysql -e "CREATE DATABASE IF NOT EXISTS ${MOODLE_DBNAME}; GRANT ALL PRIVILEGES ON moodle.* TO '${MOODLE_DBNAME}'@'%' IDENTIFIED BY '${MOODLE_DBPASS}'; FLUSH PRIVILEGES;"
-
-  phpmyadmin:
-    expose: 80
-    image: phpmyadmin/phpmyadmin
