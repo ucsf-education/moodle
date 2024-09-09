@@ -51,6 +51,7 @@ define('TABLE_P_BOTTOM', 2);
  */
 define('TABLE_SHOW_ALL_PAGE_SIZE', 5000);
 
+use core\dataformat;
 use core_table\local\filter\filterset;
 
 /**
@@ -210,6 +211,21 @@ class flexible_table {
             TABLE_VAR_RESET  => 'treset',
             TABLE_VAR_DIR    => 'tdir',
         );
+
+        static $notified = [];
+        if (!(defined('AJAX_SCRIPT') && AJAX_SCRIPT) &&
+                $this instanceof \core_table\dynamic &&
+                !method_exists($this, 'has_capability') &&
+                empty($notified[get_class($this)])) {
+            // Classes implementing \core_table\dynamic must have a method has_capability():bool .
+            // This will be enforced in Moodle 4.5.
+            \core\notification::add(
+                get_string('codingerror', 'debug',
+                'Error in class '.get_class($this).'. Some functionality may be available to admins only.'),
+                \core\notification::WARNING
+            );
+            $notified[get_class($this)] = true;
+        }
     }
 
     /**
@@ -2318,11 +2334,7 @@ class table_dataformat_export_format extends table_default_export_format_parent 
             throw new coding_exception("Output can not be buffered before instantiating table_dataformat_export_format");
         }
 
-        $classname = 'dataformat_' . $dataformat . '\writer';
-        if (!class_exists($classname)) {
-            throw new coding_exception("Unable to locate dataformat/$dataformat/classes/writer.php");
-        }
-        $this->dataformat = new $classname;
+        $this->dataformat = dataformat::get_format_instance($dataformat);
 
         // The dataformat export time to first byte could take a while to generate...
         set_time_limit(0);

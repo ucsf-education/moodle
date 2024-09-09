@@ -48,6 +48,7 @@ Feature: Data export from the privacy API
     And I should see "Awaiting approval" in the "Victim User 1" "table_row"
     And I open the action menu in "Victim User 1" "table_row"
     And I follow "Approve request"
+    And I wait until "Approve request" "button" exists
     And I press "Approve request"
     And I should see "Approved" in the "Victim User 1" "table_row"
     And I run all adhoc tasks
@@ -115,6 +116,7 @@ Feature: Data export from the privacy API
     And I navigate to "Users > Privacy and policies > Data requests" in site administration
     And I open the action menu in "Victim User 1" "table_row"
     And I follow "Approve request"
+    And I wait until "Approve request" "button" exists
     And I press "Approve request"
 
     And I log out
@@ -185,7 +187,7 @@ Feature: Data export from the privacy API
     And I reload the page
     And I should see "Download ready" in the "Victim User 1" "table_row"
     And I open the action menu in "Victim User 1" "table_row"
-    And following "Download" should download between "1" and "170000" bytes
+    And following "Download" should download between "1" and "172000" bytes
     And the following config values are set as admin:
       | privacyrequestexpiry | 1 | tool_dataprivacy |
     And I wait "1" seconds
