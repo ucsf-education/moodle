@@ -92,7 +92,7 @@
 	path = lib/editor/tiny/plugins/fontcolor
 	url = https://github.com/bfh/moodle-tiny_fontcolor
 	branch = main
-	tag = V0.5
+	tag = V0.7
 [submodule "local/iliosapiclient"]
 	path = local/iliosapiclient
 	url = https://github.com/ilios/local_iliosapiclient
