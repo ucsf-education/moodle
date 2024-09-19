@@ -6,6 +6,11 @@
 	path = admin/tool/ilioscategoryassignment
 	url = https://github.com/ilios/tool_ilioscategoryassignment.git
 	branch = MOODLE_404_STABLE
+[submodule "admin/tool/ribbons"]
+	path = admin/tool/ribbons
+	url = https://github.com/cwarwicker/moodle-tool_ribbons
+	branch = main
+	tag = v1.0.3
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
@@ -17,3 +22,4 @@
 [submodule "local/navbarhelpmenu"]
 	path = local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
+	branch = MOODLE_404_STABLE
