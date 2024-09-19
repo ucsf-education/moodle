@@ -39,7 +39,7 @@ require_once($CFG->dirroot . '/question/type/numerical/question.php');
  */
 class qtype_calculated extends question_type {
     /**
-     * @var string a placeholder is a letter, followed by zero or more alphanum chars (as well as space, - and _ for readability).
+     * @const string a placeholder is a letter, followed by zero or more alphanum chars (as well as space, - and _ for readability).
      */
     const PLACEHOLDER_REGEX_PART = '[[:alpha:]][[:alpha:][:digit:]\-_\s]*';
 
