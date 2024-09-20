@@ -6,3 +6,7 @@
 	path = admin/tool/ilioscategoryassignment
 	url = https://github.com/ilios/tool_ilioscategoryassignment.git
 	branch = MOODLE_404_STABLE
+[submodule "blocks/course_recent"]
+	path = blocks/course_recent
+	url = https://github.com/ucsf-education/moodle-block-course_recent
+	branch = MOODLE_404_STABLE
