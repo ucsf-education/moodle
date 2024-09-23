@@ -10,3 +10,6 @@
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
 	branch = MOODLE_404_STABLE
+[submodule "local/navbarhelpmenu"]
+	path = local/navbarhelpmenu
+	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
