@@ -22,3 +22,7 @@
 	path = local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_404_STABLE
+[submodule "theme/ucsf"]
+	path = theme/ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
+	branch = MOODLE_404_STABLE
