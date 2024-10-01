@@ -26,3 +26,7 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_404_STABLE
+[submodule "question/type/knowledgecheck"]
+	path = question/type/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck.git
+	branch = MOODLE_404_STABLE
