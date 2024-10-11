@@ -30,6 +30,11 @@
 	path = admin/tool/ucsfsomapi
 	url = https://github.com/ucsf-education/tool_ucsfsomapi.git
 	branch = MOODLE_404_STABLE
+[submodule "mod/customcert"]
+	path = mod/customcert
+	url = https://github.com/mdjnelson/moodle-mod_customcert
+	branch = MOODLE_404_STABLE
+	tag = v4.4.2
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
