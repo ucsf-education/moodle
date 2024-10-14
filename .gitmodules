@@ -30,6 +30,10 @@
 	path = admin/tool/ucsfsomapi
 	url = https://github.com/ucsf-education/tool_ucsfsomapi.git
 	branch = MOODLE_404_STABLE
+[submodule "enrol/ilios"]
+	path = enrol/ilios
+	url = https://github.com/ilios/moodle-enrol-ilios
+	branch = MOODLE_404_STABLE
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
@@ -49,7 +53,3 @@
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_404_STABLE
 	tag = v4.1.1
-[submodule "enrol/ilios"]
-	path = enrol/ilios
-	url = https://github.com/ilios/moodle-enrol-ilios
-	branch = MOODLE_404_STABLE
