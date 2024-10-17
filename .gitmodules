@@ -34,6 +34,11 @@
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_404_STABLE
+[submodule "local/maintenance_livecheck"]
+	path = local/maintenance_livecheck
+	url = https://github.com/moodle-an-hochschulen/moodle-local_maintenance_livecheck
+	branch = MOODLE_404_STABLE
+	tag = v4.4-r1
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
