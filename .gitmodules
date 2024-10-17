@@ -34,6 +34,11 @@
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_404_STABLE
+[submodule "local/staticpage"]
+	path = local/staticpage
+	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
+	branch = MOODLE_404_STABLE
+	tag = v4.4-r1
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
