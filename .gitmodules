@@ -59,6 +59,11 @@
 	url = https://github.com/PoetOS/moodle-mod_questionnaire
 	branch = MOODLE_404_STABLE
 	tag = v4.1.1
+[submodule "mod/zoom"]
+	path = mod/zoom
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
+	branch = main
+	tag = v5.2.4
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = https://github.com/ucsf-education/moodle-block_quickmail
