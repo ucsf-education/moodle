@@ -64,3 +64,7 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.4
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
+	branch = UCSFCLE_404_STABLE
