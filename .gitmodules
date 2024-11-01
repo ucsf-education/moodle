@@ -107,6 +107,10 @@
 	path = local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_403_STABLE
+[submodule "local/quizanon"]
+	path = local/quizanon
+	url = https://github.com/ucsf-education/local_quizanon
+	branch = MOODLE_403_STAGING
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodleuulm/moodle-local_staticpage
