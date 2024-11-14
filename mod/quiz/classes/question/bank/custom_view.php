@@ -45,7 +45,7 @@ require_once($CFG->dirroot . '/mod/quiz/locallib.php');
  */
 class custom_view extends \core_question\local\bank\view {
     /** @var int number of questions per page to show in the add from question bank modal. */
-    const DEFAULT_PAGE_SIZE = 20;
+    const DEFAULT_PAGE_SIZE = 300;
 
     /** @var bool $quizhasattempts whether the quiz this is used by has been attemptd. */
     protected $quizhasattempts = false;
