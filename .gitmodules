@@ -116,3 +116,8 @@
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
 	tag = v5.2.4
+[submodule "question/type/wordselect"]
+	path = question/type/wordselect
+	url = https://github.com/marcusgreen/moodle-qtype_wordselect.git
+	branch = master
+	tag = v2.53
