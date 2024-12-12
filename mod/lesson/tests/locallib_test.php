@@ -250,7 +250,7 @@ class locallib_test extends \advanced_testcase {
         $this->assertEquals(true, $lesson->is_participant($USER->id),
             'Admin is enrolled and can participate');
 
-        $this->getDataGenerator()->enrol_user(2, $course->id, [], 'manual', 0, 0, ENROL_USER_SUSPENDED);
+        $this->getDataGenerator()->enrol_user(2, $course->id, null, 'manual', 0, 0, ENROL_USER_SUSPENDED);
         $this->assertEquals(true, $lesson->is_participant($USER->id),
             'Admin is enrolled, suspended and can participate');
     }
@@ -260,7 +260,7 @@ class locallib_test extends \advanced_testcase {
      *
      * @return array
      */
-    public function get_last_attempt_dataprovider() {
+    public static function get_last_attempt_dataprovider(): array {
         return [
             [0, [(object)['id' => 1], (object)['id' => 2], (object)['id' => 3]], (object)['id' => 3]],
             [1, [(object)['id' => 1], (object)['id' => 2], (object)['id' => 3]], (object)['id' => 1]],

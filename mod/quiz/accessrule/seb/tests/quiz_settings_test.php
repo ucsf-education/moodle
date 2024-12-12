@@ -499,7 +499,7 @@ class quiz_settings_test extends \advanced_testcase {
         $this->save_settings_with_optional_template($quizsettings, settings_provider::USE_SEB_TEMPLATE, $templateid);
 
         // Case for USE_SEB_UPLOAD_CONFIG, ensure template id reverts to 0.
-        $xml = file_get_contents(__DIR__ . '/fixtures/unencrypted.seb');
+        $xml = file_get_contents(self::get_fixture_path(__NAMESPACE__, 'unencrypted.seb'));
         $this->create_module_test_file($xml, $this->quiz->cmid);
         $this->save_settings_with_optional_template($quizsettings, settings_provider::USE_SEB_UPLOAD_CONFIG);
         $quizsettings = seb_quiz_settings::get_record(['quizid' => $this->quiz->id]);
@@ -531,7 +531,7 @@ class quiz_settings_test extends \advanced_testcase {
      *
      * @return array
      */
-    public function bad_browser_exam_key_provider(): array {
+    public static function bad_browser_exam_key_provider(): array {
         return [
             'Short string' => ['fdsf434r',
                     'A key should be a 64-character hex string.'],
@@ -547,7 +547,7 @@ class quiz_settings_test extends \advanced_testcase {
      *
      * @return array Test data.
      */
-    public function filter_rules_provider(): array {
+    public static function filter_rules_provider(): array {
         return [
             'enabled simple expessions' => [
                 (object) [
@@ -709,7 +709,7 @@ class quiz_settings_test extends \advanced_testcase {
         $this->assertNull($quizsettings->get_config());
 
         $quizsettings->set('requiresafeexambrowser', settings_provider::USE_SEB_UPLOAD_CONFIG);
-        $xml = file_get_contents(__DIR__ . '/fixtures/unencrypted.seb');
+        $xml = file_get_contents(self::get_fixture_path(__NAMESPACE__, 'unencrypted.seb'));
         $this->create_module_test_file($xml, $this->quiz->cmid);
         $quizsettings->save();
         $quizsettings = seb_quiz_settings::get_record(['quizid' => $this->quiz->id]);
