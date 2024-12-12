@@ -1,6 +1,28 @@
 This files describes API changes in core libraries and APIs,
 information provided here is intended especially for developers.
 
+=== 4.4.5 ===
+
+* All uses of the following PHPUnit methods have been removed as these methods are deprecated upstream without direct replacement:
+    - `withConsecutive`
+    - `willReturnConsecutive`
+    - `onConsecutive`
+  Any plugin using these methods must update their uses.
+
+* `\core\output\activity_header` now uses the `is_title_allowed()` method when setting the title in the constructor.
+  This method has been improved to give priority to the 'notitle' option in the theme config for the current page layout,
+  over the top-level option in the theme.
+
+  For example, the Boost theme sets `$THEME->activityheaderconfig['notitle'] = true;` by default,
+  but in its `secure` pagelayout, it has `'notitle' = false`.
+
+  This prevents display of the title in all layouts except `secure`.
+
+=== 4.4.4 ===
+
+* The `navigation_cache` class now uses the Moodle Universal Cache (MUC) to store the navigation cache data instead of storing
+  it in the global `$SESSION` variable.
+
 === 4.4.3 ===
 
 * The Moodle autoloader should now be registered using `\core\component::register_autoloader` rather

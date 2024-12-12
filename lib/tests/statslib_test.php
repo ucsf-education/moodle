@@ -186,7 +186,7 @@ class statslib_test extends \advanced_testcase {
      *
      * @return array of fixture XML log file names.
      */
-    public function daily_log_provider() {
+    public static function daily_log_provider(): array {
         $logfiles = array();
         $fileno = array('00', '01', '02', '03', '04', '05', '06', '07', '08');
 
@@ -202,7 +202,7 @@ class statslib_test extends \advanced_testcase {
      *
      * @return array Dates and timezones for which the first day of the week will be calculated
      */
-    public function get_base_weekly_provider() {
+    public static function get_base_weekly_provider(): array {
         return [
             [
                 "startwday" => 0,
@@ -460,7 +460,7 @@ class statslib_test extends \advanced_testcase {
             2 => 'edit',
             3 => 'add mod',
             4 => 'delete mod',
-            5 => 'edit sectionenrol',
+            5 => 'edit section',
             6 => 'loginas',
             7 => 'new',
             8 => 'unenrol',
@@ -495,6 +495,7 @@ class statslib_test extends \advanced_testcase {
             37 => 'editquestions',
             38 => 'delete attempt',
             39 => 'manualgrade',
+            40 => 'enrol',
         );
 
          $baseviewactions = array (

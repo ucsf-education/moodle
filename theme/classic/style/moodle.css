@@ -13266,7 +13266,7 @@ readers do not read off random characters that represent icons */
   --blue: #0f6cbf;
   --indigo: #6610f2;
   --purple: #613d7c;
-  --pink: #e83e8c;
+  --pink: #db1a74;
   --red: #ca3120;
   --orange: #f0ad4e;
   --yellow: #ff7518;
@@ -13822,7 +13822,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: #db1a74;
   word-wrap: break-word;
 }
 a > code {
@@ -25672,25 +25672,24 @@ input[disabled] {
   }
   .nav-tabs:not(.more-nav) .nav-link.active,
   .nav-pills .nav-link.active {
-    color: #6a737b;
-    border-color: #6a737b;
-    border-color: #6a737b;
+    color: #0f6cbf;
+    border-color: #0f6cbf;
   }
   .nav-tabs:not(.more-nav) .nav-link.active:hover,
   .nav-pills .nav-link.active:hover {
     color: #fff;
-    background-color: #6a737b;
+    background-color: #0f6cbf;
     border-color: #6a737b;
   }
   .nav-tabs:not(.more-nav) .nav-link.active:focus, .nav-tabs:not(.more-nav) .nav-link.active.focus,
   .nav-pills .nav-link.active:focus,
   .nav-pills .nav-link.active.focus {
-    box-shadow: 0 0 0 0.2rem rgba(106, 115, 123, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(15, 108, 191, 0.5);
   }
   .nav-tabs:not(.more-nav) .nav-link.active.disabled, .nav-tabs:not(.more-nav) .nav-link.active:disabled,
   .nav-pills .nav-link.active.disabled,
   .nav-pills .nav-link.active:disabled {
-    color: #6a737b;
+    color: #0f6cbf;
     background-color: transparent;
   }
   .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled):active, .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled).active, .show > .nav-tabs:not(.more-nav) .nav-link.active.dropdown-toggle,
@@ -25698,14 +25697,14 @@ input[disabled] {
   .nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
   .show > .nav-pills .nav-link.active.dropdown-toggle {
     color: #fff;
-    background-color: #6a737b;
+    background-color: #0f6cbf;
     border-color: #6a737b;
   }
   .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled):active:focus, .nav-tabs:not(.more-nav) .nav-link.active:not(:disabled):not(.disabled).active:focus, .show > .nav-tabs:not(.more-nav) .nav-link.active.dropdown-toggle:focus,
   .nav-pills .nav-link.active:not(:disabled):not(.disabled):active:focus,
   .nav-pills .nav-link.active:not(:disabled):not(.disabled).active:focus,
   .show > .nav-pills .nav-link.active.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(106, 115, 123, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(15, 108, 191, 0.5);
   }
 }
 @media (max-width: 576px) and (max-height: 320px) {
@@ -25982,7 +25981,12 @@ blockquote {
   margin: 0 0.5rem 1rem;
   padding-left: 1rem;
   color: #495057;
-  border-left: 5px solid #ced4da;
+  border-left: 5px solid #8f959e;
+}
+
+.pagelayout-maintenance .page-header-headings,
+.pagelayout-secure .page-header-headings {
+  background-color: #fff;
 }
 
 /* Prevent long strings exceeding page width */
@@ -29781,6 +29785,9 @@ span.editinstructions .alert-link {
 .bulkenabled .bulk-hidden {
   display: none !important;
 }
+.bulkenabled .section {
+  margin-left: 1rem;
+}
 .bulkenabled .section:not(:first-child) {
   margin-top: 1.5rem;
 }
@@ -33285,6 +33292,7 @@ textarea[data-auto-rows] {
 .felement[data-fieldtype=autocomplete],
 .felement[data-fieldtype=tags] {
   display: block !important; /* stylelint-disable-line declaration-no-important */
+  position: static;
 }
 
 [data-fieldtype=editor] > div {
@@ -35117,12 +35125,12 @@ table .sticky-column {
   background-color: inherit;
 }
 
-.table-dynamic .loading-icon {
+.table-dynamic > .loading-icon {
   position: absolute;
   left: calc(50% - 1.5rem);
   top: 200px;
 }
-.table-dynamic .loading-icon .icon {
+.table-dynamic > .loading-icon .icon {
   max-height: 3rem;
   max-width: 3rem;
   font-size: 3rem;
@@ -36739,6 +36747,17 @@ span[data-flexitour=container][x-placement=right] div[data-role=arrow]:after, sp
 }
 .modal .close:not(:disabled):not(.disabled):hover, .modal .close:not(:disabled):not(.disabled):focus {
   opacity: inherit;
+}
+
+/* Change the modal-dialog-scrollable class to position: static to fix the issue with popper.js and autocomplete. */
+.modal-dialog-scrollable:has(.form-autocomplete-suggestions) {
+  position: static;
+}
+.modal-dialog-scrollable:has(.form-autocomplete-suggestions) .modal-content {
+  position: static;
+}
+.modal-dialog-scrollable:has(.form-autocomplete-suggestions) .modal-content .modal-body {
+  position: static;
 }
 
 /* Bug fix for TinyMCE menu when in fullscreen mode. */

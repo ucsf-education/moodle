@@ -325,7 +325,7 @@ class access_manager_test extends \advanced_testcase {
         $this->quiz = $this->create_test_quiz($this->course, settings_provider::USE_SEB_CONFIG_MANUALLY);
         $quizsettings = seb_quiz_settings::get_record(['quizid' => $this->quiz->id]);
         $quizsettings->set('requiresafeexambrowser', settings_provider::USE_SEB_UPLOAD_CONFIG); // Doesn't check basic header.
-        $xml = file_get_contents(__DIR__ . '/fixtures/unencrypted.seb');
+        $xml = file_get_contents(self::get_fixture_path(__NAMESPACE__, 'unencrypted.seb'));
         $this->create_module_test_file($xml, $this->quiz->cmid);
         $quizsettings->save();
         $accessmanager = $this->get_access_manager();
@@ -342,7 +342,7 @@ class access_manager_test extends \advanced_testcase {
      *
      * @return array
      */
-    public function should_validate_basic_header_data_provider() {
+    public static function should_validate_basic_header_data_provider(): array {
         return [
             [settings_provider::USE_SEB_NO, false],
             [settings_provider::USE_SEB_CONFIG_MANUALLY, false],
@@ -376,7 +376,7 @@ class access_manager_test extends \advanced_testcase {
      *
      * @return array
      */
-    public function should_validate_config_key_data_provider() {
+    public static function should_validate_config_key_data_provider(): array {
         return [
             [settings_provider::USE_SEB_NO, false],
             [settings_provider::USE_SEB_CONFIG_MANUALLY, true],
@@ -409,7 +409,7 @@ class access_manager_test extends \advanced_testcase {
      *
      * @return array
      */
-    public function should_validate_browser_exam_key_data_provider() {
+    public static function should_validate_browser_exam_key_data_provider(): array {
         return [
             [settings_provider::USE_SEB_NO, false],
             [settings_provider::USE_SEB_CONFIG_MANUALLY, false],

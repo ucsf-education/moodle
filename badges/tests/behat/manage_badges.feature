@@ -45,12 +45,12 @@ Feature: Manage badges
     And I navigate to "Badges > Manage badges" in site administration
     And I press "Delete" action in the "Badge #1" report row
     And I press "Delete and remove existing issued badges"
-    Then I should see "There are currently no badges available for users to earn"
+    Then I should see "There are no matching badges available for users to earn."
 
   Scenario Outline: Filter managed badges
     Given the following "core_badges > Badges" exist:
-      | name     | status | version |
-      | Badge #2 | 1      | 2.0     |
+      | name     | status | version | image                        |
+      | Badge #2 | 1      | 2.0     | badges/tests/behat/badge.png |
     And I log in as "admin"
     When I navigate to "Badges > Manage badges" in site administration
     And I click on "Filters" "button"
