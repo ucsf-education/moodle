@@ -161,8 +161,9 @@
 	tag = v5.2.4
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
-	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
-	branch = UCSFCLE_403_STABLE
+	url = https://github.com/turnitin/moodle-plagiarism_turnitin
+	branch = master
+	tag = v2024120502
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck
