@@ -152,3 +152,7 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_404_STABLE
+[submodule "local/quizanon"]
+	path = local/quizanon
+	url = https://github.com/ucsf-education/local_quizanon
+	branch = MOODLE_403_STAGING

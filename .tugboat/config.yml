@@ -21,6 +21,7 @@ services:
 
         - echo "****** initializing the submodules *****"
         - git config submodule.admin/tool/ucsfsomapi.url https://${GITHUB_TOKEN_USER}:${GITHUB_TOKEN}@github.com/ucsf-education/tool_ucsfsomapi.git
+        - git config submodule.local/quizanon.url https://${GITHUB_TOKEN_USER}:${GITHUB_TOKEN}@github.com/ucsf-education/local_quizanon.git
         - git submodule update --init
 
         - echo "****** Setting php config variables ******"
