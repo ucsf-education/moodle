@@ -1,0 +1,99 @@
+name: SonarQube Code Scan
+on:
+  workflow_dispatch:
+  workflow_call:
+
+env:
+  SONAR_TOKEN: sqp_db041dcd2f5c1f5310d1a87bde0dde3c52b455fa
+  SONAR_HOST_URL: https://sonarqube.ucsf.edu
+  SQ_PROJECT_KEY: ucsf-education_moodle_ab414c18-b81d-4ee0-9125-2904626af99b
+
+jobs:
+  php_scan_except_lib:
+    name: Scan Core PHP Code (except lib)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Scan Core PHP Code (except lib)
+        uses: sonarsource/sonarqube-scan-action@v4.2.1
+        with:
+          args: >
+            -Dsonar.projectKey=${{ env.SQ_PROJECT_KEY }}
+            -Dsonar.language=php
+            -Dsonar.lang.patterns.mule=-
+            -Dsonar.excludePlugins=mulevalidationsonarqubepluginmule
+            -Dsonar.exclusions=**/lib/**
+            -Dsonar.inclusions=**/*.php
+            -Dsonar.log.level=WARN
+            -Dsonar.plugins.downloadOnlyRequired=true
+        env:
+          SONAR_SCANNER_JAVA_OPTS: -Xmx16g
+
+  php_scan_only_lib:
+    name: Scan lib folder PHP Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Scan lib folder PHP Code
+        uses: sonarsource/sonarqube-scan-action@v4.2.1
+        with:
+          args: >
+            -Dsonar.projectKey=${{ env.SQ_PROJECT_KEY }}
+            -Dsonar.language=php
+            -Dsonar.lang.patterns.mule=-
+            -Dsonar.excludePlugins=mulevalidationsonarqubepluginmule
+            -Dsonar.inclusions=lib/**/*.php
+            -Dsonar.log.level=WARN
+            -Dsonar.plugins.downloadOnlyRequired=true
+        env:
+          SONAR_SCANNER_JAVA_OPTS: -Xmx16g
+
+  frontend_scan:
+    name: Scan Core Frontend Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Scan Core Frontend Code
+        uses: sonarsource/sonarqube-scan-action@v4.2.1
+        with:
+          args: >
+            -Dsonar.projectKey=${{ env.SQ_PROJECT_KEY }}
+            -Dsonar.lang.patterns.mule=-
+            -Dsonar.excludePlugins=mulevalidationsonarqubepluginmule
+            -Dsonar.inclusions=**/*.js,**/*.jsx,**/*.ts,**/*.tsx,**/*.css,**/*.scss,**/*.xml,**/*.cass,**/*.mustache,**/*.json,**/*.html
+            -Dsonar.log.level=WARN
+            -Dsonar.javascript.file.suffixes=.js,.jsx,.mocha.js,.spec.js,.test.js,.st,.tsx
+            -Dsonar.language=js,css,xml,cass,mustache,json,ts,html
+            -Dsonar.typescript.file.suffixes=.ts,.tsx
+            -Dsonar.css.file.suffixes=.css,.scss
+            -Dsonar.html.file.suffixes=.html
+            -Dsonar.mustache.file.suffixes=.mustache
+            -Dsonar.plugins.downloadOnlyRequired=true
+        env:
+          SONAR_SCANNER_JAVA_OPTS: -Xmx12g
+
+  plugins_scan:
+    name: Scan Plugins Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Scan Plugins Code
+        uses: sonarsource/sonarqube-scan-action@v4.2.1
+        with:
+          args: >
+            -Dsonar.projectKey=${{ env.SQ_PROJECT_KEY }}
+            -Dsonar.lang.patterns.mule=-
+            -Dsonar.excludePlugins=mulevalidationsonarqubepluginmule
+            -Dsonar.log.level=WARN
+            -Dsonar.sources=mod,lib/antivirus,customfield/field,files/converter,lib/mlbackend,blocks,question/type,question/behaviour,question/format,filter,lib/editor,enrol,auth,admin/tool,availability/condition,calendar/type,message/output,course/format,dataformat,user/profile/field,report,course/report,grade/export,grade/import,grade/report,grade/grading/form,mnet/service,webservice,repository,portfolio,search/engine,media/player,plagiarism,cache/stores,cache/locks,theme,local,contentbank/contenttype,h5p/h5plib,question/bank
+            -Dsonar.plugins.downloadOnlyRequired=true
+        env:
+          SONAR_SCANNER_JAVA_OPTS: -Xmx8g
