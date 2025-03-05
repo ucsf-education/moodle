@@ -116,6 +116,7 @@
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
 	branch = main
+	tag = v4.5-r2
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
 	url = https://github.com/ucsf-education/moodle-mod_turnitintooltwo
