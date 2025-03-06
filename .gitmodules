@@ -12,8 +12,8 @@
 	branch = MOODLE_404_STABLE
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
-	url = https://github.com/ucsf-education/tool_ucsfsomapi.git
-	branch = MOODLE_404_STABLE
+	url = http://github.com/stopfstedt/tool_ucsfsomapi.git
+	branch = add_general_feedback
 [submodule "availability/condition/mobileapp"]
 	path = availability/condition/mobileapp
 	url = https://github.com/moodlehq/moodle-availability_mobileapp
