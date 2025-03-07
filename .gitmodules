@@ -157,3 +157,4 @@
 	path = theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_404_STABLE
+	tag = v4.4.1
