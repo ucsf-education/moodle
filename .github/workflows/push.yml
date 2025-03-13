@@ -129,3 +129,20 @@ jobs:
           dbtype: ${{ matrix.db }}
           phpunit_options: ${{ secrets.phpunit_options }}
         run: vendor/bin/phpunit $phpunit_options ${{ inputs.phpunit_extra_options }}
+        
+  TriggerSandboxDeploy:
+    if: >
+      github.event_name == 'push' &&
+      github.repository == 'ucsf-education/moodle' &&
+      github.ref_name == vars.SANDBOX_VERSION
+    name: Deploy to Sandbox
+    runs-on: ubuntu-latest
+    needs: [Grunt, PHPUnit]
+    steps:    
+      - name: CLE DevOps Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.DEPLOYMENT_AUTOMATION_PAT }}
+          repository: ucsf-education/cle-devops
+          event-type: moodle-sandbox-deploy
+          client-payload: '{ "deploy_ref": "${{ vars.SANDBOX_VERSION}}", "destination":"moodle-sandbox" }'
