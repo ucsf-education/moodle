@@ -145,4 +145,4 @@ jobs:
           token: ${{ secrets.DEPLOYMENT_AUTOMATION_PAT }}
           repository: ucsf-education/cle-devops
           event-type: moodle-sandbox-deploy
-          client-payload: '{ "deploy_ref": "${{ vars.SANDBOX_VERSION}}", "destination":"moodle-sandbox" }'
+          client-payload: '{ "deploy_ref":"${{ vars.SANDBOX_VERSION }}", "destination":"moodle-sandbox" }'
