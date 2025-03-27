@@ -125,12 +125,12 @@
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
-	tag = v5.2.5
+	tag = v5.3.1
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
 	url = https://github.com/turnitin/moodle-plagiarism_turnitin
 	branch = master
-	tag = v2024121901
+	tag = v2025030501
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck.git
@@ -143,7 +143,6 @@
 	path = question/type/wordselect
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
 	branch = master
-	tag = v2.53
 [submodule "report/benchmark"]
 	path = report/benchmark
 	url = https://github.com/mikasmart/benchmark
