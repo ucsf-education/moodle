@@ -1,10 +1,10 @@
 name: UCSFCLE Moodle Staging Deployment
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
     branches:
-      - UCSFCLE_[0-9]+_STABLE
+      - 'UCSFCLE_[0-9]+_STABLE'
 
 jobs:
   dispatch-staging-deployment:
@@ -21,8 +21,8 @@ jobs:
           event-type: moodle-stage-deploy
           client-payload: >            
             {       
-                "deploy_ref": "${{ github.ref_name }}",
-                "destination": "${{ github.ref_name == github.event.repository.default_branch && 'moodle-stage' || 'moodle-ng-stage' }}", 
+                "deploy_ref": "${{ github.event.pull_request.base.ref }}",
+                "destination": "${{ github.event.pull_request.base.ref == github.event.repository.default_branch && 'moodle-stage' || 'moodle-ng-stage' }}", 
                 "merged_pr": "${{ github.event.pull_request.number }}", 
                 "merged_by": "${{ github.event.pull_request.merged_by.login }}"
             }
