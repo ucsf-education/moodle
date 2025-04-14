@@ -308,9 +308,11 @@ class helper {
     ): array {
         global $DB;
         $topwhere = $top ? '' : 'AND c.parent <> 0';
-        $statuscondition = "AND (qv.status = '" . question_version_status::QUESTION_STATUS_READY . "' " .
-            " OR qv.status = '" . question_version_status::QUESTION_STATUS_DRAFT . "' )";
-
+        $statuscondition = "AND qv.status <> :status";
+        $params = [
+            'status' => question_version_status::QUESTION_STATUS_HIDDEN,
+            'substatus' => question_version_status::QUESTION_STATUS_HIDDEN,
+        ];
         $sql = "SELECT c.*,
                     (SELECT COUNT(1)
                        FROM {question} q
@@ -323,7 +325,7 @@ class helper {
                                 OR (qv.version = (SELECT MAX(v.version)
                                                     FROM {question_versions} v
                                                     JOIN {question_bank_entries} be ON be.id = v.questionbankentryid
-                                                   WHERE be.id = qbe.id)
+                                                   WHERE be.id = qbe.id AND v.status <> :substatus)
                                    )
                                 )
                             ) AS questioncount
@@ -331,7 +333,7 @@ class helper {
                  WHERE c.contextid IN ($contexts) $topwhere
               ORDER BY $sortorder";
 
-        return $DB->get_records_sql($sql);
+        return $DB->get_records_sql($sql, $params);
     }
 
     /**
@@ -378,7 +380,7 @@ class helper {
             foreach ($categories as $category) {
                 if ($category->contextid == $contextid) {
                     $cid = $category->id;
-                    if ($currentcat != $cid || $currentcat == 0) {
+                    if ("{$currentcat},{$contextid}" != $cid || $currentcat == 0) {
                         $a = new \stdClass();
                         $a->name = format_string(
                             $category->indentedname,
