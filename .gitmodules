@@ -15,6 +15,10 @@
 	url = https://github.com/moodlehq/moodle-availability_mobileapp
 	branch = main
 	tag = 4.5
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = https://github.com/danmarsden/moodle-block_attendance
+	branch = main
 [submodule "blocks/checklist"]
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
