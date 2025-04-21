@@ -10,6 +10,11 @@
 	path = admin/tool/ldapsync
 	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
 	branch = MOODLE_405_STABLE
+[submodule "availability/condition/mobileapp"]
+	path = availability/condition/mobileapp
+	url = https://github.com/moodlehq/moodle-availability_mobileapp
+	branch = main
+	tag = 4.5
 [submodule "blocks/attendance"]
 	path = blocks/attendance
 	url = https://github.com/danmarsden/moodle-block_attendance
