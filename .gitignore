@@ -20,6 +20,7 @@
 *~
 #
 /config.php
+/config.local.php
 /tags
 /TAGS
 /cscope.*
@@ -58,3 +59,4 @@ moodle-plugin-ci.phar
 .hugo_build.lock
 phpcs.xml
 jsconfig.json
+

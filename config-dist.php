@@ -1286,6 +1286,13 @@ $CFG->admin = 'admin';
 // ALL DONE!  To continue installation, visit your main page with a browser
 //=========================================================================
 
+
+// Include local config file, if it exists.
+if (file_exists(__DIR__ . '/config.local.php')) {
+  include_once(__DIR__ . '/config.local.php');
+}
+
+
 require_once(__DIR__ . '/lib/setup.php'); // Do not edit
 
 // There is no php closing tag in this file,
