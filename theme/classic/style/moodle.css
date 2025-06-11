@@ -26088,13 +26088,11 @@ blockquote {
 .showmore-container:not(.collapsed) .collapsed-content {
   display: none;
 }
-.showmore-container button {
+.showmore-container .showmore-button {
   float: right;
-}
-.showmore-container button.btn-link {
   text-decoration: none;
 }
-.showmore-container button .icon {
+.showmore-container .showmore-button .icon {
   font-size: 0.8203125rem;
   margin: 0;
 }
@@ -27127,6 +27125,14 @@ img.icon {
 }
 .block .block-controls .dropdown-toggle::after {
   display: none;
+}
+.block .block-controls .dropdown-menu {
+  max-width: 500px;
+}
+.block .block-controls .dropdown-menu .dropdown-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 [data-region=blocks-column] {
@@ -31808,9 +31814,6 @@ a.ygtvspacer:hover {
     display: flex;
     align-items: center;
   }
-  .message-app .footer-container [data-region=view-overview] {
-    display: none;
-  }
   .message-app .overflow-y {
     overflow-y: unset;
   }
@@ -31992,7 +31995,7 @@ a.ygtvspacer:hover {
   color: #1d2125;
 }
 .message-app .lazy-load-list {
-  overflow-y: auto;
+  overflow-y: inherit;
 }
 
 #page-message-index #page-header {
@@ -35102,12 +35105,6 @@ img.userpicture {
   border: 0;
   margin: 0;
 }
-.path-mod-feedback .drag_target_active {
-  opacity: 0.25;
-}
-.path-mod-feedback .drag_item_active {
-  opacity: 0.5;
-}
 .path-mod-feedback .feedback_bar_image {
   height: 10px;
 }
@@ -35120,34 +35117,45 @@ img.userpicture {
 .path-mod-feedback .templateslist th.header.action {
   width: 10%;
 }
-.path-mod-feedback .feedback_form .itemactions {
-  display: inline-block;
-  margin: 0 0.5rem;
-}
 .path-mod-feedback .feedback-item-label {
   width: 100%;
 }
-.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist {
+.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist,
+.path-mod-feedback #feedback_edit_form .feedback_itemlist.sortable-list-is-dragged {
   padding: 1rem;
   border: 1px solid #dee2e6;
+  background-color: #fff;
+  position: relative;
   border-radius: 0.25rem;
 }
-.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .itemhandle {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  text-align: center;
-  align-content: center;
+.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .itemname,
+.path-mod-feedback #feedback_edit_form .feedback_itemlist.sortable-list-is-dragged .itemname {
+  margin-right: 2rem;
 }
-.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .action-menu {
+.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .itemactions,
+.path-mod-feedback #feedback_edit_form .feedback_itemlist.sortable-list-is-dragged .itemactions {
   position: absolute;
   top: 0;
   right: 0;
 }
-.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .dropdown-toggle {
+.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist .itemactions .dropdown-toggle,
+.path-mod-feedback #feedback_edit_form .feedback_itemlist.sortable-list-is-dragged .itemactions .dropdown-toggle {
   border-radius: 0.5rem;
   width: 32px;
   height: 32px;
+}
+.path-mod-feedback #feedback_edit_form [id*=_feedback_item_].feedback_itemlist.sortable-list-current-position,
+.path-mod-feedback #feedback_edit_form .feedback_itemlist.sortable-list-is-dragged.sortable-list-current-position {
+  background-color: #f8f9fa;
+}
+.path-mod-feedback #feedback_edit_form .sortable-list-is-dragged {
+  opacity: 0.75;
+  max-width: 830px;
+}
+.path-mod-feedback #feedback_edit_form .loading-icon {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 0.5rem);
 }
 .path-mod-feedback table.analysis {
   width: 100%;
@@ -38491,7 +38499,12 @@ div.editor_atto_toolbar button .icon {
   margin-right: 0;
 }
 
-@media (max-width: 575.98px) {
+.reportbuilder-report {
+  container-type: inline-size; /* stylelint-disable-line */
+}
+
+@container (width < 576px) {
+  .reportbuilder-report[data-report-type="0"]:not([data-editing]) { /* stylelint-disable-line */ }
   .reportbuilder-report[data-report-type="0"]:not([data-editing]):not([data-force-table]) table.reportbuilder-table thead {
     display: none;
   }
@@ -38551,65 +38564,63 @@ div.editor_atto_toolbar button .icon {
     font-weight: bold;
   }
 }
-@media (min-width: 576px) {
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table thead {
-    display: none;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 0;
-    padding: 0.25rem 0.5rem 0 0.5rem;
-    background-color: #fff !important; /* stylelint-disable-line declaration-no-important */
-    word-wrap: break-word;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr:hover {
-    background-color: #fff !important; /* stylelint-disable-line declaration-no-important */
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr.emptyrow {
-    display: none;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr:not(.show) td[data-cardviewhidden] {
-    display: none;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td {
-    display: block;
-    min-height: 3.6rem;
-    padding: 0.5rem 0.25rem;
-    border: none;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td::before {
-    content: attr(data-cardtitle);
-    display: block;
-    text-transform: uppercase;
-    font-size: 70%;
-    color: #343a40;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:not([data-cardtitle]) {
-    min-height: 3rem;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:not(:first-child):not(.card-toggle) {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:first-child {
-    padding-right: 2rem;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle {
-    display: block !important; /* stylelint-disable-line declaration-no-important */
-    position: absolute;
-    right: 10px;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle button {
-    padding: 0 0.5rem;
-    color: #6a737b;
-  }
-  .reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle button i {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table thead {
+  display: none;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  background-color: #fff !important; /* stylelint-disable-line declaration-no-important */
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr:hover {
+  background-color: #fff !important; /* stylelint-disable-line declaration-no-important */
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr.emptyrow {
+  display: none;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr:not(.show) td[data-cardviewhidden] {
+  display: none;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td {
+  display: block;
+  min-height: 3.6rem;
+  padding: 0.5rem 0.25rem;
+  border: none;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td::before {
+  content: attr(data-cardtitle);
+  display: block;
+  text-transform: uppercase;
+  font-size: 70%;
+  color: #343a40;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:not([data-cardtitle]) {
+  min-height: 3rem;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:not(:first-child):not(.card-toggle) {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td:first-child {
+  padding-right: 2rem;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle {
+  display: block !important; /* stylelint-disable-line declaration-no-important */
+  position: absolute;
+  right: 10px;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle button {
+  padding: 0 0.5rem;
+  color: #6a737b;
+}
+.reportbuilder-report[data-report-type="0"]:not([data-editing])[data-force-card] table.reportbuilder-table tr td.card-toggle button i {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .courseindex .courseindex-item {
@@ -39059,6 +39070,7 @@ div.editor_atto_toolbar button .icon {
   display: flex;
 }
 .moodlenet-share-dialog .modal-header .moodlenet-share-moodlenetinfo .moodlenet-logo .icon {
+  max-width: initial;
   width: auto;
   height: 1.3rem;
 }
@@ -39120,7 +39132,7 @@ div.editor_atto_toolbar button .icon {
 }
 .moodlenet-share-dialog .modal-body .moodlenet-share-modal-content .moodlenet-circle-status span.status-icon .icon {
   font-size: 8rem;
-  width: auto;
+  max-width: initial;
   margin: 0;
 }
 .moodlenet-share-dialog .modal-footer .moodlenet-share-to {
@@ -39205,6 +39217,12 @@ div.editor_atto_toolbar button .icon {
 .dropdown-item:hover a.text-dark, .dropdown-item:focus.text-dark,
 .dropdown-item:focus a.text-dark {
   color: #fff !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.dir-rtl .dropdown-menu {
+  transform: none !important; /* stylelint-disable-line declaration-no-important */
+  top: 100% !important; /* stylelint-disable-line declaration-no-important */
+  right: inherit !important; /* stylelint-disable-line declaration-no-important */
 }
 
 /**
