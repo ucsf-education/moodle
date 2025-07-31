@@ -45,7 +45,7 @@
 	path = course/format/topcoll
 	url = https://github.com/gjbarnard/moodle-format_topcoll
 	branch = main
-	tag = V405.0.4
+	tag = V405.1.2
 [submodule "enrol/ilios"]
 	path = enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
@@ -62,11 +62,12 @@
 	path = lib/editor/tiny/plugins/fontcolor
 	url = https://github.com/bfh/moodle-tiny_fontcolor
 	branch = main
+	tag = V1.0
 [submodule "local/bulkenrol"]
 	path = local/bulkenrol
 	url = https://github.com/moodle-an-hochschulen/moodle-local_bulkenrol
 	branch = MOODLE_405_STABLE
-	tag = v4.5-r1
+	tag = v4.5-r2
 [submodule "local/coursearchivingnotification"]
 	path = local/coursearchivingnotification
 	url = https://github.com/ucsf-education/moodle-local_coursearchivingnotification
@@ -133,12 +134,11 @@
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
-	tag = v5.4.0
+	tag = v5.4.3
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
-	url = https://github.com/turnitin/moodle-plagiarism_turnitin
-	branch = master
-	tag = v2025052901
+	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
+	branch = UCSFCLE_405_STABLE
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck
