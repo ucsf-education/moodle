@@ -143,6 +143,7 @@
 	path = question/type/oumultiresponse
 	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
 	branch = main
+	tag = v2.5
 [submodule "question/type/wordselect"]
 	path = question/type/wordselect
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
