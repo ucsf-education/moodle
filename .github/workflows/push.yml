@@ -21,7 +21,7 @@ env:
 
 jobs:
   Grunt:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checking out code
@@ -65,11 +65,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # MySQL builds always run with the lowest PHP supported version.
-          - os: ubuntu-22.04
-            php: 8.1
-            extensions:
-            db: mysqli
           # MySQL with php 8.3 and ubuntu-24.04.
           - os: ubuntu-24.04
             php: 8.3
@@ -77,7 +72,7 @@ jobs:
             db: mysqli
           # Disable testing with PostgreSQL for now since we are not using it.
           # # PostgreSQL builds always run with the highest PHP supported version.
-          # - os: ubuntu-22.04
+          # - os: ubuntu-24.04
           #   php: 8.3
           #   db: pgsql
 

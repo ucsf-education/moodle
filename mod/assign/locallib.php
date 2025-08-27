@@ -6634,6 +6634,7 @@ class assign {
         global $USER;
         $userid = core_user::is_real_user($userfrom->id) ? $userfrom->id : $USER->id;
         $uniqueid = $this->get_uniqueid_for_user($userid);
+        $oldforcelang = force_current_language($userto->lang);
         self::send_assignment_notification($userfrom,
                                            $userto,
                                            $messagetype,
@@ -6646,6 +6647,7 @@ class assign {
                                            $this->get_instance()->name,
                                            $this->is_blind_marking(),
                                            $uniqueid);
+        force_current_language($oldforcelang);
     }
 
     /**
@@ -7366,7 +7368,7 @@ class assign {
         mdl: 'MDL-82681',
     )]
     protected function process_save_grading_options() {
-        \core\deprecation::emit_deprecation_if_present([self::class, __FUNCTION__]);
+        \core\deprecation::emit_deprecation([self::class, __FUNCTION__]);
     }
 
     /**
