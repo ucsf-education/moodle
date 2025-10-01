@@ -145,9 +145,8 @@
 	branch = MOODLE_405_STABLE
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
-	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
-	branch = main
-	tag = v2.5
+	url = https://github.com/ucsf-education/moodle-qtype_oumultiresponse
+	branch = UCSFCLE_405_STABLE
 [submodule "question/type/wordselect"]
 	path = question/type/wordselect
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
