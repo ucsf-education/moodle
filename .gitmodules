@@ -119,8 +119,8 @@
 	branch = MOODLE_404_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
-	url = https://github.com/PoetOS/moodle-mod_questionnaire
-	branch = MOODLE_404_STABLE
+	url = https://github.com/ucsf-education/moodle-mod_questionnaire
+	branch = UCSFCLE_405_STABLE
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
