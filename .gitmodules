@@ -54,6 +54,10 @@
 	path = enrol/ucsfsis
 	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = main
+[submodule "filter/panorama"]
+	path = filter/panorama
+	url = https://github.com/ucsf-education/moodle-filter_panorama
+	branch = UCSFCLE_405_STABLE
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
