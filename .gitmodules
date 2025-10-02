@@ -119,8 +119,8 @@
 	branch = MOODLE_404_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
-	url = https://github.com/PoetOS/moodle-mod_questionnaire
-	branch = MOODLE_404_STABLE
+	url = https://github.com/ucsf-education/moodle-mod_questionnaire
+	branch = UCSFCLE_405_STABLE
 [submodule "mod/quiz/report/archive"]
 	path = mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
@@ -128,8 +128,8 @@
 	tag = v5.0-r1
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
-	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
-	tag = v2025052901
+	url = https://github.com/ucsf-education/moodle-mod_turnitintooltwo
+	branch = UCSFCLE_405_STABLE
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
@@ -145,14 +145,12 @@
 	branch = MOODLE_405_STABLE
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
-	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
-	branch = main
-	tag = v2.5
+	url = https://github.com/ucsf-education/moodle-qtype_oumultiresponse
+	branch = UCSFCLE_405_STABLE
 [submodule "question/type/wordselect"]
 	path = question/type/wordselect
-	url = https://github.com/marcusgreen/moodle-qtype_wordselect
-	branch = master
-	tag = v2.54
+	url = https://github.com/ucsf-education/moodle-qtype_wordselect
+	branch = UCSFCLE_405_STABLE
 [submodule "report/benchmark"]
 	path = report/benchmark
 	url = https://github.com/mikasmart/moodle-report_benchmark
