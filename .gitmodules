@@ -96,7 +96,7 @@
 [submodule "local/replacementapipanorama"]
 	path = local/replacementapipanorama
 	url = https://github.com/ucsf-education/moodle-local_replacementapipanorama
-	branch = main
+	branch = UCSFCLE_405_STABLE
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
