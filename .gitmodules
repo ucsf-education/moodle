@@ -54,6 +54,10 @@
 	path = enrol/ucsfsis
 	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = main
+[submodule "filter/panorama"]
+	path = filter/panorama
+	url = https://github.com/ucsf-education/moodle-filter_panorama
+	branch = UCSFCLE_405_STABLE
 [submodule "filter/ucsfezproxy"]
 	path = filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
@@ -81,10 +85,18 @@
 	path = local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_405_STABLE
+[submodule "local/panorama"]
+	path = local/panorama
+	url = https://github.com/ucsf-education/moodle-local_panorama
+	branch = UCSFCLE_405_STABLE
 [submodule "local/quizanon"]
 	path = local/quizanon
 	url = https://github.com/ucsf-education/local_quizanon
 	branch = MOODLE_405_STABLE
+[submodule "local/replacementapipanorama"]
+	path = local/replacementapipanorama
+	url = https://github.com/ucsf-education/moodle-local_replacementapipanorama
+	branch = UCSFCLE_405_STABLE
 [submodule "local/staticpage"]
 	path = local/staticpage
 	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
