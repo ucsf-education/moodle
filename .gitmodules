@@ -109,8 +109,8 @@
 [submodule "mod/checklist"]
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
-	branch = MOODLE_401_STABLE
-	tag = 4.1.0.5
+	branch = MOODLE_500_STABLE
+	tag = 4.1.0.7
 [submodule "mod/choicegroup"]
 	path = mod/choicegroup
 	url = https://github.com/ndunand/moodle-mod_choicegroup
