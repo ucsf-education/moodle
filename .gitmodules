@@ -26,8 +26,8 @@
 [submodule "blocks/checklist"]
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
-	branch = MOODLE_401_STABLE
-	tag = 4.1.0.6
+	branch = MOODLE_500_STABLE
+	tag = 4.0.0.1
 [submodule "blocks/course_recent"]
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
