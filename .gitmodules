@@ -140,8 +140,9 @@
 	tag = v5.1-r1
 [submodule "mod/turnitintooltwo"]
 	path = mod/turnitintooltwo
-	url = https://github.com/ucsf-education/moodle-mod_turnitintooltwo
-	branch = UCSFCLE_405_STABLE
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
+	branch = master
+	tag = v2025102901
 [submodule "mod/zoom"]
 	path = mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
