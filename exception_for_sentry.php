@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/config.php';
+
 // Some normal code
 echo "Loading page to test Sentry\n";
 
