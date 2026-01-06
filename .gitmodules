@@ -10,6 +10,10 @@
 	path = admin/tool/ldapsync
 	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
 	branch = MOODLE_405_STABLE
+[submodule "admin/tool/sentry"]
+	path = admin/tool/sentry
+	url = https://github.com/EsdrasCaleb/moodle-tool_sentry
+	branch = main
 [submodule "admin/tool/ucsfsomapi"]
 	path = admin/tool/ucsfsomapi
 	url = https://github.com/ucsf-education/tool_ucsfsomapi
