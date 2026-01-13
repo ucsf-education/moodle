@@ -109,7 +109,7 @@
 [submodule "mod/attendance"]
 	path = mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
-	branch = MOODLE_405_STABLE	
+	branch = MOODLE_405_STABLE
 [submodule "mod/checklist"]
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
@@ -154,9 +154,8 @@
 	tag = v5.4.5
 [submodule "plagiarism/turnitin"]
 	path = plagiarism/turnitin
-	url = https://github.com/turnitin/moodle-plagiarism_turnitin
-	branch = master
-	tag = v2025102901
+	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
+	branch = UCSFCLE_405_STABLE
 [submodule "question/type/knowledgecheck"]
 	path = question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck
