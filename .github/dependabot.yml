@@ -4,9 +4,8 @@ updates:
   - package-ecosystem: "gitsubmodule"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "wednesday"
-      time: "10:00"
+      interval: "daily"
+      time: "5:00"
 
     # PRs will target this branch (the branch in your repo)
     target-branch: "UCSFCLE_405_STABLE"
