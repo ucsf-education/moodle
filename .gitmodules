@@ -26,7 +26,7 @@
 [submodule "blocks/attendance"]
 	path = blocks/attendance
 	url = https://github.com/danmarsden/moodle-block_attendance
-	branch = main
+	branch = MOODLE_405_STABLE
 [submodule "blocks/checklist"]
 	path = blocks/checklist
 	url = https://github.com/davosmith/moodle-block_checklist
@@ -48,7 +48,7 @@
 [submodule "course/format/topcoll"]
 	path = course/format/topcoll
 	url = https://github.com/gjbarnard/moodle-format_topcoll
-	branch = main
+	branch = MOODLE_405
 	tag = V405.1.4
 [submodule "enrol/ilios"]
 	path = enrol/ilios
@@ -128,11 +128,12 @@
 [submodule "mod/diary"]
 	path = mod/diary
 	url = https://github.com/drachels/moodle-mod_diary
-	branch = master
+	branch = MOODLE_400_STABLE
+	tag = v4.0.0
 [submodule "mod/oublog"]
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
-	branch = MOODLE_404_STABLE
+	branch = MOODLE_405_STABLE
 [submodule "mod/questionnaire"]
 	path = mod/questionnaire
 	url = https://github.com/ucsf-education/moodle-mod_questionnaire
