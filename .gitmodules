@@ -36,6 +36,7 @@
 	path = blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
 	branch = MOODLE_405_STABLE
+	tag = 4.5.1
 [submodule "blocks/massaction"]
 	path = blocks/massaction
 	url = https://github.com/Syxton/moodle-block_massaction
