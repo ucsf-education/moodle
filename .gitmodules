@@ -76,3 +76,8 @@
 	url = https://github.com/ucsf-education/knowledgecheck
 	branch = MOODLE_501_STABLE
 	tag = v5.1.0
+[submodule "public/question/type/oumultiresponse"]
+	path = public/question/type/oumultiresponse
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
+	branch = main
+	tag = v2.5
