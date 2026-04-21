@@ -4,7 +4,7 @@ on:
   pull_request_target:
     types: [closed]
     branches:
-      - 'UCSFCLE_[0-9]+_STABLE'
+      - 'UCSFCLE_405_STABLE'
 
 jobs:
   dispatch-staging-deployment:
