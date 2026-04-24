@@ -129,8 +129,8 @@
 [submodule "mod/diary"]
 	path = mod/diary
 	url = https://github.com/drachels/moodle-mod_diary
-	branch = MOODLE_401_STABLE
-	tag = v4.0.1
+	branch = MOODLE_500_STABLE
+	tag = v5.0.0
 [submodule "mod/oublog"]
 	path = mod/oublog
 	url = https://github.com/moodleou/moodle-mod_oublog
