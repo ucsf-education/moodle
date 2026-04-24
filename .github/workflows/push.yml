@@ -61,6 +61,14 @@ jobs:
         image: redis
         ports:
           - 6379:6379
+      postgres:
+        image: ${{ matrix.db == 'pgsql' && 'postgres:13' || '' }}
+        env:
+          POSTGRES_DB: test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+        ports:
+          - 5432:5432
     strategy:
       fail-fast: false
       matrix:
