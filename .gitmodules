@@ -184,3 +184,7 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_405_STABLE
 	tag = v4.5.4
+[submodule "public/mod/chat"]
+	path = public/mod/chat
+	url = https://github.com/moodlehq/moodle-mod_chat
+	branch = main
