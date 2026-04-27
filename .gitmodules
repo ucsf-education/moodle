@@ -27,9 +27,9 @@
 	path = blocks/attendance
 	url = https://github.com/danmarsden/moodle-block_attendance
 	branch = MOODLE_405_STABLE
-[submodule "blocks/checklist"]
-	path = blocks/checklist
-	url = https://github.com/davosmith/moodle-block_checklist
+[submodule "blocks/"]
+	path = blocks/
+	url = https://github.com/davosmith/moodle-block_
 	branch = MOODLE_500_STABLE
 	tag = 4.0.0.1
 [submodule "blocks/course_recent"]
@@ -115,7 +115,7 @@
 	path = mod/checklist
 	url = https://github.com/davosmith/moodle-checklist
 	branch = MOODLE_500_STABLE
-	tag = 4.1.0.7
+	tag = 4.1.0.8
 [submodule "mod/choicegroup"]
 	path = mod/choicegroup
 	url = https://github.com/ndunand/moodle-mod_choicegroup
