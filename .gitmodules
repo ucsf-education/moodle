@@ -90,6 +90,10 @@
 	path = local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_405_STABLE
+[submodule "local/oauthredirect"]
+	path = local/oauthredirect
+	url = https://github.com/ucsf-education/moodle-local_oauthredirect
+	branch = main
 [submodule "local/panorama"]
 	path = local/panorama
 	url = https://github.com/ucsf-education/moodle-local_panorama
