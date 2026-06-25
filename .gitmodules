@@ -124,7 +124,7 @@
 	path = mod/choicegroup
 	url = https://github.com/ndunand/moodle-mod_choicegroup
 	branch = master
-	tag = 2026013100
+	tag = 2026062400
 [submodule "mod/customcert"]
 	path = mod/customcert
 	url = https://github.com/mdjnelson/moodle-mod_customcert
