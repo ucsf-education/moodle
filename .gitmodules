@@ -170,6 +170,16 @@
 	url = https://github.com/turnitin/moodle-plagiarism_turnitin
 	branch = master
 	tag = v2025102901
+[submodule "public/mod/turnitintooltwo"]
+	path = public/mod/turnitintooltwo
+	url = https://github.com/turnitin/moodle-mod_turnitintooltwo
+	branch = master
+	tag = v2025121101
+[submodule "public/theme/ucsf"]
+	path = public/theme/ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
+	branch = MOODLE_501_STABLE
+	tag = v5.1.2
 [submodule "public/question/type/knowledgecheck"]
 	path = public/question/type/knowledgecheck
 	url = https://github.com/ucsf-education/knowledgecheck
