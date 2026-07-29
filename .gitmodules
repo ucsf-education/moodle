@@ -1,0 +1,200 @@
+[submodule "public/admin/tool/externaltaskmonitor"]
+	path = public/admin/tool/externaltaskmonitor
+	url = https://github.com/ucsf-education/tool_externaltaskmonitor
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/admin/tool/ilioscategoryassignment"]
+	path = public/admin/tool/ilioscategoryassignment
+	url = https://github.com/ilios/tool_ilioscategoryassignment
+	branch = MOODLE_501_STABLE
+	tag = v5.1.1
+[submodule "public/admin/tool/ldapsync"]
+	path = public/admin/tool/ldapsync
+	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
+	branch = main
+[submodule "public/admin/tool/sentry"]
+	path = public/admin/tool/sentry
+	url = https://github.com/EsdrasCaleb/moodle-tool_sentry
+	branch = main
+[submodule "public/admin/tool/ucsfsomapi"]
+	path = public/admin/tool/ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/availability/condition/mobileapp"]
+	path = public/availability/condition/mobileapp
+	url = https://github.com/ucsf-education/moodle-availability_mobileapp
+	branch = UCSFCLE_501_STABLE
+[submodule "public/blocks/attendance"]
+	path = public/blocks/attendance
+	url = https://github.com/danmarsden/moodle-block_attendance
+	branch = MOODLE_500_STABLE
+[submodule "public/blocks/checklist"]
+	path = public/blocks/checklist
+	url = https://github.com/davosmith/moodle-block_checklist
+	branch = MOODLE_500_STABLE
+	tag = 4.1.0.1
+[submodule "public/blocks/course_recent"]
+	path = public/blocks/course_recent
+	url = https://github.com/ucsf-education/moodle-block-course_recent
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/blocks/massaction"]
+	path = public/blocks/massaction
+	url = https://github.com/Syxton/moodle-block_massaction
+	branch = MOODLE_501_STABLE
+	tag = 7.5.1
+[submodule "public/blocks/quickmail"]
+	path = public/blocks/quickmail
+	url = https://github.com/ucsf-education/moodle-block_quickmail
+	branch = UCSFCLE_501_STABLE
+[submodule "public/enrol/ilios"]
+	path = public/enrol/ilios
+	url = https://github.com/ilios/moodle-enrol-ilios
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/enrol/ucsfsis"]
+	path = public/enrol/ucsfsis
+	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
+	branch = main
+	tag = v5.1.1
+[submodule "public/filter/panorama"]
+	path = public/filter/panorama
+	url = https://github.com/ucsf-education/moodle-filter_panorama
+	branch = UCSFCLE_405_STABLE
+[submodule "public/filter/ucsfezproxy"]
+	path = public/filter/ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/lib/editor/tiny/plugins/fontcolor"]
+	path = public/lib/editor/tiny/plugins/fontcolor
+	url = https://github.com/bfh/moodle-tiny_fontcolor
+	branch = main
+	tag = V1.4
+[submodule "public/local/bulkenrol"]
+	path = public/local/bulkenrol
+	url = https://github.com/moodle-an-hochschulen/moodle-local_bulkenrol
+	branch = MOODLE_501_STABLE
+	tag = v5.1-r1
+[submodule "public/local/coursearchivingnotification"]
+	path = public/local/coursearchivingnotification
+	url = https://github.com/ucsf-education/moodle-local_coursearchivingnotification
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/local/maintenance_livecheck"]
+	path = public/local/maintenance_livecheck
+	url = https://github.com/moodle-an-hochschulen/moodle-local_maintenance_livecheck
+	branch = MOODLE_501_STABLE
+	tag = v5.1-r1
+[submodule "public/local/navbarhelpmenu"]
+	path = public/local/navbarhelpmenu
+	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/local/oauthredirect"]
+	path = public/local/oauthredirect
+	url = https://github.com/ucsf-education/moodle-local_oauthredirect
+	branch = main
+[submodule "public/local/panorama"]
+	path = public/local/panorama
+	url = https://github.com/ucsf-education/moodle-local_panorama
+	branch = UCSFCLE_405_STABLE
+[submodule "public/local/quizanon"]
+	path = public/local/quizanon
+	url = https://github.com/ucsf-education/local_quizanon
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/local/replacementapipanorama"]
+	path = public/local/replacementapipanorama
+	url = https://github.com/ucsf-education/moodle-local_replacementapipanorama
+	branch = UCSFCLE_405_STABLE
+[submodule "public/local/staticpage"]
+	path = public/local/staticpage
+	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
+	branch = MOODLE_501_STABLE
+	tag = v5.1-r1
+[submodule "public/mod/attendance"]
+	path = public/mod/attendance
+	url = https://github.com/danmarsden/moodle-mod_attendance
+	branch = MOODLE_501_STABLE
+[submodule "public/mod/chat"]
+	path = public/mod/chat
+	url = https://github.com/ucsf-education/moodle-mod_chat
+	branch = main
+[submodule "public/mod/checklist"]
+	path = public/mod/checklist
+	url = https://github.com/davosmith/moodle-checklist
+	branch = MOODLE_500_STABLE
+	tag = 4.1.0.8
+[submodule "public/mod/choicegroup"]
+	path = public/mod/choicegroup
+	url = https://github.com/ndunand/moodle-mod_choicegroup
+	branch = master
+	tag = 2026013100
+[submodule "public/mod/customcert"]
+	path = public/mod/customcert
+	url = https://github.com/mdjnelson/moodle-mod_customcert
+	branch = MOODLE_500_STABLE
+	tag = v5.0.4
+[submodule "public/mod/diary"]
+	path = public/mod/diary
+	url = https://github.com/drachels/moodle-mod_diary
+	branch = master
+	tag = v5.1.2
+[submodule "public/mod/oublog"]
+	path = public/mod/oublog
+	url = https://github.com/moodleou/moodle-mod_oublog
+	branch = MOODLE_500_STABLE
+[submodule "public/mod/questionnaire"]
+	path = public/mod/questionnaire
+	url = https://github.com/PoetOS/moodle-mod_questionnaire
+	branch = MOODLE_500_STABLE
+	tag = v5.0.3
+[submodule "public/mod/quiz/report/archive"]
+	path = public/mod/quiz/report/archive
+	url = https://github.com/bfh/moodle-quiz_archive
+	branch = main
+	tag = v5.2-r1
+[submodule "public/mod/survey"]
+	path = public/mod/survey
+	url = https://github.com/ucsf-education/moodle-mod_survey
+	branch = main
+[submodule "public/mod/zoom"]
+	path = public/mod/zoom
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
+	branch = main
+	tag = v5.5.0
+[submodule "public/plagiarism/turnitin"]
+	path = public/plagiarism/turnitin
+	url = https://github.com/turnitin/moodle-plagiarism_turnitin
+	branch = master
+	tag = v2025102901
+[submodule "public/question/type/knowledgecheck"]
+	path = public/question/type/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck
+	branch = MOODLE_501_STABLE
+	tag = v5.1.0
+[submodule "public/question/type/oumultiresponse"]
+    path = public/question/type/oumultiresponse
+    url = https://github.com/ucsf-education/moodle-qtype_oumultiresponse
+    branch = UCSFCLE_501_STABLE
+[submodule "public/question/type/wordselect"]
+	path = public/question/type/wordselect
+	url = https://github.com/marcusgreen/moodle-qtype_wordselect
+	branch = main
+	tag = v2.56
+[submodule "public/report/benchmark"]
+	path = public/report/benchmark
+	url = https://github.com/mikasmart/moodle-report_benchmark
+	branch = master
+	tag = v1.5.4
+[submodule "public/repository/boxnet"]
+	path = public/repository/boxnet
+	url = https://github.com/ucsf-education/moodle-repository_boxnet
+	branch = master
+[submodule "public/theme/ucsf"]
+	path = public/theme/ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
+	branch = MOODLE_501_STABLE
+	tag = v5.1.4
