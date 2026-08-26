@@ -164,7 +164,7 @@
 	path = public/mod/zoom
 	url = https://github.com/ncstate-delta/moodle-mod_zoom
 	branch = main
-	tag = v5.5.0
+	tag = v5.5.1
 [submodule "public/plagiarism/turnitin"]
 	path = public/plagiarism/turnitin
 	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
