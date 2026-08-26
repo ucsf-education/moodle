@@ -6,6 +6,12 @@ updates:
     schedule:
       interval: "daily"
       time: "05:00"
+      timezone: "America/Los_Angeles"
+      
+    # Default cooldown is 3 days and the minimum for cooldown is 1 day. Override default cooldown to 1 day so we can decide cooldown period after PR review
+    cooldown:
+      default-days: 1
+      
     # The limit on the number of maximum number of pull requests for version updates open at any time.
     open-pull-requests-limit: 10
 
