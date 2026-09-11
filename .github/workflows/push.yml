@@ -157,7 +157,7 @@ jobs:
             --exclude='.*' \
             --exclude='*.sh' \
             --exclude='composer.json' \
-            plugin/ moodle/public/
+            plugin/public/ moodle/public/
 
       - name: Setting up PHPUnit
         working-directory: moodle

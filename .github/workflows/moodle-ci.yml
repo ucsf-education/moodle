@@ -36,19 +36,19 @@ jobs:
         moodle-branch: ['MOODLE_502_STABLE']
         database: [pgsql, mariadb]
         plugin:
-          - blocks/kalturamediagallery
-          - filter/kaltura
-          - lib/editor/tiny/plugins/kalturamedia
-          - local/kaltura
-          - local/kalturamediagallery
-          - local/mymedia
-          - mod/assign/submission/kalvid
-          - mod/kalvidassign
-          - mod/kalvidres
+          - public/blocks/kalturamediagallery
+          - public/filter/kaltura
+          - public/lib/editor/tiny/plugins/kalturamedia
+          - public/local/kaltura
+          - public/local/kalturamediagallery
+          - public/local/mymedia
+          - public/mod/assign/submission/kalvid
+          - public/mod/kalvidassign
+          - public/mod/kalvidres
         include:
           # This plugin has a dependence of the `local/kaltura` plugin
-          - plugin: filter/kaltura
-            extra-plugins: local/
+          - plugin: public/filter/kaltura
+            extra-plugins: public/local/
 
     steps:
       - name: Check out repository code
