@@ -19,34 +19,51 @@ on:
 
 env:
   php: 8.4
+  moodle-branch: MOODLE_502_STABLE
 
 jobs:
-  # Grunt:
-  #   runs-on: ubuntu-24.04
+  Grunt:
+    runs-on: ubuntu-24.04
 
-  #   steps:
-  #     - name: Checking out code
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Checking out Moodle ${{ matrix.moodle-branch }}
+        uses: actions/checkout@v6
+        with:
+          repository: moodle/moodle
+          ref: ${{ env.moodle-branch }}
 
-  #     - name: Configuring node & npm
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version-file: '.nvmrc'
+      - name: Checking out kaltura moodle_plugin code
+        uses: actions/checkout@v6
+        with:
+          path: plugin
 
-  #     - name: Installing node stuff
-  #       run: npm install
+      - name: Installing plugins
+        run: |
+          rsync -av \
+            --exclude='.*' \
+            --exclude='*.sh' \
+            --exclude='composer.json' \
+            plugin/public/ public/
+ 
+      - name: Configuring node & npm
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
 
-  #     - name: Running grunt
-  #       run: npx grunt
+      - name: Installing node stuff
+        run: npm install
 
-  #     - name: Looking for uncommitted changes
-  #       # Add all files to the git index and then run diff --cached to see all changes.
-  #       # This ensures that we get the status of all files, including new files.
-  #       # We ignore npm-shrinkwrap.json to make the tasks immune to npm changes.
-  #       run: |
-  #         git add .
-  #         git reset -- npm-shrinkwrap.json
-  #         git diff --cached --exit-code
+      - name: Running grunt
+        run: npx grunt
+
+      # - name: Looking for uncommitted changes
+      #   # Add all files to the git index and then run diff --cached to see all changes.
+      #   # This ensures that we get the status of all files, including new files.
+      #   # We ignore npm-shrinkwrap.json to make the tasks immune to npm changes.
+      #   run: |
+      #     git add .
+      #     git reset -- npm-shrinkwrap.json
+      #     git diff --cached --exit-code
 
   PHPUnit:
     runs-on: ${{ matrix.os }}
@@ -70,7 +87,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        moodle-branch: ['MOODLE_502_STABLE']
         include:
           # MySQL builds always run with the lowest PHP supported version.
           - os: ubuntu-24.04
@@ -120,14 +136,14 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: moodle/moodle
-          ref: ${{ matrix.moodle-branch }}
+          ref: ${{ env.moodle-branch }}
           path: moodle
 
       - name: Applying MDL-87086 patch
         working-directory: moodle
         run: |
           git remote add ctam https://github.com/ctam/moodle.git
-          git fetch ctam MDL-87086-${{ matrix.moodle-branch }}
+          git fetch ctam MDL-87086-${{ env.moodle-branch }}
           ## git merge does not always work, with merge unrelated history error.
           # git merge --no-edit FETCH_HEAD
           ## So, we use cherry-pick instead.
