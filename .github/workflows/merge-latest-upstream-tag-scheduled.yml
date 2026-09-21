@@ -17,7 +17,12 @@ jobs:
             upstream: MOODLE_501_STABLE
             target: UCSFCLE_501_STABLE
             assignees: ctam
-            reviewers: ucsf-education/MoodleCodeReviewers
+            reviewers: ucsf-education/moodlecodereviewers
+          - version: "Moodle 5.2"
+            upstream: MOODLE_502_STABLE
+            target: UCSFCLE_502_STABLE
+            assignees: ctam
+            reviewers: ucsf-education/moodlecodereviewers            
 
     uses: ./.github/workflows/merge-latest-upstream-tag.yml
 

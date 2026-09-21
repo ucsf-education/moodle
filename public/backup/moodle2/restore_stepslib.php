@@ -82,6 +82,14 @@ class restore_drop_and_clean_temp_stuff extends restore_execution_step {
 class restore_gradebook_structure_step extends restore_structure_step {
 
     /**
+     * The first Moodle version on this branch containing the MDL-88407 fix.
+     *
+     * As the fix did not include a version bump on any branch, this is the exact weekly version the
+     * fix first shipped in.
+     */
+    const PENALTY_CALCULATION_BUG_VERSION = 2025100605.04;
+
+    /**
      * To conditionally decide if this step must be executed
      * Note the "settings" conditions are evaluated in the
      * corresponding task. Here we check for other conditions
@@ -525,6 +533,18 @@ class restore_gradebook_structure_step extends restore_structure_step {
                 && ($restoretask->backup_version_compare(20160518, '<') || $restoretask->backup_release_compare('2.9', '<='))) {
             require_once($CFG->libdir . '/db/upgradelib.php');
             upgrade_course_letter_boundary($this->get_courseid());
+        }
+        // Penalised grades may have had a grade item's multiplier/offset applied twice between the
+        // introduction of grade penalties (20250318) and the MDL-88407 fix. As the fix did not include
+        // a version bump, compare the backup's exact moodle_version against the weekly version in which
+        // the fix first shipped on this branch.
+        if (
+            !$gradebookcalculationsfreeze
+            && $restoretask->backup_version_compare(20250318, '>=')
+            && $restoretask->get_info()->moodle_version < self::PENALTY_CALCULATION_BUG_VERSION
+        ) {
+            require_once($CFG->libdir . '/db/upgradelib.php');
+            upgrade_penalty_calculation_freeze($this->get_courseid());
         }
 
     }
@@ -1046,6 +1066,17 @@ class restore_load_included_files extends restore_structure_step {
     public function process_file($data) {
 
         $data = (object)$data; // handy
+
+        // Reject invalid contenthash values early to prevent path traversal.
+        if (!empty($data->contenthash) && !preg_match('/^[a-f0-9]{40}$/', $data->contenthash)) {
+            $filename = isset($data->filename) ? $data->filename : '';
+            $this->log(
+                'Skipping file with invalid contenthash during restore: ' . $filename,
+                backup::LOG_WARNING
+            );
+
+            return;
+        }
 
         // load it if needed:
         //   - it it is one of the annotated inforef files (course/section/activity/block)
@@ -1682,9 +1713,12 @@ class restore_section_structure_step extends restore_structure_step {
                 $section->summaryformat = $data->summaryformat;
                 $restorefiles = true;
             }
-
-            // Don't update availability (I didn't see a useful way to define
-            // whether existing or new one should take precedence).
+            if (!$data->visible) {
+                $section->visible = $data->visible;
+            }
+            if (!empty($CFG->enableavailability) && empty($secrec->availability)) {
+                $section->availability = isset($data->availabilityjson) ? $data->availabilityjson : null;
+            }
 
             $DB->update_record('course_sections', $section);
             $newitemid = $secrec->id;
@@ -1915,6 +1949,35 @@ class restore_course_structure_step extends restore_structure_step {
      */
     protected $legacyallowedmodules = array();
 
+    /** @var array|null Fields provided in the CSV that should not be overwritten from the template course. */
+    protected $skiptemplatefields = [];
+
+    /**
+     * Step constructor.
+     * @param string $name Step's name.
+     * @param string $filename Step's file name.
+     * @param restore_task|null $task Restore task.
+     * @param ?array $skiptemplatefields Course fields provided in the CSV that should not be overwritten by the template course.
+     * @throws restore_step_exception
+     */
+    public function __construct($name, $filename, $task = null, $skiptemplatefields = []) {
+        parent::__construct($name, $filename, $task);
+        $this->skiptemplatefields = $skiptemplatefields;
+    }
+
+    /**
+     * Check whether the template course field should be restored.
+     *
+     * Fields explicitly provided in the CSV should not be overwritten by values
+     * from the template course.
+     *
+     * @param string $field the course field name to check.
+     * @return bool
+     */
+    protected function should_restore_template_field(string $field): bool {
+        return !in_array($field, $this->skiptemplatefields ?? []);
+    }
+
     protected function define_structure() {
 
         $paths = [];
@@ -1922,31 +1985,38 @@ class restore_course_structure_step extends restore_structure_step {
         $course = new restore_path_element('course', '/course');
         $paths[] = $course;
         $paths[] = new restore_path_element('category', '/course/category');
-        $paths[] = new restore_path_element('tag', '/course/tags/tag');
-        $paths[] = new restore_path_element('course_format_option', '/course/courseformatoptions/courseformatoption');
+        if ($this->should_restore_template_field('tags')) {
+            $paths[] = new restore_path_element('tag', '/course/tags/tag');
+        }
+        if ($this->should_restore_template_field('format')) {
+            $paths[] = new restore_path_element('course_format_option', '/course/courseformatoptions/courseformatoption');
+        }
         $paths[] = new restore_path_element('allowed_module', '/course/allowed_modules/module');
 
         // Custom fields.
         if ($this->get_setting_value('customfield')) {
             $paths[] = new restore_path_element('customfield', '/course/customfields/customfield');
         }
+        if ($this->should_restore_template_field('format')) {
+            // Apply for 'format' plugins optional paths at course level.
+            $this->add_plugin_structure('format', $course);
+        }
 
-        // Apply for 'format' plugins optional paths at course level
-        $this->add_plugin_structure('format', $course);
+        if ($this->should_restore_template_field('theme')) {
+            // Apply for 'theme' plugins optional paths at course level.
+            $this->add_plugin_structure('theme', $course);
+        }
 
-        // Apply for 'theme' plugins optional paths at course level
-        $this->add_plugin_structure('theme', $course);
-
-        // Apply for 'report' plugins optional paths at course level
+        // Apply for 'report' plugins optional paths at course level.
         $this->add_plugin_structure('report', $course);
 
-        // Apply for 'course report' plugins optional paths at course level
+        // Apply for 'course report' plugins optional paths at course level.
         $this->add_plugin_structure('coursereport', $course);
 
-        // Apply for plagiarism plugins optional paths at course level
+        // Apply for plagiarism plugins optional paths at course level.
         $this->add_plugin_structure('plagiarism', $course);
 
-        // Apply for local plugins optional paths at course level
+        // Apply for local plugins optional paths at course level.
         $this->add_plugin_structure('local', $course);
 
         // Apply for admin tool plugins optional paths at course level.
@@ -2074,7 +2144,33 @@ class restore_course_structure_step extends restore_structure_step {
             $data->activitytype = 'scorm';
         }
 
-        // Course record ready, update it
+        // Remove fields explicitly provided via CSV upload so template values do not overwrite them.
+        foreach ($this->skiptemplatefields ?? [] as $field) {
+            // Keep the CSV-provided format instead of the template format.
+            // The format cannot be unset because it is required by the restore process.
+            if ($field == 'format') {
+                $data->format = $DB->get_field('course', 'format', ['id' => $this->get_courseid()]);
+
+                // Activity type only applies to the single activity format.
+                if ($data->format != 'singleactivity') {
+                    unset($data->activitytype);
+                }
+
+                continue;
+            }
+
+            if (!isset($data->{$field})) {
+                continue;
+            }
+
+            // Some fields have dependent properties that must be removed alongside them.
+            if ($field == 'summary' && isset($data->summaryformat)) {
+                unset($data->summaryformat);
+            }
+
+            unset($data->{$field});
+        }
+        // Course record ready, update it.
         $DB->update_record('course', $data);
 
         // Apply any course format options that may be saved against the course
@@ -2152,7 +2248,9 @@ class restore_course_structure_step extends restore_structure_step {
         global $DB;
 
         // Add course related files, without itemid to match
-        $this->add_related_files('course', 'summary', null);
+        if ($this->should_restore_template_field('summary')) {
+            $this->add_related_files('course', 'summary', null);
+        }
         $this->add_related_files('course', 'overviewfiles', null);
 
         // Deal with legacy allowed modules.

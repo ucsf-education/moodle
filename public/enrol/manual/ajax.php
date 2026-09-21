@@ -65,7 +65,7 @@ $searchanywhere = get_user_preferences('userselector_searchtype') === USER_SEARC
 switch ($action) {
     case 'enrol':
         $enrolid = required_param('enrolid', PARAM_INT);
-        $cohorts = $users = [];
+        $users = [];
 
         $userids = optional_param_array('userlist', [], PARAM_SEQUENCE);
         $userid = optional_param('userid', 0, PARAM_INT);
@@ -74,7 +74,7 @@ switch ($action) {
         }
         if ($userids) {
             foreach ($userids as $userid) {
-                $users[] = $DB->get_record('user', array('id' => $userid), '*', MUST_EXIST);
+                $users[$userid] = $DB->get_record('user', ['id' => $userid], '*', MUST_EXIST);
             }
         }
         $cohortids = optional_param_array('cohortlist', [], PARAM_SEQUENCE);
@@ -88,7 +88,16 @@ switch ($action) {
                 if (!cohort_can_view_cohort($cohort, $context)) {
                     throw new enrol_ajax_exception('invalidenrolinstance'); // TODO error text!
                 }
-                $cohorts[] = $cohort;
+                // Include all non-enrolled cohort members in the enrolment process.
+                [$enrolledsql, $enrolledparams] = get_enrolled_sql($context);
+                $users += $DB->get_records_sql(
+                    "SELECT u.*
+                       FROM {user} u
+                       JOIN {cohort_members} cm ON cm.userid = u.id
+                  LEFT JOIN ({$enrolledsql}) je ON je.id = u.id
+                      WHERE cm.cohortid = :cohortid AND je.id IS NULL",
+                    ['cohortid' => $cohort->id] + $enrolledparams,
+                );
             }
         }
 
@@ -98,7 +107,7 @@ switch ($action) {
         $startdateselect = optional_param_array('startdateselect', [], PARAM_INT);
         $recovergrades = optional_param('recovergrades', 0, PARAM_INT);
         $timeend = optional_param_array('timeend', [], PARAM_INT);
-        $group = optional_param('group', null, PARAM_INT);
+        $groupid = optional_param('group', 0, PARAM_INT);
 
         if (empty($roleid)) {
             $roleid = null;
@@ -154,7 +163,7 @@ switch ($action) {
 
         $mform = new enrol_manual_enrol_users_form(null, (object)["context" => $context]);
         $userenroldata = [
-                'group' => $group,
+                'group' => $groupid,
                 'startdate' => $timestart,
                 'timeend' => $timeend,
         ];
@@ -177,15 +186,14 @@ switch ($action) {
         if ($plugin->allow_enrol($instance) && has_capability('enrol/'.$plugin->get_name().':enrol', $context)) {
             foreach ($users as $user) {
                 $plugin->enrol_user($instance, $user->id, $roleid, $timestart, $timeend, null, $recovergrades);
-                if ($group && has_capability('moodle/course:managegroups', $context)) {
-                    groups_add_member($group, $user->id);
+                if ($groupid) {
+                    $group = $DB->get_record('groups', ['id' => $groupid, 'courseid' => $course->id]);
+                    if ($group && has_capability('moodle/course:managegroups', $context)) {
+                        groups_add_member($group, $user);
+                    }
                 }
             }
             $outcome->count += count($users);
-            foreach ($cohorts as $cohort) {
-                $totalenrolledusers = $plugin->enrol_cohort($instance, $cohort->id, $roleid, $timestart, $timeend, null, $recovergrades);
-                $outcome->count += $totalenrolledusers;
-            }
         } else {
             throw new enrol_ajax_exception('enrolnotpermitted');
         }

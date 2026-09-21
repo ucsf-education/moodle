@@ -15734,7 +15734,7 @@ textarea.form-control-lg {
   padding-left: 2.5em;
 }
 .form-switch .form-check-input {
-  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.45%29'/%3e%3c/svg%3e");
   width: 2em;
   margin-left: -2.5em;
   background-image: var(--bs-form-switch-bg);
@@ -27354,6 +27354,7 @@ nav.navbar .logo img {
 
 ul.dragdrop-keyboard-drag li {
   list-style-type: none;
+  margin-bottom: 0.1em;
 }
 ul.dragdrop-keyboard-drag li a,
 ul.dragdrop-keyboard-drag li a:hover {
@@ -27386,6 +27387,13 @@ body.lockscroll {
 /* IE10 only fix for calendar titling */
 .ie10 .yui3-calendar-header-label {
   display: inline-block;
+}
+
+.yui3-calendar-weekday {
+  max-width: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 dd:before,
@@ -28297,6 +28305,12 @@ body.dragging .dragging {
   margin-left: 0;
   margin-right: 4px;
   width: 9px;
+  display: inline-block;
+  vertical-align: 0.255em;
+}
+
+.dropleft .dropdown-toggle::after {
+  content: none;
 }
 
 .dir-rtl .dropleft .dropdown-toggle::before {
@@ -28306,6 +28320,7 @@ body.dragging .dragging {
 .dropright .dropdown-toggle::after {
   border: 0;
   font: var(--fa-font-solid);
+  font-size: 9px;
   content: "\f054";
 }
 
@@ -28316,6 +28331,7 @@ body.dragging .dragging {
 .dropup .dropdown-toggle::after {
   border: 0;
   font: var(--fa-font-solid);
+  font-size: 9px;
   content: "\f077";
 }
 
@@ -29615,6 +29631,9 @@ img.icon {
   .block_recentlyaccessedcourses .paging-bar-container {
     margin-top: 0;
   }
+}
+.editing .block_recentlyaccessedcourses .paging-bar-container {
+  margin-top: 0;
 }
 
 #block-region-side-pre .block_recentlyaccessedcourses .paging-bar-container {
@@ -31768,6 +31787,38 @@ table.calendartable caption {
   max-width: 6rem;
   margin-bottom: 0.6rem;
 }
+@media (max-width: 400px), (max-height: 300px) {
+  .modchooser.modal-dialog .modal-header {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  .modchooser.modal-dialog .modal-footer {
+    height: auto;
+    min-height: 2.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .modchooser.modal-dialog .modal-footer .activitychooserfooter {
+    flex-wrap: wrap;
+    padding-left: 0 !important; /* stylelint-disable-line declaration-no-important */
+    padding-right: 0 !important; /* stylelint-disable-line declaration-no-important */
+  }
+  .modchooser.modal-dialog .modal-body,
+  .modchooser.modal-dialog .modal-body .carousel,
+  .modchooser.modal-dialog .modal-body .carousel-inner,
+  .modchooser.modal-dialog .modal-body .carousel-item {
+    height: auto;
+    overflow: visible;
+  }
+  .modchooser.modal-dialog .modal-body {
+    overflow-y: auto;
+  }
+  .modchooser.modal-dialog .modal-body .carousel-item {
+    float: none;
+    margin-right: 0;
+    padding: 0.25rem !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
 
 /* Main container layout styles. */
 .modchoosercontainer {
@@ -31924,6 +31975,40 @@ table.calendartable caption {
   .searchresultitemscontainer {
     height: 100%;
     overflow-y: auto;
+  }
+}
+/* Reflow support for narrow or short viewports (e.g. 320x256 at 400% zoom on a
+   1280x1024 display, or 480x270 at 400% zoom on a 1920x1080 display), to satisfy
+   WCAG 2.2 SC 1.4.10 (Reflow). The width and height conditions are combined with an
+   "or" (comma-separated media queries) rather than "and", so the fix engages when
+   either dimension is constrained, not only when both are constrained together.
+   Category tabs stack vertically and activities stack in a single column instead of
+   the fixed-height grid layout used at larger sizes. */
+@media (max-width: 400px), (max-height: 300px) {
+  .modchoosercontainer {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+  .modchoosercontainer .modchooserfilters .searchcontainer {
+    margin-bottom: 0.25rem !important; /* stylelint-disable-line declaration-no-important */
+  }
+  .modchoosercontainer .modchoosernav {
+    flex-direction: column !important; /* stylelint-disable-line declaration-no-important */
+    height: auto;
+    overflow: visible;
+    white-space: normal;
+  }
+  .modchoosercontainer .modchoosernav .nav-link {
+    width: 100%;
+    max-width: none;
+  }
+  .modchoosercontainer .modchoosercontent {
+    height: auto;
+    overflow: visible;
+  }
+  .modchoosercontent .optionscontainer {
+    grid-template-columns: 1fr;
   }
 }
 /* Anchor link offset fix. This makes hash links scroll 60px down to account for the fixed header. */
@@ -33741,6 +33826,9 @@ a.ygtvspacer:hover {
 .message-app .list-group .list-group-item:hover {
   color: #fff;
   background-color: #0f6cbf;
+}
+.message-app .list-group .list-group-item:hover .message-icon-forward {
+  color: inherit !important;
 }
 .message-app .list-group .list-group-item:first-child {
   border-top: 0;
@@ -36299,6 +36387,10 @@ div#dock {
 #page-mod-lesson-view .fitem .felement .form-select {
   align-self: flex-start;
 }
+#page-mod-lesson-view .mediaplugin,
+#page-mod-lesson-view .mediaplugin video {
+  min-width: 200px;
+}
 
 .path-mod-lesson .table td {
   vertical-align: middle;
@@ -36841,6 +36933,11 @@ img.userpicture {
   z-index: 1;
 }
 
+@media (max-width: 576px) and (max-height: 320px) {
+  .path-mod-assign .gradingtable thead tr {
+    position: static;
+  }
+}
 /**
  * Mod LTI.
  */
@@ -40555,8 +40652,26 @@ div.editor_atto_toolbar button .icon {
 .courseindex .courseindex-item.pageitem a {
   color: #fff;
 }
+.courseindex .courseindex-item.pageitem .completioninfo .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  line-height: 1;
+}
+.courseindex .courseindex-item.pageitem .completioninfo img.icon {
+  background-color: #f8f9fa;
+}
+.courseindex .courseindex-item.pageitem .completioninfo .icon:not(img)::before {
+  outline: 2px solid #f8f9fa;
+  border-radius: 50%;
+}
 .courseindex .courseindex-item .completioninfo {
   min-width: 24px;
+  display: inline-flex;
+  align-items: center;
 }
 .courseindex .courseindex-item .completioninfo.completion_complete {
   color: #357a32;
@@ -40758,6 +40873,19 @@ div.editor_atto_toolbar button .icon {
 .drawer-primary .drawercontent .list-group .list-group-item {
   border-left: 0;
   border-right: 0;
+}
+
+.drawer-primary .drawerheader [data-region=site-home-link] {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.drawer-primary .drawerheader .logo {
+  max-width: 100%;
+  max-height: 50px;
+  width: auto;
+  height: 50px;
+  object-fit: contain;
 }
 
 .secondary-navigation {

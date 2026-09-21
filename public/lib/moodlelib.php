@@ -4142,15 +4142,17 @@ function complete_user_login($user, array $extrauserinfo = []) {
     // Allow plugins to callback as soon possible after user has completed login.
     di::get(\core\hook\manager::class)->dispatch(new \core_user\hook\after_login_completed());
 
-    // Check if the user is using a new browser or session (a new MoodleSession cookie is set in that case).
-    // If the user is accessing from the same IP, ignore everything (most of the time will be a new session in the same browser).
-    // Skip Web Service requests, CLI scripts, AJAX scripts, and request from the mobile app itself.
+    // Send a new login notification when the IP address has changed since the last login,
+    // unless the same user is logging in again (identified via the MOODLEID1_ cookie).
+    // Skip Web Service requests, CLI scripts, and environments that don't support cookies.
     $loginip = getremoteaddr();
     $isnewip = isset($SESSION->userpreviousip) && $SESSION->userpreviousip != $loginip;
     $isvalidenv = (!WS_SERVER && !CLI_SCRIPT && !NO_MOODLE_COOKIES) || PHPUNIT_TEST;
 
-    if (!empty($SESSION->isnewsessioncookie) && $isnewip && $isvalidenv && !\core_useragent::is_moodle_app()) {
+    $prevusername = get_moodle_cookie();
+    $issameuser = !empty($prevusername) && $prevusername == $USER->username;
 
+    if (!$issameuser && $isnewip && $isvalidenv) {
         $logintime = time();
         $ismoodleapp = false;
         $useragent = \core_useragent::get_user_agent_string();
@@ -6145,7 +6147,7 @@ function send_password_change_confirmation_email($user, $resetrecord) {
     foreach ($placeholders as $field => $value) {
         $data->{$field} = $value;
     }
-    $data->username  = $user->username;
+    $data->username  = s($user->username);
     $data->sitename  = format_string($site->fullname);
     $data->link      = $CFG->wwwroot .'/login/forgot_password.php?token='. $resetrecord->token;
     $data->admin     = generate_email_signoff();
@@ -8499,9 +8501,25 @@ function address_in_subnet($addr, $subnetstr, $checkallzeros = false) {
     if ($addr == '0.0.0.0' && !$checkallzeros) {
         return false;
     }
+
+    $addr = trim($addr);
+
+    // An IPv4-mapped IPv6 address (::ffff:x.x.x.x) is equivalent to its plain IPv4 form.
+    // Also test the unwrapped IPv4 form against the subnet list, so IPv4-notation rules apply
+    // (e.g. 127.0.0.0/8) without changing how $addr itself is matched against rules already
+    // expressed in IPv6 notation (e.g. ::ffff:127.0.0.0/104) below.
+    $packed = @inet_pton($addr);
+    if ($packed !== false && strlen($packed) === 16
+            && substr($packed, 0, 12) === "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff") {
+        $unwrapped = inet_ntop(substr($packed, 12));
+        if ($unwrapped !== false && address_in_subnet($unwrapped, $subnetstr, $checkallzeros)) {
+            return true;
+        }
+    }
+
     $subnets = explode(',', $subnetstr);
     $found = false;
-    $addr = trim($addr);
+
     $addr = cleanremoteaddr($addr, false); // Normalise.
     if ($addr === null) {
         return false;
@@ -9600,52 +9618,25 @@ function is_mnet_remote_user($user) {
 function setup_lang_from_browser() {
     global $CFG, $SESSION, $USER;
 
+    // Lang is defined in session or user profile, nothing to do.
     if (!empty($SESSION->lang) or !empty($USER->lang) or empty($CFG->autolang)) {
-        // Lang is defined in session or user profile, nothing to do.
         return;
     }
 
-    if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) { // There isn't list of browser langs, nothing to do.
+    $lang = \core\lang::match_lang_from_browser_header($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? null);
+
+    if (empty($lang)) {
         return;
     }
 
-    // Extract and clean langs from headers.
-    $rawlangs = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-    $rawlangs = str_replace('-', '_', $rawlangs);         // We are using underscores.
-    $rawlangs = explode(',', $rawlangs);                  // Convert to array.
-    $langs = array();
-
-    $order = 1.0;
-    foreach ($rawlangs as $lang) {
-        if (strpos($lang, ';') === false) {
-            $langs[(string)$order] = $lang;
-            $order = $order-0.01;
-        } else {
-            $parts = explode(';', $lang);
-            $pos = strpos($parts[1], '=');
-            $langs[substr($parts[1], $pos+1)] = $parts[0];
-        }
+    // If the translation for this language exists then try to set it
+    // for the rest of the session, if this is a read only session then
+    // we can only set it temporarily in $CFG.
+    if (defined('READ_ONLY_SESSION') && !empty($CFG->enable_read_only_sessions)) {
+        $CFG->lang = $lang;
+    } else {
+        $SESSION->lang = $lang;
     }
-    krsort($langs, SORT_NUMERIC);
-
-    // Look for such langs under standard locations.
-    foreach ($langs as $lang) {
-        // Clean it properly for include.
-        $lang = strtolower(clean_param($lang, PARAM_SAFEDIR));
-        if (get_string_manager()->translation_exists($lang, false)) {
-            // If the translation for this language exists then try to set it
-            // for the rest of the session, if this is a read only session then
-            // we can only set it temporarily in $CFG.
-            if (defined('READ_ONLY_SESSION') && !empty($CFG->enable_read_only_sessions)) {
-                $CFG->lang = $lang;
-            } else {
-                $SESSION->lang = $lang;
-            }
-            // We have finished. Go out.
-            break;
-        }
-    }
-    return;
 }
 
 /**

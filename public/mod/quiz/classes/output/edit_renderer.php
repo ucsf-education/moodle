@@ -711,7 +711,7 @@ class edit_renderer extends \plugin_renderer_base {
         // Add a new section to the add_menu if possible. This is always added to the HTML
         // then hidden with CSS when no needed, so that as things are re-ordered, etc. with
         // Ajax it can be relevaled again when necessary.
-        $params = ['cmid' => $structure->get_cmid(), 'addsectionatpage' => $page];
+        $params = ['cmid' => $structure->get_cmid(), 'addsectionatpage' => $page, 'sesskey' => sesskey()];
 
         $actions['addasection'] = new \action_menu_link_secondary(
             new \moodle_url($pageurl, $params),
@@ -1114,7 +1114,7 @@ class edit_renderer extends \plugin_renderer_base {
         if (!question_bank::is_qtype_usable($question->qtype)) {
             $output .= html_writer::span($title);
             $output .= html_writer::span(
-                get_string('invalidquestiontype', 'question', $question->originalqtype),
+                get_string('invalidquestiontype', 'question', $question->originalqtype ?? $question->qtype),
                 'badge bg-danger text-white ms-3'
             );
         } else {

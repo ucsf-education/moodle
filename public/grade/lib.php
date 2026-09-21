@@ -135,7 +135,7 @@ class graded_users_iterator {
      * @return boolean success
      */
     public function init() {
-        global $CFG, $DB;
+        global $CFG, $DB, $USER;
 
         $this->close();
 
@@ -150,18 +150,29 @@ class graded_users_iterator {
 
         list($relatedctxsql, $relatedctxparams) = $DB->get_in_or_equal($coursecontext->get_parent_context_ids(true), SQL_PARAMS_NAMED, 'relatedctx');
         list($gradebookroles_sql, $params) = $DB->get_in_or_equal(explode(',', $CFG->gradebookroles), SQL_PARAMS_NAMED, 'grbr');
-        list($enrolledsql, $enrolledparams) = get_enrolled_sql($coursecontext, '', 0, $this->onlyactive);
+        list($enrolledsql, $enrolledparams) = get_enrolled_sql($coursecontext, '', $this->groupid, $this->onlyactive);
 
         $params = array_merge($params, $enrolledparams, $relatedctxparams);
 
-        if ($this->groupid) {
-            $groupsql = "INNER JOIN {groups_members} gm ON gm.userid = u.id";
-            $groupwheresql = "AND gm.groupid = :groupid";
-            // $params contents: gradebookroles
-            $params['groupid'] = $this->groupid;
+        if (
+            empty($this->groupid) &&
+            groups_get_course_groupmode($this->course) == SEPARATEGROUPS &&
+            !has_capability('moodle/site:accessallgroups', $coursecontext)
+        ) {
+            $groups = groups_get_all_groups($this->course->id, $USER->id, 0, 'g.id');
+            if (count($groups) > 0) {
+                [$groupmembersql, $groupmemberparams] = groups_get_members_ids_sql(
+                    array_column($groups, 'id'),
+                    $coursecontext,
+                );
+
+                $groupsql = "JOIN ({$groupmembersql}) jg ON jg.id = u.id";
+                $params = array_merge($params, $groupmemberparams);
+            } else {
+                $groupsql = "JOIN (SELECT 0 AS id) jg ON jg.id = u.id";
+            }
         } else {
             $groupsql = "";
-            $groupwheresql = "";
         }
 
         if (empty($this->sortfield1)) {
@@ -213,7 +224,6 @@ class graded_users_iterator {
                                      AND ra.contextid $relatedctxsql
                              ) rainner ON rainner.userid = u.id
                          WHERE u.deleted = 0
-                             $groupwheresql
                     ORDER BY $order";
         $this->users_rs = $DB->get_recordset_sql($users_sql, $params);
 
@@ -242,7 +252,6 @@ class graded_users_iterator {
                                   ) rainner ON rainner.userid = u.id
                               WHERE u.deleted = 0
                               AND g.itemid $itemidsql
-                              $groupwheresql
                          ORDER BY $order, g.itemid ASC";
             $this->grades_rs = $DB->get_recordset_sql($grades_sql, $params);
         } else {
@@ -557,7 +566,7 @@ function hide_gradebook_calculations_freeze_notice($courseid) {
  * @return nothing or string if $return true
  */
 function print_natural_aggregation_upgrade_notice($courseid, $context, $thispage, $return=false) {
-    global $CFG, $OUTPUT;
+    global $CFG, $DB, $OUTPUT;
     $html = '';
 
     // Do not do anything if they cannot manage the grades of this course.
@@ -677,10 +686,17 @@ function print_natural_aggregation_upgrade_notice($courseid, $context, $thispage
 
     if ($gradebookcalculationsfreeze) {
         if ($acceptgradebookchanges) {
+            // Repair rawgrade values affected by the legacy penalty calculation before lifting the
+            // freeze and regrading. Otherwise, the fixed calculation would be applied to the
+            // incorrectly calculated rawgrade.
+            \core_grades\penalty_manager::repair_penalised_rawgrade($courseid);
+
+            // Force all grade items in the course to be recalculated when the freeze is lifted,
+            // including items that could not be repaired above.
+            $DB->set_field('grade_items', 'needsupdate', 1, ['courseid' => $courseid]);
+
             // Accept potential changes in grades caused by extra credit bug MDL-49257.
             hide_gradebook_calculations_freeze_notice($courseid);
-            $courseitem = grade_item::fetch_course_item($courseid);
-            $courseitem->force_regrading();
             grade_regrade_final_grades($courseid);
 
             $html .= $OUTPUT->notification(get_string('gradebookcalculationsuptodate', 'grades'), 'notifysuccess');

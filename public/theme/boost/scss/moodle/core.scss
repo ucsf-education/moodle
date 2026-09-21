@@ -1759,6 +1759,7 @@ nav.navbar .logo img {
 
 ul.dragdrop-keyboard-drag li {
     list-style-type: none;
+    margin-bottom: 0.1em;
     a,
     a:hover {
         color: inherit;
@@ -1791,6 +1792,11 @@ body.lockscroll {
 /* IE10 only fix for calendar titling */
 .ie10 .yui3-calendar-header-label {
     display: inline-block;
+}
+
+.yui3-calendar-weekday {
+    max-width: 40px;
+    @include text-truncate();
 }
 
 dd:before,
@@ -2808,6 +2814,12 @@ body.dragging {
     margin-left: 0;
     margin-right: 4px;
     width: 9px;
+    display: inline-block;
+    vertical-align: 0.255em;
+}
+
+.dropleft .dropdown-toggle::after {
+    content: none;
 }
 
 .dir-rtl .dropleft .dropdown-toggle::before {
@@ -2817,6 +2829,7 @@ body.dragging {
 .dropright .dropdown-toggle::after {
     border: 0;
     font: var(--fa-font-solid);
+    font-size: 9px;
     content: fa-content($fa-var-chevron-right);
 }
 
@@ -2828,6 +2841,7 @@ body.dragging {
 .dropup .dropdown-toggle::after {
     border: 0;
     font: var(--fa-font-solid);
+    font-size: 9px;
     content: fa-content($fa-var-chevron-up);
 }
 

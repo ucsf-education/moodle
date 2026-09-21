@@ -104,10 +104,25 @@ final class penalty_container {
     /**
      * Get the grade before penalties are applied.
      *
-     * @return float The grade before penalties are applied
+     * Returns the raw grade (the original source grade from the activity, before
+     * grade-item factors such as multiplier or offset are applied).
+     *
+     * @return float The raw grade before any penalty or grade-item adjustment
      */
     public function get_grade_before_penalties(): float {
-        return $this->gradegrade->finalgrade;
+        // Use the legacy value for confirmed pre-MDL-88407 grades while frozen.
+        if (
+            penalty_manager::is_frozen_for_legacy_penalty($this->gradeitem->courseid)
+            && penalty_manager::requires_legacy_penalty_calculation(
+                $this->gradegrade,
+                penalty_manager::get_authoritative_user_grades($this->gradeitem),
+                $this->gradeitem
+            )
+        ) {
+            return $this->gradegrade->finalgrade;
+        } else {
+            return $this->gradegrade->rawgrade;
+        }
     }
 
     /**
