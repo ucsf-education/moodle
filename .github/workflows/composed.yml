@@ -5,6 +5,7 @@ on:
     branches-ignore:
       - main
       - MOODLE_[0-9]+_STABLE
+      - UCSFCLE_[0-9]+_STABLE
     tags-ignore:
       - v[0-9]+.[0-9]+.[0-9]+*
   workflow_dispatch:
@@ -13,6 +14,9 @@ on:
         description: Additional options to apply to PHPUnit
         required: false
         default: ''
+  pull_request:
+    branches:
+      - UCSFCLE_[0-9]+_STABLE
 
 env:
   php: 8.4
@@ -43,13 +47,14 @@ jobs:
         include:
           # MySQL builds always run with the lowest PHP supported version.
           - os: ubuntu-24.04
-            php: 8.3
+            php: 8.4
             extensions:
             db: mysqli
-          # PostgreSQL builds always run with the highest PHP supported version.
-          - os: ubuntu-24.04
-            php: 8.4
-            db: pgsql
+          # Disable testing with PostgreSQL for now since we are not using it.
+          # # PostgreSQL builds always run with the highest PHP supported version.
+          # - os: ubuntu-24.04
+          #   php: 8.4
+          #   db: pgsql
 
     steps:
       - name: Run MySQL Server
@@ -83,6 +88,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: 'moodle'
+          submodules: true
 
       - name: 'Preparing the environment'
         run: |
