@@ -160,7 +160,22 @@ class behat_command {
         global $CFG;
 
         $currentcwd = getcwd();
-        $rootpath = realpath(\Composer\InstalledVersions::getRootPackage()['install_path']);
+        $composerroot = realpath(\Composer\InstalledVersions::getRootPackage()['install_path']);
+
+        // Validate: if the reported root is inside Moodle's directory tree (i.e. it's a plugin),
+        // fall back to the known Moodle root.
+        // This protects against plugins that ship their own vendor/ directory and whose
+        // autoloader gets prepended into Composer's ClassLoader registry.
+        // Note: We must NOT fall back when $composerroot is a *parent* of $moodleroot,
+        // because that is the legitimate "composed" installation layout where Moodle
+        // is installed as a Composer dependency.
+        $moodleroot = realpath($CFG->root);
+        if ($moodleroot !== false && str_starts_with($composerroot, $moodleroot . '/')) {
+            $rootpath = $moodleroot;
+        } else {
+            $rootpath = $composerroot;
+        }
+
         chdir($rootpath);
         exec(self::get_behat_command() . ' ' . $options, $output, $code);
         chdir($currentcwd);
