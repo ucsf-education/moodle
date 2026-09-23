@@ -1032,6 +1032,13 @@ abstract class testing_util {
             return '';
         }
 
+        // If the reported root is inside Moodle's tree, it's a plugin that has corrupted
+        // InstalledVersions by prepending its own autoloader. In this case, Moodle IS
+        // the real root package — return empty string.
+        if ($moodlepath !== false && str_starts_with($rootpath, $moodlepath . '/')) {
+            return '';
+        }
+
         // At the moment there is no way to get the name of the Moodle core package from the provided package.
         // So we need to get all installed moodle-core packages and check which one is installed.
         // It's only really possible for a single moodle-core package to be installed.

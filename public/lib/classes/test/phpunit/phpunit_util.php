@@ -1079,15 +1079,37 @@ class phpunit_util extends \core\test\testing_util {
     /**
      * Get the path to the root of the package Moodle is installed in.
      *
-     * @return bool|string
+     * This method validates that the Composer-reported root package is actually
+     * Moodle and not a plugin that has prepended its own ClassLoader via
+     * require_once('vendor/autoload.php') in lib.php. When a plugin autoloader
+     * registers with prepend=true, Composer\InstalledVersions::getRootPackage()
+     * may incorrectly report the plugin as the root package.
+     *
+     * @return string The absolute path to the Moodle package root directory.
      */
     protected static function get_package_root(): string {
+        global $CFG;
+
         if (!class_exists(\Composer\InstalledVersions::class)) {
-            // If composer is not being used, we assume that the root package is Moodle and return empty string.
+            // If composer is not being used, we assume that the root package is Moodle.
             return dirname(__DIR__, 5);
         }
 
-        return realpath(\Composer\InstalledVersions::getRootPackage()['install_path']);
+        $composerroot = realpath(\Composer\InstalledVersions::getRootPackage()['install_path']);
+
+        // Validate: if the reported root is inside Moodle's directory tree (i.e. it's a plugin),
+        // fall back to the known Moodle root.
+        // This protects against plugins that ship their own vendor/ directory and whose
+        // autoloader gets prepended into Composer's ClassLoader registry.
+        // Note: We must NOT fall back when $composerroot is a *parent* of $moodleroot,
+        // because that is the legitimate "composed" installation layout where Moodle
+        // is installed as a Composer dependency.
+        $moodleroot = realpath($CFG->root);
+        if ($moodleroot !== false && str_starts_with($composerroot, $moodleroot . '/')) {
+            return $moodleroot;
+        }
+
+        return $composerroot;
     }
 }
 
