@@ -1,0 +1,5 @@
+[submodule "public/enrol/ilios"]
+	path = public/enrol/ilios
+	url = https://github.com/ilios/moodle-enrol-ilios
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
