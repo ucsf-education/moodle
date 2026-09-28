@@ -8,3 +8,8 @@
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/theme/ucsf"]
+	path = public/theme/ucsf
+	url = https://github.com/ucsf-education/moodle-theme-ucsf
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
