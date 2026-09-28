@@ -1,0 +1,5 @@
+[submodule "public/admin/tool/ilioscategoryassignment"]
+	path = public/admin/tool/ilioscategoryassignment
+	url = https://github.com/ilios/tool_ilioscategoryassignment
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
