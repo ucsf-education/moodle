@@ -177,6 +177,7 @@
     path = public/question/type/oumultiresponse
     url = https://github.com/ucsf-education/moodle-qtype_oumultiresponse
     branch = UCSFCLE_501_STABLE
+	tag = v2.5
 [submodule "public/question/type/wordselect"]
 	path = public/question/type/wordselect
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
