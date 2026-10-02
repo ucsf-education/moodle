@@ -18,6 +18,10 @@
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/mod/attendance"]
+        path = public/mod/attendance
+        url = https://github.com/danmarsden/moodle-mod_attendance
+        branch = MOODLE_501_STABLE
 [submodule "public/mod/diary"]
         path = public/mod/diary
         url = https://github.com/drachels/moodle-mod_diary
