@@ -18,6 +18,11 @@
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/mod/diary"]
+        path = public/mod/diary
+        url = https://github.com/drachels/moodle-mod_diary
+        branch = master
+        tag = v5.1.2
 [submodule "public/theme/ucsf"]
 	path = public/theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
