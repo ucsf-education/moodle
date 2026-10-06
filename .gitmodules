@@ -27,6 +27,10 @@
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/local/oauthredirect"]
+	path = public/local/oauthredirect
+	url = https://github.com/ucsf-education/moodle-local_oauthredirect
+	branch = main
 [submodule "public/mod/attendance"]
         path = public/mod/attendance
         url = https://github.com/danmarsden/moodle-mod_attendance
