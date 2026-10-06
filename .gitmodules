@@ -17,6 +17,11 @@
 	url = https://github.com/ilios/moodle-enrol-ilios
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/lib/editor/tiny/plugins/fontcolor"]
+	path = public/lib/editor/tiny/plugins/fontcolor
+	url = https://github.com/bfh/moodle-tiny_fontcolor
+	branch = main
+	tag = V1.4
 [submodule "public/local/coursearchivingnotification"]
 	path = public/local/coursearchivingnotification
 	url = https://github.com/ucsf-education/moodle-local_coursearchivingnotification
@@ -46,3 +51,4 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+
