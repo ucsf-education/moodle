@@ -7,6 +7,11 @@
         path = public/blocks/attendance
         url = https://github.com/danmarsden/moodle-block_attendance
         branch = MOODLE_500_STABLE
+[submodule "public/blocks/checklist"]
+	path = public/blocks/checklist
+	url = https://github.com/davosmith/moodle-block_checklist
+	branch = MOODLE_500_STABLE
+	tag = 4.1.0.1
 [submodule "public/blocks/course_recent"]
 	path = public/blocks/course_recent
 	url = https://github.com/ucsf-education/moodle-block-course_recent
