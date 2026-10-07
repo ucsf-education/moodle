@@ -153,7 +153,7 @@
 	path = public/mod/quiz/report/archive
 	url = https://github.com/bfh/moodle-quiz_archive
 	branch = main
-	tag = v5.2-r3
+	tag = v5.3-r1
 [submodule "public/mod/survey"]
 	path = public/mod/survey
 	url = https://github.com/ucsf-education/moodle-mod_survey
