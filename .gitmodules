@@ -64,6 +64,10 @@
         url = https://github.com/bfh/moodle-quiz_archive
         branch = main
         tag = v5.2-r3
+[submodule "public/plagiarism/turnitin"]
+	path = public/plagiarism/turnitin
+	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
+	branch = master
 [submodule "public/theme/ucsf"]
 	path = public/theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
