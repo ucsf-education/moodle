@@ -94,10 +94,6 @@
 	path = public/local/oauthredirect
 	url = https://github.com/ucsf-education/moodle-local_oauthredirect
 	branch = main
-[submodule "public/local/panorama"]
-	path = public/local/panorama
-	url = https://github.com/ucsf-education/moodle-local_panorama
-	branch = UCSFCLE_405_STABLE
 [submodule "public/local/quizanon"]
 	path = public/local/quizanon
 	url = https://github.com/ucsf-education/local_quizanon
