@@ -99,10 +99,6 @@
 	url = https://github.com/ucsf-education/local_quizanon
 	branch = MOODLE_501_STABLE
 	tag = v5.1.0
-[submodule "public/local/replacementapipanorama"]
-	path = public/local/replacementapipanorama
-	url = https://github.com/ucsf-education/moodle-local_replacementapipanorama
-	branch = UCSFCLE_405_STABLE
 [submodule "public/local/staticpage"]
 	path = public/local/staticpage
 	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
