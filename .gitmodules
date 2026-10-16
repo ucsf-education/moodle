@@ -59,7 +59,7 @@
 [submodule "public/filter/panorama"]
 	path = public/filter/panorama
 	url = https://github.com/ucsf-education/moodle-filter_panorama
-	branch = UCSFCLE_405_STABLE
+	branch = UCSFCLE_501_STABLE
 [submodule "public/filter/ucsfezproxy"]
 	path = public/filter/ucsfezproxy
 	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
