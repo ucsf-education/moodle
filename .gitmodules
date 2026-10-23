@@ -17,6 +17,11 @@
 	url = https://github.com/ucsf-education/moodle-block-course_recent
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/blocks/massaction"]
+        path = public/blocks/massaction
+        url = https://github.com/Syxton/moodle-block_massaction
+        branch = master
+        tag = 8.0.2
 [submodule "public/enrol/ilios"]
 	path = public/enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
@@ -73,4 +78,3 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
-
