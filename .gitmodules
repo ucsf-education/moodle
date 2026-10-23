@@ -73,6 +73,11 @@
 	path = public/plagiarism/turnitin
 	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
 	branch = master
+[submodule "public/question/type/wordselect"]
+        path = public/question/type/wordselect
+        url = https://github.com/marcusgreen/moodle-qtype_wordselect
+        branch = main
+        tag = v2.57
 [submodule "public/theme/ucsf"]
 	path = public/theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
