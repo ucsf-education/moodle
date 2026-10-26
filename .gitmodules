@@ -64,6 +64,10 @@
         url = https://github.com/drachels/moodle-mod_diary
         branch = master
         tag = v5.1.2
+[submodule "public/mod/questionnaire"]
+        path = public/mod/questionnaire
+        url = https://github.com/PoetOS/moodle-mod_questionnaire
+        branch = MOODLE_500_STABLE
 [submodule "public/mod/quiz/report/archive"]
         path = public/mod/quiz/report/archive
         url = https://github.com/bfh/moodle-quiz_archive
