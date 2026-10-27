@@ -26,7 +26,6 @@
 	path = public/blocks/quickmail
 	url = https://github.com/ucsf-education/moodle-block_quickmail
 	branch = UCSFCLE_502_STABLE
-	tag = v5.2
 [submodule "public/enrol/ilios"]
 	path = public/enrol/ilios
 	url = https://github.com/ilios/moodle-enrol-ilios
