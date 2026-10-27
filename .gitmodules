@@ -77,6 +77,11 @@
 	path = public/plagiarism/turnitin
 	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
 	branch = master
+[submodule "public/question/type/knowledgecheck"]
+	path = public/question/type/knowledgecheck
+	url = https://github.com/ucsf-education/knowledgecheck
+	branch = MOODLE_502_STABLE
+	tag = v5.2
 [submodule "public/question/type/oumultiresponse"]
 	path = public/question/type/oumultiresponse
 	url = https://github.com/ucsf-education/moodle-qtype_oumultiresponse
