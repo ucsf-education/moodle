@@ -64,6 +64,10 @@
         url = https://github.com/drachels/moodle-mod_diary
         branch = master
         tag = v5.1.2
+[submodule "public/mod/oublog"]
+        path = public/mod/oublog
+        url = https://github.com/ucsf-education/moodle-mod_oublog
+        branch = UCSFCLE_502_STABLE
 [submodule "public/mod/questionnaire"]
         path = public/mod/questionnaire
         url = https://github.com/PoetOS/moodle-mod_questionnaire
