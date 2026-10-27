@@ -188,6 +188,11 @@ jobs:
             exit 1
           fi
 
+          if [ -z "${SUBMODULE_TAG:-}" ]; then
+            echo "No tag in .gitmodules found, i.e. we are not tracking tags for this submodule. Skipping."
+            exit 0
+          fi
+
           ####################################################################
           # Fetch submodule repository metadata
           ####################################################################
