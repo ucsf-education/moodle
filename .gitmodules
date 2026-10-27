@@ -1,3 +1,8 @@
+[submodule "public/admin/tool/externaltaskmonitor"]
+	path = public/admin/tool/externaltaskmonitor
+	url = https://github.com/ucsf-education/tool_externaltaskmonitor
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
 [submodule "public/admin/tool/ilioscategoryassignment"]
 	path = public/admin/tool/ilioscategoryassignment
 	url = https://github.com/ilios/tool_ilioscategoryassignment
