@@ -8,6 +8,11 @@
 	url = https://github.com/ilios/tool_ilioscategoryassignment
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/admin/tool/ucsfsomapi"]
+	path = public/admin/tool/ucsfsomapi
+	url = https://github.com/ucsf-education/tool_ucsfsomapi
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
 [submodule "public/blocks/attendance"]
         path = public/blocks/attendance
         url = https://github.com/danmarsden/moodle-block_attendance
@@ -109,3 +114,4 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+
