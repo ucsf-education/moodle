@@ -1,11 +1,26 @@
 version: 2
 
 updates:
+  # Default branch (UCSFCLE_501_STABLE)
   - package-ecosystem: "gitsubmodule"
     directory: "/"
     schedule:
-      interval: "daily"
-      time: "05:00"
+      interval: "cron"
+      cronjob: "0 5 * * 1,3,5"
+      timezone: "America/Los_Angeles"
+
+    # Default cooldown is 3 days and the minimum for cooldown is 1 day. Override default cooldown to 1 day so we can decide cooldown period after PR review
+    cooldown:
+      default-days: 1
+
+    # The limit on the number of maximum number of pull requests for version updates open at any time.
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "cron"
+      cronjob: "0 5 * * 2,4"
       timezone: "America/Los_Angeles"
       
     # Default cooldown is 3 days and the minimum for cooldown is 1 day. Override default cooldown to 1 day so we can decide cooldown period after PR review
@@ -16,4 +31,4 @@ updates:
     open-pull-requests-limit: 10
 
     # PRs will target this branch (the branch in your repo)
-    target-branch: "UCSFCLE_501_STABLE"
+    target-branch: "UCSFCLE_502_STABLE"
