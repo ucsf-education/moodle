@@ -45,6 +45,11 @@
 	path = public/enrol/ucsfsis
 	url = https://github.com/ucsf-education/moodle-enrol-ucsfsis
 	branch = main
+[submodule "public/filter/ucsfezproxy"]
+	path = public/filter/ucsfezproxy
+	url = https://github.com/ucsf-education/moodle-filter_ucsfezproxy
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
 [submodule "public/lib/editor/tiny/plugins/fontcolor"]
 	path = public/lib/editor/tiny/plugins/fontcolor
 	url = https://github.com/bfh/moodle-tiny_fontcolor
