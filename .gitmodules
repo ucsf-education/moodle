@@ -104,7 +104,7 @@
         path = public/mod/quiz/report/archive
         url = https://github.com/bfh/moodle-quiz_archive
         branch = main
-        tag = v5.2-r3
+	tag = v5.3-r2
 [submodule "public/plagiarism/turnitin"]
 	path = public/plagiarism/turnitin
 	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
