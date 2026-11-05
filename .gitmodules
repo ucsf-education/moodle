@@ -8,6 +8,11 @@
 	url = https://github.com/ilios/tool_ilioscategoryassignment
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/admin/tool/ldapsync"]
+	path = public/admin/tool/ldapsync
+	url = https://github.com/ucsf-education/moodle-admin-tool-ldapsync
+	branch = MOODLE_502_STABLE
+	tag = v5.2.0
 [submodule "public/admin/tool/sentry"]
 	path = public/admin/tool/sentry
 	url = https://github.com/ucsf-education/moodle-tool_sentry
@@ -128,3 +133,4 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.1
+
