@@ -8,6 +8,10 @@
 	url = https://github.com/ilios/tool_ilioscategoryassignment
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/admin/tool/sentry"]
+	path = public/admin/tool/sentry
+	url = https://github.com/ucsf-education/moodle-tool_sentry
+	branch = UCSFCLE_502_STABLE
 [submodule "public/admin/tool/ucsfsomapi"]
 	path = public/admin/tool/ucsfsomapi
 	url = https://github.com/ucsf-education/tool_ucsfsomapi
@@ -124,4 +128,3 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.1
-
