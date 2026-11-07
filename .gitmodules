@@ -69,6 +69,11 @@
 	url = https://github.com/ucsf-education/moodle-local_coursearchivingnotification
 	branch = MOODLE_502_STABLE
 	tag = v5.2.0
+[submodule "public/local/maintenance_livecheck"]
+	path = public/local/maintenance_livecheck
+	url = https://github.com/moodle-an-hochschulen/moodle-local_maintenance_livecheck
+	branch = MOODLE_502_STABLE
+	tag = v5.2-r2
 [submodule "public/local/navbarhelpmenu"]
 	path = public/local/navbarhelpmenu
 	url = https://github.com/ucsf-education/moodle-local_navbarhelpmenu
@@ -133,4 +138,3 @@
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
 	branch = MOODLE_502_STABLE
 	tag = v5.2.1
-
