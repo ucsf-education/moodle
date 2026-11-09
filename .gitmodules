@@ -119,6 +119,11 @@
         url = https://github.com/bfh/moodle-quiz_archive
         branch = main
 	tag = v5.3-r2
+[submodule "public/mod/zoom"]
+	path = public/mod/zoom
+	url = https://github.com/ncstate-delta/moodle-mod_zoom
+	branch = main
+	tag = v5.5.2
 [submodule "public/plagiarism/turnitin"]
 	path = public/plagiarism/turnitin
 	url = https://github.com/ucsf-education/moodle-plagiarism_turnitin
