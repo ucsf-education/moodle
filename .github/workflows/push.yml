@@ -136,10 +136,7 @@ jobs:
         # filter_panorama uses a legacy external function name that fails the Moodle 5.2
         # component-prefix check; keep the other plugin checks enabled.
         run: >
-          vendor/bin/phpunit
-          $phpunit_options
-          ${{ inputs.phpunit_extra_options }}
-          --exclude-filter 'test_db_services_file.*filter_panorama'
+          vendor/bin/phpunit $phpunit_options ${{ inputs.phpunit_extra_options }} --exclude-filter 'test_db_services_file.*filter_panorama'
 
       - name: Git status
         run: git status
