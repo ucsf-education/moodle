@@ -137,6 +137,10 @@
 	url = https://github.com/marcusgreen/moodle-qtype_wordselect
 	branch = main
 	tag = v2.57
+[submodule "public/repository/boxnet"]
+	path = public/repository/boxnet
+	url = https://github.com/ucsf-education/moodle-repository_boxnet
+	branch = master
 [submodule "public/theme/ucsf"]
 	path = public/theme/ucsf
 	url = https://github.com/ucsf-education/moodle-theme-ucsf
