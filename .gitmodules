@@ -103,7 +103,7 @@
 	path = public/local/staticpage
 	url = https://github.com/moodle-an-hochschulen/moodle-local_staticpage
 	branch = MOODLE_501_STABLE
-	tag = v5.1-r1
+	tag = v5.1-r2
 [submodule "public/mod/attendance"]
 	path = public/mod/attendance
 	url = https://github.com/danmarsden/moodle-mod_attendance
