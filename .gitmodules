@@ -101,6 +101,11 @@
 	url = https://github.com/davosmith/moodle-checklist
 	branch = MOODLE_500_STABLE
 	tag = 4.1.0.9
+[submodule "public/mod/choicegroup"]
+        path = public/mod/choicegroup
+        url = https://github.com/ndunand/moodle-mod_choicegroup
+        branch = master
+        tag = 2026062400
 [submodule "public/mod/diary"]
         path = public/mod/diary
         url = https://github.com/drachels/moodle-mod_diary
