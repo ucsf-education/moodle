@@ -123,7 +123,8 @@
 [submodule "public/mod/questionnaire"]
         path = public/mod/questionnaire
         url = https://github.com/PoetOS/moodle-mod_questionnaire
-        branch = MOODLE_500_STABLE
+        branch = MOODLE_503_STABLE
+        tag = v5.3.1
 [submodule "public/mod/quiz/report/archive"]
         path = public/mod/quiz/report/archive
         url = https://github.com/bfh/moodle-quiz_archive
