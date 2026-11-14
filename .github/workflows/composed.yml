@@ -120,5 +120,9 @@ jobs:
         env:
           dbtype: ${{ matrix.db }}
           phpunit_options: ${{ secrets.phpunit_options }}
+        # filter_panorama uses a legacy external function name that fails the Moodle 5.2
+        # component-prefix check.
+        # customcert image test uses addMethods() for the existing pdf::Image() method,
+        # which is rejected by the PHPUnit version used with Moodle 5.2.
         run: |
-            vendor/bin/phpunit $phpunit_options ${{ inputs.phpunit_extra_options }} --exclude-filter 'test_db_services_file.*filter_panorama'
+          vendor/bin/phpunit $phpunit_options ${{ inputs.phpunit_extra_options }} --exclude-filter 'test_db_services_file.*filter_panorama|test_render_with_stored_file_does_not_call_render_html'
