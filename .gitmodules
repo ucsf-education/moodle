@@ -76,7 +76,7 @@
 	path = public/local/bulkenrol
 	url = https://github.com/moodle-an-hochschulen/moodle-local_bulkenrol
 	branch = MOODLE_502_STABLE
-	tag = v5.2-r2
+	tag = v5.2-r3
 [submodule "public/local/coursearchivingnotification"]
 	path = public/local/coursearchivingnotification
 	url = https://github.com/ucsf-education/moodle-local_coursearchivingnotification
